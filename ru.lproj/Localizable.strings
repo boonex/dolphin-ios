@@ -1,0 +1,467 @@
+/* city, country format */
+"%@, %@" = "%@, %@";
+
+/* User Music view title */
+"%@ music" = "%@ музыка";
+
+/* User Video view title */
+"%@ video" = "%@ видео";
+
+/* User Images view title */
+"%@ images" = "%@ фотки";
+
+/* Previous button title */                                                                                                                                                            
+"<< Previous" = "<< Предыдущие";
+
+/* Access denied alert msg */
+"Access denied" = "Доступ запрещен";
+
+/* User info text */
+"<Age> y/o <Sex>" = "%2$@ %1$@ лет";
+
+/* User info text */
+"<Age> y/o" = "%@ лет";
+
+/* Add Photo from Library button title */
+"Add Photo from Library" = "Добавить фотку из библиотеки";
+
+/* user's friends view title */
+"<user>'s friends" = "Друзья %@";
+
+/* About view title
+   About button title */
+"About" = "О программе";
+
+/* About text in HTML format */
+"About Text" = "
+<html>
+<body style=\"background-color:transparent; color:#333; font-family:Helvetica; padding:5px;\">
+<b>Мобильное приложение Dolphin для iOS v %@</b>
+<br />
+<br />
+Подключайся к сайтам сообществ, работаюших на BoonEx Dolphin.
+<br />
+<br />
+Чтобы зайти сайт, нужно на нем зарегистрироваться. Для подключения к сайту нужно нажать \"Добавить Сайт\"
+и ввести полный адрес сайта, имя пользователя и пароль. Можно добавлять несколько сайтов.
+<br />
+<br />
+Для примера попробуйте зарегистрироваться на <a href=\"http://www.boonex.com/\" style=\"color:#333;\" target=\"_blank\">demo.boonex.com</a> и зайти на него через эту программу.
+<br />
+<br />
+При помощи платформы <a href=\"http://www.boonex.com/dolphin\" style=\"color:#333;\" target=\"_blank\">Dolphin</a> от <a href=\"http://www.boonex.com/\" style=\"color:#333;\" target=\"_blank\">BoonEx</a> можно создать свой собственный сайт социального сообщества с мобильным приложением.
+
+</body>
+</html>
+";
+
+/* Accept friend invitation button title */
+"Accept Invitation" = "Принять";
+
+/* Add site table row, while adding second and futher sites */
+"Add Another Dolphin Site" = "Добавить сайт";
+
+/* Add site table row, while adding first site */
+"Add Dolphin Site" = "Добавить сайт";
+
+/* Add Friend alert title */
+"Add Friend title" = "Добавление друга";
+
+/* Add Friend button */
+"Add Friend" = "Дружить";
+
+/* Add site view title */
+"Add Site" = "Добавление сайта";
+
+/* Initial View title */
+"App Title" = "Дельфин";
+
+/* Back button title
+   Back button text */
+"Back" = "Назад";
+
+/* Cancel button title */
+"Cancel" = "Отменить";
+
+/* Choose message recipient from user contacts */
+"Choose..." = "Выбрать...";
+
+/* Choose image for uploading */
+"Choose image" = "Выбрать фотку";
+
+/* City field caption */
+"City" = "Город";
+
+/* Close button */
+"Close" = "Закрыть";
+
+/* Message compose view title */
+"Compose" = "Написать";
+
+/* Compose row title */
+"Compose row" = "Написать";
+
+/* Error Alert Text */
+"Connection Error" = "Ошибка соединения";
+
+/* Profile contact block caption */
+"Contact profile block" = "Написать";
+
+/* Contacts View Title */
+"Contacts" = "Контакты";
+
+/* Countries View Title */
+"Countries" = "Страны";
+
+/* Country field caption */
+"Country" = "Страна";
+
+/* Get current user location */
+"Current" = "Текущее";
+
+/* Decline friend invitation button title */
+"Decline Invitation" = "Отказать";
+
+/* Description cell title */
+"Description cell" = "Описание";
+
+/* Done button title */
+"Done" = "Готово";
+
+/* Edit button title */
+"Edit" = "Изменить";
+
+/* Error alert title
+   Error alert titile */
+"Error" = "Ошибка";
+
+/* Error occured alert text */
+"Error occured" = "Ошибка случилась";
+
+/* Error Alert Title */
+"Error Title" = "Ошибка";
+
+/* Gender */
+"female" = "девушка";
+"male" = "мужик";
+
+/* Friend Requests view title */
+"Friend Requests" = "Просятся в друзья";
+
+/* Friend Requests with no friend requests row title */
+"Friend Requests row" = "Никто не просится в друзья";
+
+/* Friend Requests more than zero row title */
+"Friend Requests (<Num>)" = "%d человек просятся в друзья";
+
+/* Friends View Title */
+"Friends" = "Друзья";
+
+/* Friends List row title */
+"Friends List row" = "Список друзей";
+
+/* Profile fiends block caption */
+"Friends profile block" = "Друзья";
+
+/* Friends title with more than 1 friend request */
+"Friends row (%d friend requests)" = "Друзья (%d просятся)";
+
+/* Friends title with 1 friend request */
+"Friends row (One friend request)" = "Друзья (один просится)";
+
+/* Friends title with no friend requests */
+"Friends row with 0 requests" = "Друзья";
+
+/* Friends tab title */
+"Friends tab" = "Друзья";
+
+/* Display 'From: User' in mail messages list */
+"From <User>" = "От %@";
+
+/* Message sent success alert title 
+   Image added success alert title 
+   Set primary image success alert title */
+"Great!" = "Отлично!";
+
+/* Welcome message */
+"Hello User!" = "Привет %@!";
+
+/* Home tab title */
+"Home Tab" = "Домой";
+
+/* Images tab with images count title */
+"Images ({num})" = "Фотки (%d)";
+
+/* Image cell title */
+"Image cell" = "Фотка";
+
+/* Image upload success message */
+"Image hase been successfully uploaded" = "Фотка добавлена";
+
+/* Image upload error message */
+"Image upload error" = "Фотка не была добавлена из-за ошибки";
+
+/* Inbox button title
+   Inbox view title */
+"Inbox" = "Входящие";
+
+/* Inbox row title */
+"Inbox row" = "Входящие";
+
+/* Inbox with unread letters num */
+"Inbox row (<Num>)" = "Входящие (%d)";
+
+/* Info title */
+"Info" = "Обо Мне";
+
+/* Keyword field caption */
+"Keyword" = "Ключевое слово";
+
+/* keyword search form view title */
+"Keyword Search" = "Поиск по ключевому слову";
+
+/* Loading text */
+"Loading..." = "Загрузка...";
+
+/* Location title */
+"Location" = "Место";
+
+/* Location is undefined alert msg */
+"Location is undefined" = "Местоположение не определено";
+
+/* Location Search view title */
+"Location Search" = "Поиск по местоположению";
+
+/* Location search row title */
+"Location Search row" = "Поиск по местоположению";
+
+/* Location update failed alert text */
+"Location update failed" = "Невозможно определить местоположение";
+
+/* Loagin view title
+   Login button title */
+"Login" = "Зайти";
+
+/* Login failed error text */
+"Login failed" = "Заход не удался";
+
+/* Logout button title */
+"Logout" = "Выйти";
+
+/* Mail View Title */
+"Mail" = "Почта";
+
+/* Mail title with more than 1 unread letters */
+"Mail row (<Num> unread letters)" = "Почта (%d непрочитанных)";
+
+/* Mail title with 1 unread letter */
+"Mail row (One unread letter)" = "Почта (одно непрочитанное)";
+
+/* Mail title with no unread letters */
+"Mail row with 0 unread" = "Почта";
+
+/* Mail tab title */
+"Mail tab" = "Почта";
+
+/* Make thumbnail button title */
+"Make Thumbnail" = "Сделать главной";
+
+/* Menu button with bubble format */
+"Menu Button" = "%@ (%@)";
+
+/* Message From user view title */
+"Message From" = "Сообщение От";
+
+/* No comment provided by engineer. */
+"Message send failed" = "Не удалось отправить сообщение";
+
+/* Message sent success alert text */
+"Message sent" = "Сообщение отправлено";
+
+/* Message To user view title */
+"Message To" = "Сообщение К";
+
+/* Profile music block caption */
+"Music profile block" = "Музыка";
+
+/* My Friends view title */
+"My Friends" = "Мои друзья";
+
+/* My Images view title */
+"My images" = "Мои Фотки";
+
+/* New mail message marker */
+"New mail" = "НОВОЕ";
+
+/* Next button title */
+"Next >>" = "Следующие >>";
+
+/* No profiles found alert text */
+"No profiles found" = "Нет никого";
+
+/* No Images view title */
+"No Images" = "Фотографий нет";
+
+/* OK button text
+   OK Button Title
+   OK Button text
+   OK button title */
+"OK" = "Закрыть";
+
+/* online only field caption
+   online Only field caption */
+"Online Only" = "Только те кто в сети";
+
+/* Password field name */
+"Password" = "Пароль";
+
+/* Profile photos block caption */
+"Photos profile block" = "Фотографии";
+
+/* Not all fields are filled in message compose error message text */
+"Please specify message subject, text and recipient" = "Вы забыли указать тему, текст или получателя";
+
+/* Profile tab title */
+"Profile tab" = "Обо Мне";
+
+/* Profile Info block caption */
+"Profile Info block" = "Дополнительная информация";
+
+/* Profile button with bubble format */
+"Profile button" = "%@ (%@)";
+
+/* Set primary image success message */
+"Primary image has been successfully set" = "Главная фотка успешно установлена";
+
+/* Reply to message subject format */
+"Re: <string>" = "Ответ: %@";
+
+/* Message recipient field caption */
+"Recipient" = "Получатель";
+
+/* No comment provided by engineer. */
+"Recipient profile is not activated" = "Получатель не активен";
+
+/* Reload button title */
+"Reload" = "Перезагрузить";
+
+/* Reply button title */
+"Reply" = "Ответить";
+
+/* Remember Password switch text */
+"Remember Password"= "Запомнить";
+
+/* Save button title */
+"Save" = "Сохранить";
+
+/* Search view title
+   Search button text */
+"Search" = "Поиск";
+
+/* Search by keyword row title */
+"Search By Keyword row" = "Поиск по ключевому слову";
+
+/* search near me form view title */
+"Search Near Me" = "Поиск возле меня";
+
+/* Search near me row title */
+"Search Near Me row" = "Поиск возле меня";
+
+/* Search form button text */
+"Search Form" = "Форма поиска";
+
+/* Search results view title */
+"Search Results" = "Результаты";
+
+/* Search row title */
+"Search row" = "Поиск";
+
+/* Search tab title */
+"Search tab" = "Поиск";
+
+/* Choose country from countries list */
+"Select Country..." = "Выбрать страну...";
+
+/* Send button title */
+"Send" = "Послать";
+
+/* Send Message copy to(my email, recipient email) field caption */
+"Send Copy To" = "Послать копию на почту";
+
+/* Message send option: my email */
+"Send to my email" = "Мне";
+
+/* Message send option: recipient email */
+"Send to recipient email" = "Получателю";
+
+/* Message send option: both */
+"Send to both" = "Обоим";
+
+/* Sent view title */
+"Sent" = "Отосланные";
+
+/* Sent row title */
+"Sent row" = "Отосланные";
+
+/* Site URL field name */
+"Site URL" = "Адрес сайта";
+
+/* Site URL is not filled in Login/Add Site pages error message */
+"Site URL can not be empty" = "Адрес сайта не может быть пустым";
+
+/* Message subject field caption */
+"Subject" = "Тема";
+
+/* Status title */ 
+"Status" = "Статус";
+
+/* Status message field caption */
+"Status Message" = "Статус сообщение";
+
+/* Stop button title */
+"STOP" = "СТОП";
+
+/* Take Photo with Camera button title */
+"Take Photo with Camera" = "Добавить фотку с камеры";
+
+/* Message text field caption */
+"Text" = "Сообщение";
+
+/* Tags cell title */
+"Tags cell" = "Таги через запятую";
+
+/* Title cell title */
+"Title cell" = "Заголовок";
+
+/* Not all fields are filled on Add Image form error message */
+"Title, Tags, Description or Image is not specified" = "Вы забыли указать заголовок, таги, описание или фотку";
+
+/* Display 'To: User' in mail messages list */
+"To <User>" = "К %@";
+
+/* No comment provided by engineer. */
+"Unknown recipient" = "Неизвестный получатель";
+
+/* Username field name */
+"Username" = "Имя пользователя";
+
+/* Not all fields are filled on Login/Add Site pages error message */
+"Username, Password or Domain can not be empty" = "Вы забыли указать имя пользователя или пароль";
+
+/* Profile video block caption */
+"Video profile block" = "Видео";
+
+/* With Photos Only field caption */
+"With Photos Only" = "Только с фотками";
+
+/* Your membership level do not allow photo upload */
+"Your membership level do not allow photo upload" = "Ваше членство не позволяет загружать фотки";
+
+/* Sent mail error message */
+"You are in block list of recipient" = "Вы в заблокированы получателем";
+
+/* Sent mail error message */
+"You have to wait before sending another message" = "Вам нужно подождать прежде чем отсылать письмо снова";
+
+/* Sent mail error message */
+"Your membership doesn't allow you to send messages" = "Ваше членство не позволяет посылать сообщения";

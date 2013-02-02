@@ -1,0 +1,471 @@
+﻿/* city, country format */
+"%@, %@" = "%@, %@";
+
+/* User Music view title */
+"%@ music" = "%@ sounds";
+
+/* User Video view title */
+"%@ video" = "%@ video";
+
+/* User Images view title */
+"%@ images" = "%@ images";
+
+/* Previous button title */
+"<< Previous" = "<< Previous";
+
+/* Access denied alert msg */
+"Access denied" = "Access denied";
+
+/* User info text */
+"<Age> y/o <Sex>" = "%@ y/o %@";
+
+/* User info text */
+"<Age> y/o" = "<Age> y/o";
+
+/* Add Photo from Library button title */
+"Add Photo from Library" = "Add Photo from Library";
+
+/* user's friends view title */
+"<user>'s friends" = "%@'s friends";
+
+/* About view title
+   About button title */
+"About" = "About";
+
+/* About text in HTML format */
+"About Text" = "
+<html>
+<body style=\"background-color:transparent; color:#333; font-family:Helvetica; padding:5px;\">
+
+<b>Dolphin App for iOS v %@</b>
+<br />
+<br />
+Connect to community sites powered by BoonEx Dolphin and 
+use them from your iOS device. 
+<br />
+<br />
+You need to be registered at the site you’re adding. To add your 
+favorite community, tap “Add Site” and enter full site URL and 
+your account details. Once the site is added you can access it 
+from the app homepage.You can add and use multiple 
+Dolphin-based sites.
+<br />
+<br />
+For example, try joining <a href=\"http://demo.boonex.com\" style=\"color:#333;\" target=\"_blank\">demo.boonex.com</a> and use it via this app.
+<br />
+<br />
+Create your own community site and have your own mobile 
+app using <a href=\"http://www.boonex.com/dolphin\" style=\"color:#333;\" target=\"_blank\">Dolphin</a> - open source social networking platform 
+and mobile apps package from <a href=\"http://www.boonex.com/\" style=\"color:#333;\" target=\"_blank\">BoonEx</a>.
+
+</body>
+</html>
+";
+
+/* Accept friend invitation button title */
+"Accept Invitation" = "Accept";
+
+/* Add site table row, while adding second and futher sites */
+"Add Another Dolphin Site" = "Add Another Site";
+
+/* Add site table row, while adding first site */
+"Add Dolphin Site" = "Add Site";
+
+/* Add Friend alert title */
+"Add Friend title" = "Add Friend";
+
+/* Add Friend button */
+"Add Friend" = "Add Friend";
+
+/* Add site view title */
+"Add Site" = "Add Site";
+
+/* Initial View title */
+"App Title" = "Dolphin";
+
+/* Back button title
+   Back button text */
+"Back" = "Back";
+
+/* Cancel button title */
+"Cancel" = "Cancel";
+
+/* Choose message recipient from user contacts */
+"Choose..." = "Choose...";
+
+/* Choose image for uploading */
+"Choose image" = "Choose image";
+
+/* City field caption */
+"City" = "City";
+
+/* Close button */
+"Close" = "Close";
+
+/* Message compose view title */
+"Compose" = "Compose";
+
+/* Compose row title */
+"Compose row" = "Compose";
+
+/* Error Alert Text */
+"Connection Error" = "Connection Error";
+
+/* Profile contact block caption */
+"Contact profile block" = "Contact";
+
+/* Contacts View Title */
+"Contacts" = "Contacts";
+
+/* Countries View Title */
+"Countries" = "Countries";
+
+/* Country field caption */
+"Country" = "Country";
+
+/* Get current user location */
+"Current" = "Current";
+
+/* Decline friend invitation button title */
+"Decline Invitation" = "Decline";
+
+/* Description cell title */
+"Description cell" = "Description";
+
+/* Done button title */
+"Done" = "Done";
+
+/* Edit button title */
+"Edit" = "Edit";
+
+/* Error alert title
+   Error alert titile */
+"Error" = "Error";
+
+/* Error occured alert text */
+"Error occured" = "Error occured";
+
+/* Error Alert Title */
+"Error Title" = "Error Title";
+
+/* Gender */
+"female" = "female";
+"male" = "male";
+
+/*  Friend Requests view title */
+"Friend Requests" = "Friend Requests";
+
+/* Friend Requests with no friend requests row title */
+"Friend Requests row" = "Friend Requests";
+
+/* Friend Requests more than zero row title */
+"Friend Requests (<Num>)" = "Friend Requests (%d)";
+
+/* Friends View Title */
+"Friends" = "Friends";
+
+/* Friends List row title */
+"Friends List row" = "Friends List";
+
+/* Profile fiends block caption */
+"Friends profile block" = "Friends";
+
+/* Friends title with more than 1 friend request */
+"Friends row (%d friend requests)" = "Friends (%d friend requests)";
+
+/* Friends title with 1 friend request */
+"Friends row (One friend request)" = "Friends (One friend request)";
+
+/* Friends title with no friend requests */
+"Friends row with 0 requests" = "Friends";
+
+/* Friends tab title */
+"Friends tab" = "Friends";
+
+/* Display 'From: User' in mail messages list */
+"From <User>" = "From %@";
+
+/* Message sent success alert title 
+   Image added success alert title 
+   Set primary image success alert title */
+"Great!" = "Great!";
+
+/* Welcome message */
+"Hello User!" = "Hello %@!";
+
+/* Home tab title */
+"Home Tab" = "Home";
+
+/* Images tab with images count title */
+"Images ({num})" = "Images (%d)";
+
+/* Image cell title */
+"Image cell" = "Image";
+
+/* Image upload success message */
+"Image hase been successfully uploaded" = "Image has been successfully uploaded";
+
+/* Image upload error message */
+"Image upload error" = "Image upload error";
+
+/* Inbox button title
+   Inbox view title */
+"Inbox" = "Inbox";
+
+/* Inbox row title */
+"Inbox row" = "Inbox";
+
+/* Inbox with unread letters num */
+"Inbox row (<Num>)" = "Inbox (%d)";
+
+/* Info title */
+"Info" = "My Info";
+
+/* Keyword field caption */
+"Keyword" = "Keyword";
+
+/* keyword search form view title */
+"Keyword Search" = "Keyword Search";
+
+/* Loading text */
+"Loading..." = "Loading...";
+
+/* Location title */
+"Location" = "Location";
+
+/* Location is undefined alert msg */
+"Location is undefined" = "Location is undefined";
+
+/* Location Search view title */
+"Location Search" = "Location Search";
+
+/* Location search row title */
+"Location Search row" = "Location Search";
+
+/* Location update failed alert text */ 
+"Location update failed" = "Location update failed";
+
+/* Loagin view title
+   Login button title */
+"Login" = "Login";
+
+/* Login failed error text */
+"Login failed" = "Login failed";
+
+/* Logout button title */
+"Logout" = "Logout";
+
+/* Mail View Title */
+"Mail" = "Messages";
+
+/* Mail title with more than 1 unread letters */
+"Mail row (<Num> unread letters)" = "Messages (%d unread)";
+
+/* Mail title with 1 unread letter */
+"Mail row (One unread letter)" = "Messages (One unread)";
+
+/* Mail title with no unread letters */
+"Mail row with 0 unread" = "Messages";
+
+/* Mail tab title */
+"Mail tab" = "Messages";
+
+/* Make thumbnail button title */
+"Make Thumbnail" = "Make Primary";
+
+/* Menu button with bubble format */
+"Menu Button" = "%@ (%@)";
+
+/* Message From user view title */
+"Message From" = "Message From";
+
+/* No comment provided by engineer. */
+"Message send failed" = "Message send failed";
+
+/* Message sent success alert text */
+"Message sent" = "Message sent";
+
+/* Message To user view title */
+"Message To" = "Message To";
+
+/* Profile music block caption */
+"Music profile block" = "Sounds";
+
+/* My Friends view title */
+"My Friends" = "My Friends";
+
+/* My Images view title */
+"My Images" = "My Images";
+
+/* New mail message marker */
+"New mail" = "NEW";
+
+/* Next button title */
+"Next >>" = "Next >>";
+
+/* No profiles found alert text */
+"No profiles found" = "No profiles found";
+
+/* No Images view title */
+"No Images" = "No Images found";
+
+/* OK button text
+   OK Button Title
+   OK Button text
+   OK button title */
+"OK" = "OK";
+
+/* online only field caption
+   online Only field caption */
+"Online Only" = "Online Only";
+
+/* Password field name */
+"Password" = "Password";
+
+/* Profile photos block caption */
+"Photos profile block" = "Photos";
+
+/* Not all fields are filled in message compose error message text */
+"Please specify message subject, text and recipient" = "Please specify message subject, text and recipient";
+
+/* Profile tab title */
+"Profile tab" = "My Info";
+
+/* Profile Info block caption */
+"Profile Info block" = "Profile Info";
+
+/* Set primary image success message */
+"Primary image has been successfully set" = "Primary image has been successfully set";
+
+/* Reply to message subject format */
+"Re: <string>" = "Re: %@";
+
+/* Message recipient field caption */
+"Recipient" = "Recipient";
+
+/* No comment provided by engineer. */
+"Recipient profile is not activated" = "Recipient profile is not activated";
+
+/* Reload button title */
+"Reload" = "Reload";
+
+/* Reply button title */
+"Reply" = "Reply";
+
+/* Remember Password switch text */
+"Remember Password"= "Remember";
+
+/* Save button title */
+"Save" = "Save";
+
+/* Search view title
+   Search button text */
+"Search" = "Search";
+
+/* Search by keyword row title */
+"Search By Keyword row" = "Search By Keyword";
+
+/* search near me form view title */
+"Search Near Me" = "Search Near Me";
+
+/* Search near me row title */
+"Search Near Me row" = "Search Near Me";
+
+/* Search form button text */
+"Search Form" = "Search Form";
+
+/* Search results view title */
+"Search Results" = "Results";
+
+/* Search row title */
+"Search row" = "Search";
+
+/* Search tab title */
+"Search tab" = "Search";
+
+/* Choose country from countries list */
+"Select Country..." = "Select Country...";
+
+/* Send button title */
+"Send" = "Send";
+
+/* Send Message copy to(my email, recipient email) field caption */
+"Send Copy To" = "Send copy to email";
+
+/* Message send option: my email */
+"Send to my email" = "Me";
+
+/* Message send option: recipient email */
+"Send to recipient email" = "Recipient";
+
+/* Message send option: both */
+"Send to both" = "Both";
+
+/* Sent view title */
+"Sent" = "Sent";
+
+/* Sent row title */
+"Sent row" = "Sent";
+
+/* Site URL field name */
+"Site URL" = "Site URL";
+
+/* Site URL is not filled in Login/Add Site pages error message */
+"Site URL can not be empty" = "Site URL can not be empty";
+
+/* Message subject field caption */
+"Subject" = "Subject";
+
+/* Status title */ 
+"Status" = "Status";
+
+/* Status message field caption */
+"Status Message" = "Status Message";
+
+/* Stop button title */
+"STOP" = "STOP";
+
+/* Take Photo with Camera button title */
+"Take Photo with Camera" = "Take Photo with Camera";
+
+/* Message text field caption */
+"Text" = "Text";
+
+/* Tags cell title */
+"Tags cell" = "Tags";
+
+/* Title cell title */
+"Title cell" = "Title";
+
+/* Not all fields are filled on Add Image form error message */
+"Title, Tags, Description or Image is not specified" = "Title, Tags, Description or Image is not specified";
+
+/* Display 'To: User' in mail messages list */
+"To <User>" = "To %@";
+
+/* No comment provided by engineer. */
+"Unknown recipient" = "Unknown recipient";
+
+/* Username field name */
+"Username" = "Username";
+
+/* Not all fields are filled on Login/Add Site pages error message */
+"Username, Password or Domain can not be empty" = "Username and Password can not be empty";
+
+/* Profile video block caption */
+"Video profile block" = "Videos";
+
+/* With Photos Only field caption */
+"With Photos Only" = "With Photos Only";
+
+/* Your membership level do not allow photo upload */
+"Your membership level do not allow photo upload" = "Your membership level do not allow photo upload";
+
+/* Sent mail error message */
+"You are in block list of recipient" = "You are in block list of recipient";
+
+/* Sent mail error message */
+"You have to wait before sending another message" = "You have to wait before sending another message";
+
+/* Sent mail error message */
+"Your membership doesn't allow you to send messages" = "Your membership doesn't allow you to send messages";
