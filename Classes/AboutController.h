@@ -13,6 +13,4 @@
 	IBOutlet UIWebView *webAbout;
 }
 
-- (IBAction)actionBack:(id)sender;
-
 @end

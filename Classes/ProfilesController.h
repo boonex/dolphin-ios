@@ -18,7 +18,6 @@
 - (void) viewDidLoad;
 - (void) requestData;
 - (void) actionRequestFillProfilesArray:(id)idData;
-- (IBAction) actionBack:(id)sender;
 - (IBAction) actionReload:(id)sender;
 - (IBAction) actionEdit:(id)sender;
 

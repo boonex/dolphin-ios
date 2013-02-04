@@ -55,9 +55,8 @@ static BxUser *glUser = nil;
     // http://stackoverflow.com/questions/1725881/unknown-class-myclass-in-interface-builder-file-error-at-runtime
     [FBProfilePictureView class];
     
-    [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];    
-    [application setStatusBarHidden:NO animated:NO];
-
+    [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+    [application setStatusBarHidden:NO withAnimation:NO];
 
 	InitialController *aInitialController = [[InitialController alloc] initWithNibName:@"InitialView" bundle:[NSBundle mainBundle]];
 	navigationController =	[[UINavigationController alloc] initWithRootViewController:aInitialController];	

@@ -90,31 +90,16 @@
         
         NSURL *theURL = [NSURL URLWithString:url];
         player = [[MPMoviePlayerController alloc] initWithContentURL:theURL];
-        
-        if ([player respondsToSelector:@selector(loadState)]) { 
             
-            NSLog(@"3.2/4.x devices: %@", theURL.absoluteString);
+        [player prepareToPlay];
             
-            [player prepareToPlay];
+        player.scalingMode = MPMovieScalingModeAspectFit;
             
-            player.scalingMode = MPMovieScalingModeAspectFit;
-            
-            // Register that the load state changed (movie is ready)
-            [[NSNotificationCenter defaultCenter] addObserver:self 
-                                                     selector:@selector(moviePlayerLoadStateChanged:) 
-                                                         name:MPMoviePlayerLoadStateDidChangeNotification 
-                                                       object:nil];
-        } else {
-            
-            NSLog(@"<=3.1 devices: %@", theURL.absoluteString);
-            
-            // Register to receive a notification when the movie is in memory and ready to play.
-            [[NSNotificationCenter defaultCenter] addObserver:self 
-                                                     selector:@selector(moviePreloadDidFinish:) 
-                                                         name:MPMoviePlayerContentPreloadDidFinishNotification 
-                                                       object:nil];
-            
-        }
+        // Register that the load state changed (movie is ready)
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(moviePlayerLoadStateChanged:)
+                                                     name:MPMoviePlayerLoadStateDidChangeNotification
+                                                   object:nil];
         
         // Register to receive a notification when the movie has finished playing. 
         [[NSNotificationCenter defaultCenter] addObserver:self 
@@ -277,28 +262,7 @@
 
 
 /*---------------------------------------------------------------------------
- * For 3.1.x devices
- * For 3.2 and 4.x see moviePlayerLoadStateChanged: 
- *--------------------------------------------------------------------------*/
-- (void) moviePreloadDidFinish:(NSNotification*)notification 
-{
-    [viewIndicator stopAnimating];
-    
-	// Remove observer
-	[[NSNotificationCenter 	defaultCenter] 
-	 removeObserver:self
-	 name:MPMoviePlayerContentPreloadDidFinishNotification
-	 object:nil];
-	    
-    NSLog(@"moviePreloadDidFinish 3.1.x - start playing");
-    
-	// Play the movie
-	[player play];
-}
-
-/*---------------------------------------------------------------------------
  * For 3.2 and 4.x devices
- * For 3.1.x devices see moviePreloadDidFinish:
  *--------------------------------------------------------------------------*/
 - (void) moviePlayerLoadStateChanged:(NSNotification*)notification 
 {
@@ -329,8 +293,6 @@
         
 		// Play the movie
 		[player play];
-        
-        NSLog(@"moviePlayerLoadStateChanged 3.2/4.x - PLAY");
 
 	}
 }

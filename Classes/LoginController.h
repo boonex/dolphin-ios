@@ -26,7 +26,6 @@
 }
 
 - (IBAction)actionLogin:(id)sender;
-- (IBAction)actionCancel:(id)sender;
 
 - (NSString*)md5:(NSString*)str;
 - (void)callbackLogin:(id)idData;

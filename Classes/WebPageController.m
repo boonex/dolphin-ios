@@ -60,8 +60,8 @@
     NSURL *nsUrl = [NSURL URLWithString:strURL];
     NSMutableURLRequest *nsUrlRequest = [NSMutableURLRequest requestWithURL:nsUrl];
     
-    BxUser* user = [Dolphin6AppDelegate getCurrentUser];
-    [user setLoggenInCookiesForRequest:nsUrlRequest];
+    BxUser* anUser = [Dolphin6AppDelegate getCurrentUser];
+    [anUser setLoggenInCookiesForRequest:nsUrlRequest];
     
     [webView loadRequest:nsUrlRequest];
 }

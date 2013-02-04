@@ -104,7 +104,7 @@
 {
     [super viewWillAppear:animated];
     
-    [[UIApplication sharedApplication] setStatusBarHidden:YES animated:YES];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
 }
 
 // iOS 6
@@ -377,7 +377,7 @@
 }
 
 - (IBAction)actionClose:(id)sender {
-    [[UIApplication sharedApplication] setStatusBarHidden:NO animated:YES];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES];
 	[navContrioller dismissModalViewControllerAnimated:YES];	    
 }
 
