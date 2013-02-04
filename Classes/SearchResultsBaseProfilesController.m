@@ -99,6 +99,10 @@
 	[navController popToViewController:searchFormViewController animated:YES];
 }
 
+- (IBAction)actionBack:(id)sender {
+	[navController popViewControllerAnimated:YES];
+}
+
 - (void)actionClickNext:(id)idData {	
 	NSLog(@"Next pressed override this function!!!");
 }
