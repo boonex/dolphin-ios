@@ -34,10 +34,6 @@
         [thumb release];
         thumb = nil;
     }
-    if (user != nil) {
-        [user release];
-        user = nil;
-    }
     if (info != nil) {
         [info release];
         info = nil;
