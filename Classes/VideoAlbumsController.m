@@ -33,9 +33,11 @@
 	NSDictionary *dict = [catList objectAtIndex:indexPath.row];
 	NSString *identifer = [[dict valueForKey:@"Id"] retain];
     NSString *albumName = [[dict valueForKey:@"Title"] retain];
+    NSString *albumDefault = [dict valueForKey:@"DefaultAlbum"];
+    BOOL isDefaultAlbum = (nil == albumDefault || [albumDefault isEqualToString:@"1"]) ? TRUE : FALSE;
 
 	
-	UIViewController *ctrl = [[VideoListController alloc] initWithProfile:profile album:identifer albumName:albumName nav:navContrioller];
+	UIViewController *ctrl = [[VideoListController alloc] initWithProfile:profile album:identifer albumName:albumName albumDefault:isDefaultAlbum nav:navContrioller];
 	[navContrioller pushViewController:ctrl animated:YES];			
 	[ctrl release];
 	[identifer release];

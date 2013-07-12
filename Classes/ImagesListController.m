@@ -17,8 +17,8 @@
 @implementation ImagesListController
 
 
-- (id)initWithProfile:(NSString*)aProfile album:(NSString*)anAlbum albumName:(NSString*)anAlbumName nav:(UINavigationController*)aNav {
-	if ((self = [super initWithProfile:aProfile album:anAlbum albumName:anAlbumName nav:aNav])) {
+- (id)initWithProfile:(NSString*)aProfile album:(NSString*)anAlbum albumName:(NSString*)anAlbumName albumDefault:(BOOL)isDefault nav:(UINavigationController*)aNav {
+	if ((self = [super initWithProfile:aProfile album:anAlbum albumName:anAlbumName albumDefault:isDefault nav:aNav])) {
 		method = @"dolphin.getImagesInAlbum";
         methodRemove = @"dolphin.removeImage";
 	}
@@ -58,11 +58,11 @@
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	ImagesController *ctrl = [[ImagesController alloc] initWithList:mediaList profile:profile nav:navController selectedImageIndex:indexPath.row makeThumbnailFlag:([profile isEqualToString:user.strUsername])];
+	ImagesController *ctrl = [[ImagesController alloc] initWithList:mediaList profile:profile nav:navController selectedImageIndex:indexPath.row makeThumbnailFlag:(isAlbumDefault && [profile isEqualToString:user.strUsername])];
     
     [ctrl setWantsFullScreenLayout:YES];
 	[navController presentModalViewController:ctrl animated:YES];
-	[ctrl release]; 	
+	[ctrl release];
 }
 
 

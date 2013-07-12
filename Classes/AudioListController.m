@@ -11,8 +11,8 @@
 
 @implementation AudioListController
 
-- (id)initWithProfile:(NSString*)aProfile album:(NSString*)anAlbum albumName:(NSString*)anAlbumName nav:(UINavigationController*)aNav {
-	if ((self = [super initWithProfile:aProfile album:anAlbum albumName:anAlbumName nav:aNav])) {
+- (id)initWithProfile:(NSString*)aProfile album:(NSString*)anAlbum albumName:(NSString*)anAlbumName albumDefault:(BOOL)isDefault nav:(UINavigationController*)aNav {
+	if ((self = [super initWithProfile:aProfile album:anAlbum albumName:anAlbumName albumDefault:isDefault nav:aNav])) {
 		method = @"dolphin.getAudioInAlbum";
         methodRemove = @"dolphin.removeAudio";
         isAddAllowed = false;

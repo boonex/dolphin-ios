@@ -16,13 +16,14 @@
 
 @synthesize isReloadRequired;
 
-- (id)initWithProfile:(NSString*)aProfile album:(NSString*)anAlbum albumName:(NSString*)anAlbumName nav:(UINavigationController*)aNav
+- (id)initWithProfile:(NSString*)aProfile album:(NSString*)anAlbum albumName:(NSString*)anAlbumName albumDefault:(BOOL)isDefault nav:(UINavigationController*)aNav
 {
 	if ((self = [super initWithNibName:@"MediaListView" bundle:nil withUser:[Dolphin6AppDelegate getCurrentUser]])) {
 		profile = [aProfile copy];
 		album = [anAlbum copy];
         albumName = [anAlbumName copy];
 		navController = aNav;
+        isAlbumDefault = isDefault;
         isEditAllowed = true;
         isAddAllowed = true;
 	}

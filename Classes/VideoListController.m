@@ -12,8 +12,8 @@
 
 @implementation VideoListController
 
-- (id)initWithProfile:(NSString*)aProfile album:(NSString*)anAlbum albumName:(NSString*)anAlbumName nav:(UINavigationController*)aNav {
-	if ((self = [super initWithProfile:aProfile album:anAlbum albumName:anAlbumName nav:aNav])) {
+- (id)initWithProfile:(NSString*)aProfile album:(NSString*)anAlbum albumName:(NSString*)anAlbumName albumDefault:(BOOL)isDefault nav:(UINavigationController*)aNav {
+	if ((self = [super initWithProfile:aProfile album:anAlbum albumName:anAlbumName albumDefault:isDefault nav:aNav])) {
 		method = @"dolphin.getVideoInAlbum";
         methodRemove = @"dolphin.removeVideo";
         if (user.intProtocolVer >= 5) {
