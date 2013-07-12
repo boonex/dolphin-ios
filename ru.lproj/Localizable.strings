@@ -22,8 +22,8 @@
 /* User info text */
 "<Age> y/o" = "%@ лет";
 
-/* Add Photo from Library button title */
-"Add Photo from Library" = "Добавить фотку из библиотеки";
+/* Add File from Library button title */
+"Add File from Library" = "Библиотека";
 
 /* user's friends view title */
 "<user>'s friends" = "Друзья %@";
@@ -86,8 +86,8 @@
 /* Choose message recipient from user contacts */
 "Choose..." = "Выбрать...";
 
-/* Choose image for uploading */
-"Choose image" = "Выбрать фотку";
+/* Choose file for uploading */
+"Choose file" = "Выбрать файл";
 
 /* City field caption */
 "City" = "Город";
@@ -179,7 +179,7 @@
 "From <User>" = "От %@";
 
 /* Message sent success alert title 
-   Image added success alert title 
+   File added success alert title 
    Set primary image success alert title */
 "Great!" = "Отлично!";
 
@@ -421,8 +421,8 @@
 /* Stop button title */
 "STOP" = "СТОП";
 
-/* Take Photo with Camera button title */
-"Take Photo with Camera" = "Добавить фотку с камеры";
+/* Take File with Camera button title */
+"Take File with Camera" = "Камера";
 
 /* Message text field caption */
 "Text" = "Сообщение";
@@ -433,8 +433,8 @@
 /* Title cell title */
 "Title cell" = "Заголовок";
 
-/* Not all fields are filled on Add Image form error message */
-"Title, Tags, Description or Image is not specified" = "Вы забыли указать заголовок, таги, описание или фотку";
+/* Not all fields are filled on Add File form error message */
+"Title or file is empty" = "Заголовок не указан или файл не выбран";
 
 /* Display 'To: User' in mail messages list */
 "To <User>" = "К %@";
@@ -451,11 +451,14 @@
 /* Profile video block caption */
 "Video profile block" = "Видео";
 
+/* Video upload success message */
+"Video upload success message" = "Видео загружено, но нужно подождать пока оно обработается";
+
 /* With Photos Only field caption */
 "With Photos Only" = "Только с фотками";
 
-/* Your membership level do not allow photo upload */
-"Your membership level do not allow photo upload" = "Ваше членство не позволяет загружать фотки";
+/* Your membership level do not allow file upload */
+"Your membership level do not allow file upload" = "Ваше членство не позволяет загружать файлы";
 
 /* Sent mail error message */
 "You are in block list of recipient" = "Вы в заблокированы получателем";

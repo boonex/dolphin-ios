@@ -195,7 +195,7 @@
         if (nil == sAlbumName)
             return YES;
         
-        ImageAddController *ctrl = [[ImageAddController alloc] initWithAlbum:sAlbumName imagesListController:nil nav:navController];
+        ImageAddController *ctrl = [[ImageAddController alloc] initWithAlbum:sAlbumName mediaListController:nil nav:navController];
         [navController pushViewController:ctrl animated:YES];
         [ctrl release];
         return NO;

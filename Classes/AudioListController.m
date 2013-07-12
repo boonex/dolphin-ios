@@ -1,5 +1,5 @@
 //
-//  ImagesListController.m
+//  AudioListController.m
 //  Dolphin6
 //
 //  Created by Alexander Trofimov on 11/27/08.
@@ -11,16 +11,19 @@
 
 @implementation AudioListController
 
-- (id)initWithProfile:(NSString*)aProfile album:(NSString*)anAlbum nav:(UINavigationController*)aNav {
-	if ((self = [super initWithProfile:aProfile album:anAlbum nav:aNav])) {
+- (id)initWithProfile:(NSString*)aProfile album:(NSString*)anAlbum albumName:(NSString*)anAlbumName nav:(UINavigationController*)aNav {
+	if ((self = [super initWithProfile:aProfile album:anAlbum albumName:anAlbumName nav:aNav])) {
 		method = @"dolphin.getAudioInAlbum";
+        methodRemove = @"dolphin.removeAudio";
+        isAddAllowed = false;
+        if (user.intProtocolVer >= 5) {
+            isEditAllowed = true;
+        } else {
+            isEditAllowed = false;
+        }
+        
 	}
 	return self;
-}
-
-- (void)viewDidLoad {
-	self.navigationItem.title =[NSString stringWithFormat:NSLocalizedString(@"%@ music", @"User Music view title"), profile];
-	[super viewDidLoad];
 }
 
 @end

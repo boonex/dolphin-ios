@@ -1,5 +1,5 @@
 //
-//  ImagesHomeController.m
+//  AudioAlbumsController.m
 //  Dolphin6
 //
 //  Created by Alexander Trofimov on 11/26/08.
@@ -32,8 +32,9 @@
 
 	NSDictionary *dict = [catList objectAtIndex:indexPath.row];
 	NSString *identifer = [[dict valueForKey:@"Id"] retain];
+    NSString *albumName = [[dict valueForKey:@"Title"] retain];
 	
-	UIViewController *ctrl = [[AudioListController alloc] initWithProfile:profile album:identifer nav:navContrioller];
+	UIViewController *ctrl = [[AudioListController alloc] initWithProfile:profile album:identifer albumName:albumName nav:navContrioller];
 	[navContrioller pushViewController:ctrl animated:YES];			
 	[ctrl release];
 	[identifer release];

@@ -39,7 +39,6 @@
 		046D63C20EE3A347005AFB9E /* icon_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 046D63C00EE3A347005AFB9E /* icon_add.png */; };
 		046D63C30EE3A347005AFB9E /* icon_conf.png in Resources */ = {isa = PBXBuildFile; fileRef = 046D63C10EE3A347005AFB9E /* icon_conf.png */; };
 		046E197B0EBABC0600233D14 /* MailComposeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E197A0EBABC0600233D14 /* MailComposeController.m */; };
-		046F66340EDFA135004539BD /* ImagesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046F66330EDFA135004539BD /* ImagesListView.xib */; };
 		046F66400EDFA25D004539BD /* ImageIconBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 046F663F0EDFA25D004539BD /* ImageIconBlock.m */; };
 		046FCF860EC7EC310068DA3D /* DataButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 046FCF850EC7EC310068DA3D /* DataButton.m */; };
 		046FD05E0EC833400068DA3D /* FriendRequestsProfilesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046FD05D0EC833400068DA3D /* FriendRequestsProfilesController.m */; };
@@ -121,6 +120,9 @@
 		FA2E9A7716A51B8300E92513 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2E9A7416A51B8300E92513 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA2E9A7816A51B8300E92513 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2E9A7516A51B8300E92513 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA2E9A7916A51B8300E92513 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2E9A7616A51B8300E92513 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FA43A83A178E5AAC00D80A94 /* MediaAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA43A839178E5AAC00D80A94 /* MediaAddController.m */; };
+		FA43A83C178E674100D80A94 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA43A83B178E674100D80A94 /* MobileCoreServices.framework */; };
+		FA43A83F178E679B00D80A94 /* VideoAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA43A83D178E679B00D80A94 /* VideoAddController.m */; };
 		FA4C6FFB1577551600A584CA /* tab_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = FA4C6FF91577551600A584CA /* tab_profile.png */; };
 		FA4C6FFC1577551600A584CA /* tab_profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA4C6FFA1577551600A584CA /* tab_profile@2x.png */; };
 		FA4CCB581458F8BA00102E31 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA4CCB571458F8BA00102E31 /* Default@2x.png */; };
@@ -263,7 +265,6 @@
 		046E19760EBABBE500233D14 /* MailComposeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MailComposeView.xib; sourceTree = "<group>"; };
 		046E19790EBABC0600233D14 /* MailComposeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailComposeController.h; sourceTree = "<group>"; };
 		046E197A0EBABC0600233D14 /* MailComposeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailComposeController.m; sourceTree = "<group>"; };
-		046F66330EDFA135004539BD /* ImagesListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesListView.xib; sourceTree = "<group>"; };
 		046F663E0EDFA25D004539BD /* ImageIconBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageIconBlock.h; sourceTree = "<group>"; };
 		046F663F0EDFA25D004539BD /* ImageIconBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageIconBlock.m; sourceTree = "<group>"; };
 		046FCF840EC7EC310068DA3D /* DataButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataButton.h; sourceTree = "<group>"; };
@@ -395,6 +396,11 @@
 		FA2E9A7416A51B8300E92513 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		FA2E9A7516A51B8300E92513 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		FA2E9A7616A51B8300E92513 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		FA43A838178E5AAC00D80A94 /* MediaAddController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaAddController.h; sourceTree = "<group>"; };
+		FA43A839178E5AAC00D80A94 /* MediaAddController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaAddController.m; sourceTree = "<group>"; };
+		FA43A83B178E674100D80A94 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FA43A83D178E679B00D80A94 /* VideoAddController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoAddController.m; sourceTree = "<group>"; };
+		FA43A83E178E679B00D80A94 /* VideoAddController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoAddController.h; sourceTree = "<group>"; };
 		FA4C6FF91577551600A584CA /* tab_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_profile.png; path = img/tab_profile.png; sourceTree = "<group>"; };
 		FA4C6FFA1577551600A584CA /* tab_profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_profile@2x.png"; path = "img/tab_profile@2x.png"; sourceTree = "<group>"; };
 		FA4CCB571458F8BA00102E31 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -498,6 +504,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA43A83C178E674100D80A94 /* MobileCoreServices.framework in Frameworks */,
 				FA2E9A7716A51B8300E92513 /* Accounts.framework in Frameworks */,
 				FA2E9A7816A51B8300E92513 /* AdSupport.framework in Frameworks */,
 				FA2E9A7916A51B8300E92513 /* Social.framework in Frameworks */,
@@ -518,6 +525,8 @@
 		041B07B30EEE2EA00041A9D6 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				FA43A838178E5AAC00D80A94 /* MediaAddController.h */,
+				FA43A839178E5AAC00D80A94 /* MediaAddController.m */,
 				041B07BA0EEE2F0E0041A9D6 /* MediaAlbumsController.h */,
 				041B07BB0EEE2F0E0041A9D6 /* MediaAlbumsController.m */,
 				041B07BC0EEE2F0E0041A9D6 /* MediaListController.h */,
@@ -526,6 +535,8 @@
 				041B07B50EEE2F010041A9D6 /* AudioAlbumsController.m */,
 				041B07B60EEE2F010041A9D6 /* AudioListController.h */,
 				041B07B70EEE2F010041A9D6 /* AudioListController.m */,
+				FA43A83D178E679B00D80A94 /* VideoAddController.m */,
+				FA43A83E178E679B00D80A94 /* VideoAddController.h */,
 				041B07C00EEE2F1F0041A9D6 /* VideoAlbumsController.h */,
 				041B07C10EEE2F1F0041A9D6 /* VideoAlbumsController.m */,
 				041B07C20EEE2F1F0041A9D6 /* VideoListController.h */,
@@ -828,6 +839,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				FA43A83B178E674100D80A94 /* MobileCoreServices.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -893,7 +905,6 @@
 				FA6AEA571317996000757C66 /* SearchNearMeView.xib */,
 				FAADFD1A131E0D5D0072899B /* ImagesView.xib */,
 				043E7B550EDD43ED00B28532 /* ImagesAlbumsView.xib */,
-				046F66330EDFA135004539BD /* ImagesListView.xib */,
 				048441210EE3F1BC00360107 /* ImageAddView.xib */,
 				041B089A0EEE3FE60041A9D6 /* MediaListView.xib */,
 				042D7B601028067B00EB16B8 /* StatusMessageView.xib */,
@@ -956,7 +967,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Dolphin" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1009,7 +1020,6 @@
 				0483A9320EDAAC6700E57695 /* ProfileInfoView.xib in Resources */,
 				043E7B560EDD43ED00B28532 /* ImagesAlbumsView.xib in Resources */,
 				043E7BC70EDD64AF00B28532 /* TesterView.xib in Resources */,
-				046F66340EDFA135004539BD /* ImagesListView.xib in Resources */,
 				046D63C20EE3A347005AFB9E /* icon_add.png in Resources */,
 				046D63C30EE3A347005AFB9E /* icon_conf.png in Resources */,
 				048441220EE3F1BC00360107 /* ImageAddView.xib in Resources */,
@@ -1183,6 +1193,8 @@
 				FA2E14801581C34D001E54A9 /* TextViewPlaceholder.m in Sources */,
 				FA4FDEE816ACE2D800D6199E /* SiteAddController.m in Sources */,
 				FAA9E29516AFBD7E005B1E9D /* BaseController.m in Sources */,
+				FA43A83A178E5AAC00D80A94 /* MediaAddController.m in Sources */,
+				FA43A83F178E679B00D80A94 /* VideoAddController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1274,8 +1286,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = Dolphin;
-				PROVISIONING_PROFILE = "A97827E4-F5F4-43FE-818C-659C931F0F17";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A97827E4-F5F4-43FE-818C-659C931F0F17";
+				PROVISIONING_PROFILE = "EAD0B208-3A65-49DD-A4BC-1FA4C95409FA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EAD0B208-3A65-49DD-A4BC-1FA4C95409FA";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1324,7 +1336,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = YES;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A97827E4-F5F4-43FE-818C-659C931F0F17";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EAD0B208-3A65-49DD-A4BC-1FA4C95409FA";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;

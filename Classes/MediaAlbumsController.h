@@ -1,5 +1,5 @@
 //
-//  ImagesHomeController.h
+//  MediaAlbumsController.h
 //  Dolphin6
 //
 //  Created by Alexander Trofimov on 11/26/08.
@@ -25,7 +25,6 @@
 - (id)initWithProfile:(NSString*)aProfile nav:(UINavigationController*)aNav;
 
 - (void)requestData;
-
 - (void)reloadData;
 
 @end

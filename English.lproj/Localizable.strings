@@ -22,8 +22,8 @@
 /* User info text */
 "<Age> y/o" = "<Age> y/o";
 
-/* Add Photo from Library button title */
-"Add Photo from Library" = "Add Photo from Library";
+/* Add File from Library button title */
+"Add File from Library" = "Library";
 
 /* user's friends view title */
 "<user>'s friends" = "%@'s friends";
@@ -93,8 +93,8 @@ and mobile apps package from <a href=\"http://www.boonex.com/\" style=\"color:#3
 /* Choose message recipient from user contacts */
 "Choose..." = "Choose...";
 
-/* Choose image for uploading */
-"Choose image" = "Choose image";
+/* Choose file for uploading */
+"Choose file" = "Choose file";
 
 /* City field caption */
 "City" = "City";
@@ -186,7 +186,7 @@ and mobile apps package from <a href=\"http://www.boonex.com/\" style=\"color:#3
 "From <User>" = "From %@";
 
 /* Message sent success alert title 
-   Image added success alert title 
+   File added success alert title 
    Set primary image success alert title */
 "Great!" = "Great!";
 
@@ -425,8 +425,8 @@ and mobile apps package from <a href=\"http://www.boonex.com/\" style=\"color:#3
 /* Stop button title */
 "STOP" = "STOP";
 
-/* Take Photo with Camera button title */
-"Take Photo with Camera" = "Take Photo with Camera";
+/* Take File with Camera button title */
+"Take File with Camera" = "Camera";
 
 /* Message text field caption */
 "Text" = "Text";
@@ -437,8 +437,8 @@ and mobile apps package from <a href=\"http://www.boonex.com/\" style=\"color:#3
 /* Title cell title */
 "Title cell" = "Title";
 
-/* Not all fields are filled on Add Image form error message */
-"Title, Tags, Description or Image is not specified" = "Title, Tags, Description or Image is not specified";
+/* Not all fields are filled on Add File form error message */
+"Title or file is empty" = "Title is not specified or file is not selected";
 
 /* Display 'To: User' in mail messages list */
 "To <User>" = "To %@";
@@ -455,11 +455,14 @@ and mobile apps package from <a href=\"http://www.boonex.com/\" style=\"color:#3
 /* Profile video block caption */
 "Video profile block" = "Videos";
 
+/* Video upload success message */
+"Video upload success message" = "Video was successfully uploaded, but you need to wait until it is converted";
+
 /* With Photos Only field caption */
 "With Photos Only" = "With Photos Only";
 
-/* Your membership level do not allow photo upload */
-"Your membership level do not allow photo upload" = "Your membership level do not allow photo upload";
+/* Your membership level do not allow file upload */
+"Your membership level do not allow file upload" = "Your membership level do not allow file upload";
 
 /* Sent mail error message */
 "You are in block list of recipient" = "You are in block list of recipient";

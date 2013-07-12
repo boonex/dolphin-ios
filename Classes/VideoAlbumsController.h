@@ -1,5 +1,5 @@
 //
-//  ImagesHomeController.h
+//  VideoAlbumsController.h
 //  Dolphin6
 //
 //  Created by Alexander Trofimov on 11/26/08.
