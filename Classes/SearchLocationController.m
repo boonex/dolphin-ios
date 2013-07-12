@@ -50,6 +50,24 @@
 }
 
 /**********************************************************************************************************************
+ CUSTOM FUNCTIONS
+ **********************************************************************************************************************/
+
+#pragma mark - Custom Functions
+
+- (BOOL)checkRequiredFields {
+	
+	// check inputed values
+	if (countryCode == nil) {
+		UIAlertView *al = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error alert title") message:NSLocalizedString(@"Country is empty", @"Country is empty") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK button title") otherButtonTitles:nil];
+		[al show];
+		[al release];
+		return false;
+	}
+    return true;
+}
+
+/**********************************************************************************************************************
  ACTIONS
  **********************************************************************************************************************/
 
@@ -59,6 +77,8 @@
  * do search
  */
 - (IBAction)actionSearch:(id)sender {
+    if (![self checkRequiredFields])
+        return;
 	Dolphin6AppDelegate *app = [Dolphin6AppDelegate getApp];
 	UIViewController *ctrl = nil;
 	ctrl = [[SearchResultsLocationProfilesController alloc] initWithCountryCode:countryCode city:textCity.text onlineOnlyFlag:switchOnlineOnly.on withPhotosOnlyFlag:switchWithPhotosOnly.on startFrom:0 searchForm:self];

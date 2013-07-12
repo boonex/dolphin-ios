@@ -123,6 +123,9 @@ and mobile apps package from <a href=\"http://www.boonex.com/\" style=\"color:#3
 /* Country field caption */
 "Country" = "Country";
 
+/* Country is empty */
+"Country is empty" = "Please select country first";
+
 /* Get current user location */
 "Current" = "Current";
 

@@ -116,6 +116,9 @@
 /* Country field caption */
 "Country" = "Страна";
 
+/* Country is empty */
+"Country is empty" = "Нужно выбрать страну";
+
 /* Get current user location */
 "Current" = "Текущее";
 
