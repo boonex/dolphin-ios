@@ -42,7 +42,7 @@
 	fieldTags.font = [UIFont boldSystemFontOfSize:17];
 	textDesc.text = @"";	
 		
-	btnChooseMedia.titleLabel.text = NSLocalizedString(@"Choose file", "Choose file for uploading");
+	[btnChooseMedia setTitle:NSLocalizedString(@"Choose file", "Choose file for uploading") forState:UIControlStateNormal];
 	
 	fieldTitle.placeholder = NSLocalizedString(@"Title cell", @"Title cell title");
 	fieldTags.placeholder = NSLocalizedString(@"Tags cell", @"Tags cell title");

@@ -34,6 +34,16 @@
 #define BX_TEXT_BLUE 0.2
 #define BX_TEXT_ALPHA 1.0
 
+#define BX_TEXT_INPUT_RED 0.2
+#define BX_TEXT_INPUT_GREEN 0.2
+#define BX_TEXT_INPUT_BLUE 0.2
+#define BX_TEXT_INPUT_ALPHA 1.0
+
+#define BX_TEXT_AREA_RED 0.2
+#define BX_TEXT_AREA_GREEN 0.2
+#define BX_TEXT_AREA_BLUE 0.2
+#define BX_TEXT_AREA_ALPHA 1.0
+
 
 // default table background, if image is empty string - colors values are used 
 #define BX_TABLE_BG_RED 1.0

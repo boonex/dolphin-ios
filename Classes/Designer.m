@@ -81,13 +81,14 @@
 
 + (void)applyStylesForTextEdit:(UITextField*)textEdit {	
 	textEdit.font = [UIFont boldSystemFontOfSize:17];
-    textEdit.textColor = [UIColor colorWithRed:BX_TEXT_RED green:BX_TEXT_GREEN blue:BX_TEXT_BLUE alpha:BX_TEXT_ALPHA];
+    textEdit.textColor = [UIColor colorWithRed:BX_TEXT_INPUT_RED green:BX_TEXT_INPUT_GREEN blue:BX_TEXT_INPUT_BLUE alpha:BX_TEXT_INPUT_ALPHA];
 	if (textEdit.borderStyle != UITextBorderStyleRoundedRect)
 		textEdit.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
 }
 
 + (void)applyStylesForTextArea:(UITextView*)textArea {	
 	textArea.font = [UIFont boldSystemFontOfSize:14];
+    textArea.textColor = [UIColor colorWithRed:BX_TEXT_AREA_RED green:BX_TEXT_AREA_GREEN blue:BX_TEXT_AREA_BLUE alpha:BX_TEXT_AREA_ALPHA];
 	textArea.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];    
     textArea.layer.borderWidth = 1;
     textArea.layer.cornerRadius = 6;
@@ -99,9 +100,8 @@
     webView.layer.borderColor = [[UIColor grayColor] CGColor];
 }
 
++ (void)applyStylesForButton:(UIButton*)btn {
 
-+ (void)applyStylesForButton:(UIButton*)btn {	
-	
 }
 
 + (void)applyStylesForErrorMessageInsideThumbnail:(UILabel*)label {	
