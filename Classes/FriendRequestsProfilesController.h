@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ProfilesController.h"
 
-@interface FriendRequestsProfilesController : ProfilesController {
+@interface FriendRequestsProfilesController : ProfilesController <UIActionSheetDelegate> {
 	NSIndexPath *indexPathForRemoving;
 }
 

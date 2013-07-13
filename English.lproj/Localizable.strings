@@ -117,6 +117,9 @@ and mobile apps package from <a href=\"http://www.boonex.com/\" style=\"color:#3
 /* Contacts View Title */
 "Contacts" = "Contacts";
 
+/* Confirm Deletion */
+"Confirm Deletion" = "Confirm Deletion";
+
 /* Countries View Title */
 "Countries" = "Countries";
 

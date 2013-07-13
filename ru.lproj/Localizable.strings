@@ -110,6 +110,9 @@
 /* Contacts View Title */
 "Contacts" = "Контакты";
 
+/* Confirm Deletion */
+"Confirm Deletion" = "Подтверждаю удаление";
+
 /* Countries View Title */
 "Countries" = "Страны";
 

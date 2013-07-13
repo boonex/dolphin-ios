@@ -11,6 +11,26 @@
 #import "ProfileIconBlock.h"
 #import "DataButton.h"
 
+
+/**********************************************************************************************************************/
+
+@interface FriendRequestsProfilesControllerActionSheet : UIActionSheet {
+    id cutomSender;
+}
+
+@property(assign) id customSender;
+
+@end
+
+@implementation FriendRequestsProfilesControllerActionSheet
+
+@synthesize customSender;
+
+@end
+
+/**********************************************************************************************************************/
+
+
 @implementation FriendRequestsProfilesController
 
 - (id)init {
@@ -114,12 +134,45 @@
  * decline friend request
  */
 - (IBAction)actionFriendRequestDecline:(id)sender {
-	[self friendRequestAcceptDecline:sender method:@"dolphin.declineFriendRequest"];
+    
+    
+	Dolphin6AppDelegate *app = [Dolphin6AppDelegate getApp];
+	
+    FriendRequestsProfilesControllerActionSheet *actionSheet = [[FriendRequestsProfilesControllerActionSheet alloc]
+					   initWithTitle:@""
+					   delegate:self
+					   cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel")
+					   destructiveButtonTitle:NSLocalizedString(@"Confirm Deletion", @"Confirm Deletion")
+					   otherButtonTitles:nil];
+	
+    
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        CGRect rect = [self.view convertRect:[(UIView*)sender frame] fromView:[(UIView*)sender superview]];
+        rect.size.width = MIN(rect.size.width, 200);
+        [actionSheet showFromRect:rect inView:self.view animated:YES];
+    } else {
+        [actionSheet showFromTabBar:app.tabController.tabBar];
+    }
+    
+    actionSheet.customSender = sender;
+    
+    [actionSheet release];
 }
 
 /**********************************************************************************************************************
  DELEGATES
  **********************************************************************************************************************/
+
+#pragma mark - UIActionSheet delegates
+
+- (void)actionSheet:(FriendRequestsProfilesControllerActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == [actionSheet destructiveButtonIndex]) {
+        [self friendRequestAcceptDecline:actionSheet.customSender method:@"dolphin.declineFriendRequest"];
+    }
+}
 
 #pragma mark - UITableView delegates
 
