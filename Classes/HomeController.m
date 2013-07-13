@@ -38,12 +38,13 @@
 
 @implementation HomeController
 
-@synthesize stringStatus, stringThumbUrl, stringUserTitle, stringUserInfo, stringUserLocation;
+@synthesize stringStatus, stringThumbUrl, stringUserTitle, stringUserInfo, stringUserLocation, isSearchWithPhotos;
 
 - (id)init {
 	if ((self = [super initWithNibName:@"HomeView" bundle:nil withUser:[Dolphin6AppDelegate getCurrentUser]])) {
         self.title = NSLocalizedString(@"Home Tab", @"Home tab title");
-        self.tabBarItem.image = [UIImage imageNamed:@"tab_home.png"];				
+        self.tabBarItem.image = [UIImage imageNamed:@"tab_home.png"];
+        isSearchWithPhotos = YES;
 	}
 	return self;
 }
@@ -366,6 +367,10 @@
 	NSLog(@"requested info: %@", resp);
 	
     [self deallocUserStrings];
+    
+    isSearchWithPhotos = YES;
+    if (nil != [resp valueForKey:@"search_with_photos"])
+        isSearchWithPhotos = [[resp valueForKey:@"search_with_photos"] isEqualToString:@"1"] ? YES : NO;
     
 	stringStatus = [[resp valueForKey:@"status"] copy];
 		

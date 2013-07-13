@@ -21,6 +21,7 @@
     NSString *stringUserTitle;
     NSString *stringUserInfo;    
     NSString *stringUserLocation;
+    BOOL isSearchWithPhotos;
 	IBOutlet UIScrollView *viewScroll;
 	
     NSMutableArray *aButtons;
@@ -33,6 +34,7 @@
 @property (nonatomic, readonly) NSString *stringUserLocation;
 @property (nonatomic, readonly) NSString *stringStatus;
 @property (nonatomic, readonly) NSString *stringThumbUrl;
+@property (readonly) BOOL isSearchWithPhotos;
 
 - (IBAction)actionOpenMail:(id)sender;
 - (IBAction)actionOpenFriends:(id)sender;

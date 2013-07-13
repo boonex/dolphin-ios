@@ -8,6 +8,7 @@
 
 #import "SearchBaseFormController.h"
 #import "Designer.h"
+#import "HomeController.h"
 
 @implementation SearchBaseFormController
 
@@ -32,6 +33,18 @@
 	self.navigationItem.rightBarButtonItem = btn;
 	[btn release];	
 	
+    Dolphin6AppDelegate *app = [Dolphin6AppDelegate getApp];
+    NSArray *viewControllers = [app.homeNavigationController viewControllers];
+    HomeController *ctrlHome = (HomeController *)[viewControllers objectAtIndex:0];
+    if (ctrlHome != nil && !ctrlHome.isSearchWithPhotos) {
+        labelWithPhotosOnly.hidden = YES;
+        switchWithPhotosOnly.hidden = YES;
+        
+        CGRect r = viewContainer.frame;
+        viewContainer.frame = CGRectMake(r.origin.x, r.origin.y, r.size.width, r.size.height - CGRectGetHeight(switchWithPhotosOnly.frame));
+    }
+        
+    
 	labelOnlineOnly.text = NSLocalizedString(@"Online Only", @"online Only field caption");
 	labelWithPhotosOnly.text = NSLocalizedString(@"With Photos Only", @"With Photos Only field caption");
 	
