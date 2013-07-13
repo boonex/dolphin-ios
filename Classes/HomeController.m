@@ -22,6 +22,7 @@
 #import "Designer.h"
 
 #define BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPAD 128.0
+#define BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPHONE 80.0
 
 #define BX_HOME_BUTTONS_DX 10.0
 #define BX_HOME_BUTTONS_DY 10.0
@@ -87,18 +88,17 @@
     [super didRotateFromInterfaceOrientation:fromOrient];
     
 	UIInterfaceOrientation toOrient = self.interfaceOrientation;
-    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-        return;
-            
+    
     CGRect r = CGRectNull;
     if ((fromOrient == UIInterfaceOrientationLandscapeLeft || fromOrient == UIInterfaceOrientationLandscapeRight) && (UIInterfaceOrientationPortrait == toOrient || UIInterfaceOrientationPortraitUpsideDown == toOrient)) {        
         r = viewScroll.frame;
         r.origin.x = 0.0;
         r.size.width = self.view.frame.size.width;
     } else if ((fromOrient == UIInterfaceOrientationPortrait || fromOrient == UIInterfaceOrientationPortraitUpsideDown) && (UIInterfaceOrientationLandscapeLeft == toOrient || UIInterfaceOrientationLandscapeRight == toOrient)) {
+        CGFloat fOffsetPortrait = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPAD : BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPHONE;
         r = viewScroll.frame;
-        r.origin.x = BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPAD;
-        r.size.width = self.view.frame.size.width - BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPAD;
+        r.origin.x = fOffsetPortrait;
+        r.size.width = self.view.frame.size.width - fOffsetPortrait;
     }
         
     if (!CGRectIsNull(r)) {
@@ -298,10 +298,12 @@
 - (void)fixScroll {
     CGFloat w = self.view.frame.size.width;
     CGFloat d = 0;
+    
     if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
-        d = BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPAD;
-        w -= BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPAD;
-    } 
+        CGFloat fOffsetPortrait = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPAD : BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPHONE;
+        d = fOffsetPortrait;
+        w -= fOffsetPortrait;
+    }
     
     viewScroll.frame = CGRectMake(d, 0.0, self.view.frame.size.width - d, self.view.frame.size.height);
     viewScroll.contentSize = CGSizeMake(w, viewScroll.contentSize.height);
