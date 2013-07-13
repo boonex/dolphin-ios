@@ -21,6 +21,7 @@
     NSMutableArray *aButtons;
 	IBOutlet UIView *viewActionButtons;
 	UINavigationController *navController;
+    BOOL bGoBackAfterAlert;
 }
 
 - (id)initWithProfile:(NSString*)aProfile nav:(UINavigationController *)aNav;
@@ -30,6 +31,5 @@
 
 - (void)actionRequestAddFriend:(id)idData;
 - (IBAction)actionAddFriend:(id)sender;
-- (IBAction)actionBlock:(id)sender;
 
 @end

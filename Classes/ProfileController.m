@@ -25,6 +25,7 @@
 	if ((self = [super initWithNibName:@"ProfileView" bundle:nil withUser:[Dolphin6AppDelegate getCurrentUser]])) {
 		profile = [aProfile copy];
 		navController = aNav;
+        bGoBackAfterAlert = NO;
 	}
 	return self;
 }
@@ -168,10 +169,12 @@
 		} else {
 			sMsg = s;
 		}
-		
-		UIAlertView *al = [[UIAlertView alloc] initWithTitle:@"" message:sMsg delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK Button Title") otherButtonTitles:nil];
+        
+		UIAlertView *al = [[UIAlertView alloc] initWithTitle:@"" message:sMsg delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK Button Title") otherButtonTitles:NSLocalizedString(@"Add Friend", @"Add Friend button"), nil];
 		[al show];
-		[al release];				
+		[al release];
+        
+        [cellProfileBlock setProfile:@"" title:@"" iconUrl:nil info:@"" location:@""];
 		
 	} else {
 		
@@ -243,10 +246,6 @@
 
 - (IBAction)actionAddFriend:(id)sender {
 	[self requestAddFriend:profile];
-}
-
-- (IBAction)actionBlock:(id)sender {
-	NSLog(@"block!!");
 }
 
 /**********************************************************************************************************************
@@ -342,8 +341,13 @@
 #pragma mark - UIAlertView Delegates
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if (nil == alertView.title || 0 == [alertView.title length])
+    if (buttonIndex != [alertView cancelButtonIndex]) {
+        // add friend
+        bGoBackAfterAlert = YES;
+        [self actionAddFriend:nil];
+    } else if (bGoBackAfterAlert || nil == alertView.title || 0 == [alertView.title length]) {
 		[navController popViewControllerAnimated:YES];
+    }
 }
 
 @end
