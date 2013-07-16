@@ -1217,12 +1217,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE = "FF31CF2F-D181-4F3B-80E3-9872669D72A2";
+				PROVISIONING_PROFILE = "DAE6A3E1-8A27-4945-A32B-624B30AA71FF";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
@@ -1237,8 +1237,8 @@
 					armv7s,
 				);
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BoonEx, LLC";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1252,8 +1252,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = Dolphin;
-				PROVISIONING_PROFILE = "FF31CF2F-D181-4F3B-80E3-9872669D72A2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FF31CF2F-D181-4F3B-80E3-9872669D72A2";
+				PROVISIONING_PROFILE = "DAE6A3E1-8A27-4945-A32B-624B30AA71FF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DAE6A3E1-8A27-4945-A32B-624B30AA71FF";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1304,8 +1304,8 @@
 					armv7s,
 				);
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BoonEx, LLC";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1318,8 +1318,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = Dolphin;
-				PROVISIONING_PROFILE = "FF31CF2F-D181-4F3B-80E3-9872669D72A2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FF31CF2F-D181-4F3B-80E3-9872669D72A2";
+				PROVISIONING_PROFILE = "DAE6A3E1-8A27-4945-A32B-624B30AA71FF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DAE6A3E1-8A27-4945-A32B-624B30AA71FF";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1345,12 +1345,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE = "FF31CF2F-D181-4F3B-80E3-9872669D72A2";
+				PROVISIONING_PROFILE = "DAE6A3E1-8A27-4945-A32B-624B30AA71FF";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
