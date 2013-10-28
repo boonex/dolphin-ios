@@ -112,7 +112,7 @@ static BxUser *glUser = nil;
 	
 	tabController = [[UITabBarController alloc] init];
 	[window addSubview:tabController.view];
-	[tabController setViewControllers:[NSArray arrayWithObjects:homeNavigationController, profileNavigationController, mailNavigationController, friendsNavigationController, searchNavigationController, nil] animated:YES];
+	[tabController setViewControllers:[NSArray arrayWithObjects:homeNavigationController, profileNavigationController, mailNavigationController, friendsNavigationController, searchNavigationController, nil] animated:NO];
     
     window.rootViewController = tabController;
     

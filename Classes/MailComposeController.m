@@ -10,6 +10,7 @@
 #import "UserPickerController.h"
 #import "Designer.h"
 
+#define BX_OFFSET_MAIL_COMPOSE_TEXT_IOS7 40.0 // content offset for text field when we are entering text
 #define BX_OFFSET_MAIL_COMPOSE_TEXT 105.0 // content offset for text field when we are entering text 
 #define BX_MAIL_COMPOSE_FORM_SIZE 540.0 // form size
 
@@ -264,7 +265,10 @@
 }
 
 - (void)switchToEditMode:(BOOL)isEditBegin {
-	[viewScroll setContentOffset:CGPointMake(0, isEditBegin ? BX_OFFSET_MAIL_COMPOSE_TEXT : 0) animated:YES];
+    CGFloat fOffset = BX_OFFSET_MAIL_COMPOSE_TEXT_IOS7;
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1)
+        fOffset = BX_OFFSET_MAIL_COMPOSE_TEXT;
+	[viewScroll setContentOffset:CGPointMake(0, isEditBegin ? fOffset : 0) animated:YES];
 	[self displayDoneButton:isEditBegin textField:fieldText];
 }
 

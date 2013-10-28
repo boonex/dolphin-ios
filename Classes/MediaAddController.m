@@ -11,6 +11,7 @@
 #import "MediaAlbumsController.h"
 #import "Designer.h"
 
+#define BX_OFFSET_MEDIA_ADD_DESC_IOS7 120.0 // content offset for description field when we are entering text
 #define BX_OFFSET_MEDIA_ADD_DESC 185.0 // content offset for description field when we are entering text
 #define BX_OFFSET_MEDIA_ADD_TAGS 0.0 // content offset for tags field when we are entering text
 #define BX_MEDIA_ADD_FORM_SIZE 550.0 // whole for height
@@ -105,7 +106,10 @@
 
 - (void)switchToEditMode:(BOOL)isEditBegin {
 	editMode = BX_EDIT_MODE_DESC;
-    [viewScroll setContentOffset:CGPointMake(0, isEditBegin ? BX_OFFSET_MEDIA_ADD_DESC : 0) animated:YES];
+    CGFloat fOffset = BX_OFFSET_MEDIA_ADD_DESC_IOS7;
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1)
+        fOffset = BX_OFFSET_MEDIA_ADD_DESC;
+    [viewScroll setContentOffset:CGPointMake(0, isEditBegin ? fOffset : 0) animated:YES];
 	[self displayDoneButton:isEditBegin textField:textDesc];
 }
 

@@ -14,8 +14,6 @@
 #import "Dolphinusers.h"
 #import "Designer.h"
 
-#define BX_OFFSET_LOGIN_PASSWORD 40 // content offset for password field when we are entering text
-
 @interface LoginController () <FBLoginViewDelegate> 
 
 @end
@@ -63,6 +61,10 @@
 	[Designer applyStylesForScreen:self.view];
 	[Designer applyStylesForContainer:viewContainer];
     [Designer applyStylesForContainer:viewContainerFacebook];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     if (user.strPwdHash.length > 0 && YES == user.rememberPassword) {
         [self actionLogin:nil];
@@ -72,7 +74,6 @@
         [self addProgressIndicator];
         [user.connector execAsyncMethod:@"dolphin.service" withParams:myArray withSelector:@selector(callbackFacebookSupported:) andSelectorObject:self andSelectorData:nil useIndicator:nil];
     }
-    
 }
 
 - (void)dealloc {
