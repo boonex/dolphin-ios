@@ -98,11 +98,8 @@
 	{		
 		NSString *zeroPostsError = @"Something wrong with XMLRPC service.";
 		NSRange range = [[err description] rangeOfString:zeroPostsError options:NSBackwardsSearch];
-		if (range.location == NSNotFound) {
-			[self handleError:err]; 
-		} else {
-			return [NSMutableArray array];
-		}
+		if (range.location == NSNotFound)
+			[self handleError:err];
 	}
 	
 	return err;

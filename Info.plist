@@ -12,6 +12,15 @@
 	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
+		<string>Icon-60</string>
+		<string>Icon.png</string>
+		<string>Icon@2x.png</string>
+		<string>Icon~ipad.png</string>
+		<string>Icon@2x~ipad.png</string>
+	</array>
+	<key>CFBundleIconFiles~ipad</key>
+	<array>
+		<string>Icon-76</string>
 		<string>Icon.png</string>
 		<string>Icon@2x.png</string>
 		<string>Icon~ipad.png</string>

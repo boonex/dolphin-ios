@@ -15,7 +15,7 @@
 @implementation BaseController
 
 // iOS 6
-- (NSInteger)supportedInterfaceOrientations {
+- (NSUInteger)supportedInterfaceOrientations {
     return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? UIInterfaceOrientationMaskAll : UIInterfaceOrientationMaskPortrait;
 }
 

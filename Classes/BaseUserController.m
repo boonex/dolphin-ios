@@ -54,7 +54,7 @@
 	// wait in case the other thread did not complete its work.
 	while (self.navigationItem.rightBarButtonItem == rightButtonSave)
 	{
-		[[NSRunLoop currentRunLoop] runUntilDate:[[NSDate date] addTimeInterval:0.1]];
+		[[NSRunLoop currentRunLoop] runUntilDate:[[NSDate date] dateByAddingTimeInterval:0.1]];
 	}
 	
 	self.navigationItem.rightBarButtonItem = rightButtonSave;
