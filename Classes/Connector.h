@@ -23,6 +23,8 @@
 
 - (id)initWithSite:(NSString*)strSite;
 
+- (NSString *)getXmlRpcUrlForSite:(NSString*)strSite;
+    
 - (id)execAsyncMethod:(NSString *)strMethod 
            withParams:(NSArray *)arrParams 
          withSelector:(SEL)anOperation 

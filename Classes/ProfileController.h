@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 #import "BaseUserTableController.h"
 #import "BaseUserThumbTableController.h"
 
 @class ProfileBlock;
 
-@interface ProfileController : BaseUserThumbTableController {
+@interface ProfileController : BaseUserThumbTableController<MFMailComposeViewControllerDelegate> {
 	NSString *profile;
     NSString *title;
     NSString *location;

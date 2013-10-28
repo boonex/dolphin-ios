@@ -55,7 +55,7 @@ static BxUser *glUser = nil;
     // http://stackoverflow.com/questions/1725881/unknown-class-myclass-in-interface-builder-file-error-at-runtime
     [FBProfilePictureView class];
     
-    [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+    [application setStatusBarStyle:UIStatusBarStyleDefault];
     [application setStatusBarHidden:NO withAnimation:NO];
 
 	InitialController *aInitialController = [[InitialController alloc] initWithNibName:@"InitialView" bundle:[NSBundle mainBundle]];
@@ -73,7 +73,7 @@ static BxUser *glUser = nil;
     }
 
 	
-	navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	navigationController.navigationBar.barStyle = UIBarStyleDefault;
     
 	//[window addSubview:navigationController.view]; // < iOS 6
     window.rootViewController = navigationController; // >= iOS 6 style
@@ -104,11 +104,11 @@ static BxUser *glUser = nil;
 	searchNavigationController = [[UINavigationController alloc] initWithRootViewController:homeSearch];
 	profileNavigationController = [[UINavigationController alloc] initWithRootViewController:homeProfile];
 	
-	homeNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-	mailNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-	friendsNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-	searchNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-	profileNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	homeNavigationController.navigationBar.barStyle = UIBarStyleDefault;
+	mailNavigationController.navigationBar.barStyle = UIBarStyleDefault;
+	friendsNavigationController.navigationBar.barStyle = UIBarStyleDefault;
+	searchNavigationController.navigationBar.barStyle = UIBarStyleDefault;
+	profileNavigationController.navigationBar.barStyle = UIBarStyleDefault;
 	
 	tabController = [[UITabBarController alloc] init];
 	[window addSubview:tabController.view];

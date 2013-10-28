@@ -7,6 +7,8 @@
 //
 
 #import "BasePickerController.h"
+#import "Designer.h"
+
 
 @implementation BasePickerController
 
@@ -29,8 +31,11 @@
 }
 
 - (void)viewDidLoad {
+    [Designer applyStylesClear:table];
+    [Designer applyStylesForTableBackgroundClear:table];
+    [Designer applyStylesForScreen:self.view];
+    
 	[self requestData];
-	
 }
 
 /**********************************************************************************************************************

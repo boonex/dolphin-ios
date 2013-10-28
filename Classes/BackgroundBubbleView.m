@@ -13,8 +13,7 @@
 @implementation BackgroundBubbleView
 
 - (id)initWithOrigin:(CGPoint)anOrigin text:(NSString*)aText {
-	
-	CGSize sz = [Designer sizeForBubbleLabel:aText maxWidth:BX_BUBBLE_WIDTH_MAX maxHeight:BX_BUBBLE_HEIGHT];
+    CGSize sz = [Designer sizeForBubbleLabel:aText maxWidth:BX_BUBBLE_WIDTH_MAX maxHeight:BX_BUBBLE_HEIGHT];
 	CGRect frame = CGRectMake(anOrigin.x - sz.width - BX_BUBBLE_SPACE*2, anOrigin.y, sz.width + BX_BUBBLE_SPACE*2, BX_BUBBLE_HEIGHT);
 	
     self = [super initWithFrame:frame];
@@ -24,10 +23,10 @@
 		label.text = aText;
 		[Designer applyStylesForLabelBubble:label];
 		[self addSubview:label];
-		
+
 		self.backgroundColor = [UIColor clearColor];
     }
-    return self;	
+    return self;
 }
 
 - (void)dealloc {

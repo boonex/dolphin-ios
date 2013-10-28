@@ -183,6 +183,7 @@
 		FAA9E29516AFBD7E005B1E9D /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA9E29316AFBD7E005B1E9D /* BaseController.m */; };
 		FAADFD1B131E0D5D0072899B /* ImagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAADFD1A131E0D5D0072899B /* ImagesView.xib */; };
 		FAB566E61325C173000410B8 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0439FF8C0EC1934F00C31066 /* ProfileView.xib */; };
+		FABE63DD181E1D4000EB0506 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABE63DC181E1D4000EB0506 /* MessageUI.framework */; };
 		FACA5B8713C42A15002D8FBB /* home_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FACA5B8513C42A0C002D8FBB /* home_default@2x.png */; };
 		FACA5B8813C42A15002D8FBB /* home_default.png in Resources */ = {isa = PBXBuildFile; fileRef = FACA5B8613C42A11002D8FBB /* home_default.png */; };
 		FAD767B9158195D1009F207A /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD767B1158195D1009F207A /* Default-Portrait~ipad.png */; };
@@ -198,16 +199,6 @@
 		FADB0D031316285700DE6E5E /* icon_accessory_disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FADB0D011316285700DE6E5E /* icon_accessory_disclosure@2x.png */; };
 		FADB0D061316286E00DE6E5E /* icon_add_community@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FADB0D041316286E00DE6E5E /* icon_add_community@2x.png */; };
 		FADB0D071316286E00DE6E5E /* icon_default_community@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FADB0D051316286E00DE6E5E /* icon_default_community@2x.png */; };
-		FAE0635816AE67C70013CEC5 /* tabbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE0635616AE67C70013CEC5 /* tabbar_bg.png */; };
-		FAE0635916AE67C70013CEC5 /* tabbar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE0635716AE67C70013CEC5 /* tabbar_bg@2x.png */; };
-		FAE0635C16AE6B890013CEC5 /* tabbar_tab_active.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE0635A16AE6B890013CEC5 /* tabbar_tab_active.png */; };
-		FAE0635D16AE6B890013CEC5 /* tabbar_tab_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE0635B16AE6B890013CEC5 /* tabbar_tab_active@2x.png */; };
-		FAE0636016AE7A750013CEC5 /* tabbar_bg~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE0635E16AE7A750013CEC5 /* tabbar_bg~ipad.png */; };
-		FAE0636116AE7A750013CEC5 /* tabbar_bg@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE0635F16AE7A750013CEC5 /* tabbar_bg@2x~ipad.png */; };
-		FAE0636416AE7B800013CEC5 /* tabbar_tab_active~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE0636216AE7B800013CEC5 /* tabbar_tab_active~ipad.png */; };
-		FAE0636516AE7B800013CEC5 /* tabbar_tab_active@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE0636316AE7B800013CEC5 /* tabbar_tab_active@2x~ipad.png */; };
-		FAE0636816AE802A0013CEC5 /* tabbar_bg_landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE0636616AE802A0013CEC5 /* tabbar_bg_landscape~ipad.png */; };
-		FAE0636916AE802A0013CEC5 /* tabbar_bg_landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE0636716AE802A0013CEC5 /* tabbar_bg_landscape@2x~ipad.png */; };
 		FAEA03BE1329EA370091BB15 /* ConnectorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEA03BD1329EA370091BB15 /* ConnectorHelper.m */; };
 /* End PBXBuildFile section */
 
@@ -468,6 +459,7 @@
 		FAA9E29316AFBD7E005B1E9D /* BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseController.m; sourceTree = "<group>"; };
 		FAADFD1A131E0D5D0072899B /* ImagesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesView.xib; sourceTree = "<group>"; };
 		FAB41A8F11EEE16800EE698A /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		FABE63DC181E1D4000EB0506 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		FACA5B8513C42A0C002D8FBB /* home_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home_default@2x.png"; path = "img/home_default@2x.png"; sourceTree = "<group>"; };
 		FACA5B8613C42A11002D8FBB /* home_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_default.png; path = img/home_default.png; sourceTree = "<group>"; };
 		FAD767B1158195D1009F207A /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
@@ -485,16 +477,6 @@
 		FADB0D011316285700DE6E5E /* icon_accessory_disclosure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_accessory_disclosure@2x.png"; path = "img/icon_accessory_disclosure@2x.png"; sourceTree = "<group>"; };
 		FADB0D041316286E00DE6E5E /* icon_add_community@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_add_community@2x.png"; path = "img/icon_add_community@2x.png"; sourceTree = "<group>"; };
 		FADB0D051316286E00DE6E5E /* icon_default_community@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_default_community@2x.png"; path = "img/icon_default_community@2x.png"; sourceTree = "<group>"; };
-		FAE0635616AE67C70013CEC5 /* tabbar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabbar_bg.png; path = img/tabbar_bg.png; sourceTree = "<group>"; };
-		FAE0635716AE67C70013CEC5 /* tabbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_bg@2x.png"; path = "img/tabbar_bg@2x.png"; sourceTree = "<group>"; };
-		FAE0635A16AE6B890013CEC5 /* tabbar_tab_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabbar_tab_active.png; path = img/tabbar_tab_active.png; sourceTree = "<group>"; };
-		FAE0635B16AE6B890013CEC5 /* tabbar_tab_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_tab_active@2x.png"; path = "img/tabbar_tab_active@2x.png"; sourceTree = "<group>"; };
-		FAE0635E16AE7A750013CEC5 /* tabbar_bg~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_bg~ipad.png"; path = "img/tabbar_bg~ipad.png"; sourceTree = "<group>"; };
-		FAE0635F16AE7A750013CEC5 /* tabbar_bg@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_bg@2x~ipad.png"; path = "img/tabbar_bg@2x~ipad.png"; sourceTree = "<group>"; };
-		FAE0636216AE7B800013CEC5 /* tabbar_tab_active~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_tab_active~ipad.png"; path = "img/tabbar_tab_active~ipad.png"; sourceTree = "<group>"; };
-		FAE0636316AE7B800013CEC5 /* tabbar_tab_active@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_tab_active@2x~ipad.png"; path = "img/tabbar_tab_active@2x~ipad.png"; sourceTree = "<group>"; };
-		FAE0636616AE802A0013CEC5 /* tabbar_bg_landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_bg_landscape~ipad.png"; path = "img/tabbar_bg_landscape~ipad.png"; sourceTree = "<group>"; };
-		FAE0636716AE802A0013CEC5 /* tabbar_bg_landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_bg_landscape@2x~ipad.png"; path = "img/tabbar_bg_landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		FAEA03BC1329EA370091BB15 /* ConnectorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectorHelper.h; sourceTree = "<group>"; };
 		FAEA03BD1329EA370091BB15 /* ConnectorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectorHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -504,6 +486,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABE63DD181E1D4000EB0506 /* MessageUI.framework in Frameworks */,
 				FA43A83C178E674100D80A94 /* MobileCoreServices.framework in Frameworks */,
 				FA2E9A7716A51B8300E92513 /* Accounts.framework in Frameworks */,
 				FA2E9A7816A51B8300E92513 /* AdSupport.framework in Frameworks */,
@@ -743,16 +726,6 @@
 		04D8C8F50E6F391F0051DC34 /* img */ = {
 			isa = PBXGroup;
 			children = (
-				FAE0636616AE802A0013CEC5 /* tabbar_bg_landscape~ipad.png */,
-				FAE0636716AE802A0013CEC5 /* tabbar_bg_landscape@2x~ipad.png */,
-				FAE0636216AE7B800013CEC5 /* tabbar_tab_active~ipad.png */,
-				FAE0636316AE7B800013CEC5 /* tabbar_tab_active@2x~ipad.png */,
-				FAE0635E16AE7A750013CEC5 /* tabbar_bg~ipad.png */,
-				FAE0635F16AE7A750013CEC5 /* tabbar_bg@2x~ipad.png */,
-				FAE0635A16AE6B890013CEC5 /* tabbar_tab_active.png */,
-				FAE0635B16AE6B890013CEC5 /* tabbar_tab_active@2x.png */,
-				FAE0635616AE67C70013CEC5 /* tabbar_bg.png */,
-				FAE0635716AE67C70013CEC5 /* tabbar_bg@2x.png */,
 				FA828B931329B2D90084ECCA /* logo_initial.png */,
 				FA828B951329B7120084ECCA /* logo_initial@2x.png */,
 				FA6BE6241581A8B100C38A60 /* logo_about.png */,
@@ -917,6 +890,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FABE63DC181E1D4000EB0506 /* MessageUI.framework */,
 				FA2E9A7416A51B8300E92513 /* Accounts.framework */,
 				FA2E9A7516A51B8300E92513 /* AdSupport.framework */,
 				FA2E9A7616A51B8300E92513 /* Social.framework */,
@@ -967,7 +941,12 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = 235MTP3MJ2;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Dolphin" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1097,16 +1076,6 @@
 				FA5EEDD61626777D00F76BB6 /* Default-568h@2x.png in Resources */,
 				FA2E9A7316A51A8300E92513 /* FacebookSDKResources.bundle in Resources */,
 				FA4FDEE916ACE2D800D6199E /* SiteAddView.xib in Resources */,
-				FAE0635816AE67C70013CEC5 /* tabbar_bg.png in Resources */,
-				FAE0635916AE67C70013CEC5 /* tabbar_bg@2x.png in Resources */,
-				FAE0635C16AE6B890013CEC5 /* tabbar_tab_active.png in Resources */,
-				FAE0635D16AE6B890013CEC5 /* tabbar_tab_active@2x.png in Resources */,
-				FAE0636016AE7A750013CEC5 /* tabbar_bg~ipad.png in Resources */,
-				FAE0636116AE7A750013CEC5 /* tabbar_bg@2x~ipad.png in Resources */,
-				FAE0636416AE7B800013CEC5 /* tabbar_tab_active~ipad.png in Resources */,
-				FAE0636516AE7B800013CEC5 /* tabbar_tab_active@2x~ipad.png in Resources */,
-				FAE0636816AE802A0013CEC5 /* tabbar_bg_landscape~ipad.png in Resources */,
-				FAE0636916AE802A0013CEC5 /* tabbar_bg_landscape@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1216,7 +1185,6 @@
 		04CE01D00EF12A6A00F8AA1B /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1231,14 +1199,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					armv7,
-					armv7s,
-				);
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1252,8 +1215,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = Dolphin;
-				PROVISIONING_PROFILE = "DAE6A3E1-8A27-4945-A32B-624B30AA71FF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DAE6A3E1-8A27-4945-A32B-624B30AA71FF";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1264,14 +1227,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					armv7,
-					armv7s,
-				);
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Trofimov (AAY4NF26UA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alex Trofimov (AAY4NF26UA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1286,8 +1244,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = Dolphin;
-				PROVISIONING_PROFILE = "EAD0B208-3A65-49DD-A4BC-1FA4C95409FA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EAD0B208-3A65-49DD-A4BC-1FA4C95409FA";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1298,14 +1256,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					armv7,
-					armv7s,
-				);
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1318,7 +1271,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = Dolphin;
-				PROVISIONING_PROFILE = "DAE6A3E1-8A27-4945-A32B-624B30AA71FF";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DAE6A3E1-8A27-4945-A32B-624B30AA71FF";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1329,7 +1282,6 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alex Trofimov (AAY4NF26UA)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1344,7 +1296,6 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

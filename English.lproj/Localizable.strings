@@ -152,7 +152,7 @@ and mobile apps package from <a href=\"http://www.boonex.com/\" style=\"color:#3
 "Error occured" = "Error occured";
 
 /* Error Alert Title */
-"Error Title" = "Error Title";
+"Error Title" = "Error";
 
 /* Gender */
 "female" = "female";
@@ -361,6 +361,9 @@ and mobile apps package from <a href=\"http://www.boonex.com/\" style=\"color:#3
 /* Remember Password switch text */
 "Remember Password"= "Remember";
 
+/* Reported Profile Mail Subject */
+"Reported Profile"= "Reported Profile: %@";
+
 /* Save button title */
 "Save" = "Save";
 
@@ -433,6 +436,14 @@ and mobile apps package from <a href=\"http://www.boonex.com/\" style=\"color:#3
 
 /* Take File with Camera button title */
 "Take File with Camera" = "Camera";
+
+/* Terms & Privacy Links */
+"Terms And Privacy" = "
+<html>
+<body style=\"background-color:transparent; color:#333; font-family:Helvetica; font-size:11px; text-align:center; padding:0; margin:0;\">
+By logging in I agree with <a href=\"%@../terms_of_use.php?mobile=1\">terms of use</a> and <a href=\"%@../privacy.php?mobile=1\">privacy policy</a>
+</body>
+</html>";
 
 /* Message text field caption */
 "Text" = "Text";

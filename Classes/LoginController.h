@@ -17,6 +17,7 @@
 	IBOutlet UITextField *textUsername;
 	IBOutlet UITextField *textPassword;
     IBOutlet UIButton *buttonLogin;
+    IBOutlet UIWebView *htmlTerms;
 	
     IBOutlet UIView *viewContainerFacebook;
 	IBOutlet UIView *viewContainer;

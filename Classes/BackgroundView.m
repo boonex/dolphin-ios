@@ -12,14 +12,23 @@
 @implementation BackgroundView
 
 - (id)initWithFrame:(CGRect)frame selected:(Boolean)isSelected withSpaces:(Boolean)isWithSpaces {
+    return [self initWithFrameCustom:frame selected:isSelected withSpaces:isWithSpaces home:NO];
+}
+
+- (id)initWithFrameHome:(CGRect)frame selected:(Boolean)isSelected withSpaces:(Boolean)isWithSpaces {
+    return [self initWithFrameCustom:frame selected:isSelected withSpaces:isWithSpaces home:YES];
+}
+
+- (id)initWithFrameCustom:(CGRect)frame selected:(Boolean)isSelected withSpaces:(Boolean)isWithSpaces home:(Boolean)isHomeBackground {
     self = [super initWithFrame:frame];
     if (self) {
         selected = isSelected;
 		withSpaces = isWithSpaces;
+        homeBackground = isHomeBackground;
 		self.backgroundColor = [UIColor clearColor];
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     }
-    return self;	
+    return self;
 }
 
 - (void)dealloc {
@@ -30,24 +39,32 @@
 
     // Drawing with a white stroke color 
     CGContextRef context=UIGraphicsGetCurrentContext();
-    CGContextSetRGBStrokeColor(context, BX_BORDER_RED, BX_BORDER_GREEN, BX_BORDER_BLUE, BX_BORDER_ALPHA);
-    CGContextSetLineWidth(context, BX_BORDER_WIDTH);
-	if (selected)
-		CGContextSetRGBFillColor(context, BX_TABLE_SEL_RED, BX_TABLE_SEL_GREEN, BX_TABLE_SEL_BLUE, BX_TABLE_SEL_ALPHA); 
-	else
-		CGContextSetRGBFillColor(context, BX_TABLE_BG_RED, BX_TABLE_BG_GREEN, BX_TABLE_BG_BLUE, BX_TABLE_BG_ALPHA); 
+    CGContextSetRGBStrokeColor(context, BX_HOME_BORDER_RED, BX_HOME_BORDER_GREEN, BX_HOME_BORDER_BLUE, BX_HOME_BORDER_ALPHA);
+    CGContextSetLineWidth(context, BX_HOME_BORDER_WIDTH);
+    if (homeBackground) {
+        if (selected)
+            CGContextSetRGBFillColor(context, BX_HOME_SEL_RED, BX_HOME_SEL_GREEN, BX_HOME_SEL_BLUE, BX_HOME_SEL_ALPHA);
+        else
+            CGContextSetRGBFillColor(context, BX_HOME_BG_RED, BX_HOME_BG_GREEN, BX_HOME_BG_BLUE, BX_HOME_BG_ALPHA);
+    } else {
+        if (selected)
+            CGContextSetRGBFillColor(context, BX_TABLE_SEL_RED, BX_TABLE_SEL_GREEN, BX_TABLE_SEL_BLUE, BX_TABLE_SEL_ALPHA);
+        else
+            CGContextSetRGBFillColor(context, BX_TABLE_BG_RED, BX_TABLE_BG_GREEN, BX_TABLE_BG_BLUE, BX_TABLE_BG_ALPHA);
+    }
+    
     
     // If you were making this as a routine, you would probably accept a rectangle 
     // that defines its bounds, and a radius reflecting the "rounded-ness" of the rectangle. 
     CGFloat fSpaceTop = withSpaces ? BX_SPACE_TOP : 0;
 	CGFloat fSpaceBottom = withSpaces ? BX_SPACE_BOTTOM : 0;
-    CGFloat f = BX_BORDER_WIDTH/2.0; 
+    CGFloat f = BX_HOME_BORDER_WIDTH/2.0;
     CGRect rrect = CGRectMake(
                               rect.origin.x + f, 
                               rect.origin.y + f + fSpaceTop, 
                               rect.size.width - f*2.0, 
                               rect.size.height - f*2 - fSpaceTop - fSpaceBottom); 
-    CGFloat radius = BX_BORDER_RADIUS; 
+    CGFloat radius = BX_HOME_BORDER_RADIUS;
     // NOTE: At this point you may want to verify that your radius is no more than half 
     // the width and height of your rectangle, as this technique degenerates for those cases. 
     
@@ -83,42 +100,7 @@
     // Close the path 
     CGContextClosePath(context); 
     // Fill & stroke the path 
-    CGContextDrawPath(context, kCGPathFillStroke); 
-
-    
-/*    
-	CGContextRef context = UIGraphicsGetCurrentContext();     
-	
-	CGFloat fSpaceTop = withSpaces ? BX_SPACE_TOP : 0;
-	CGFloat fSpaceBottom = withSpaces ? BX_SPACE_BOTTOM : 0;
-	
-	// draw background
-	
-	if (selected)
-		CGContextSetRGBFillColor(context, BX_TABLE_SEL_RED, BX_TABLE_SEL_GREEN, BX_TABLE_SEL_BLUE, BX_TABLE_SEL_ALPHA); 
-	else
-		CGContextSetRGBFillColor(context, BX_TABLE_BG_RED, BX_TABLE_BG_GREEN, BX_TABLE_BG_BLUE, BX_TABLE_BG_ALPHA); 
-	
-	CGRect rFill = CGRectMake(
-						  rect.origin.x, 
-						  rect.origin.y + fSpaceTop, 
-						  rect.size.width, 
-						  rect.size.height - fSpaceTop - fSpaceBottom);
-	
-	CGContextFillRect(context, rFill); 
-	
-	// draw border
-	
-	CGRect rStroke = CGRectMake(
-						  rect.origin.x + BX_BORDER_WIDTH/2.0, 
-						  rect.origin.y + BX_BORDER_WIDTH/2.0 + fSpaceTop, 
-						  rect.size.width - BX_BORDER_WIDTH, 
-						  rect.size.height - BX_BORDER_WIDTH - fSpaceTop - fSpaceBottom);
-	
-	CGContextSetRGBStrokeColor(context, BX_BORDER_RED, BX_BORDER_GREEN, BX_BORDER_BLUE, BX_BORDER_ALPHA); 	
-	
-	CGContextStrokeRectWithWidth(context, rStroke, BX_BORDER_WIDTH);
- */
+    CGContextDrawPath(context, kCGPathFillStroke);
 }
 
 @end

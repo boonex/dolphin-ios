@@ -242,13 +242,17 @@
 
 		// app.homeImages.isReloadRequired = YES; - TODO:
 		
-		UIAlertView *al = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Great!", @"File added success alert title") message:msgSuccess delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK Button text") otherButtonTitles:nil];
-		[al show];
-		[al release];		
-		
-		[self performSelectorOnMainThread:@selector(actionBack:) withObject:nil waitUntilDone:NO];
+		[self performSelectorOnMainThread:@selector(actionBackWithSuccessAlert:) withObject:nil waitUntilDone:NO];
 		
 	}
+}
+
+- (IBAction)actionBackWithSuccessAlert:(id)sender {
+    UIAlertView *al = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Great!", @"File added success alert title") message:msgSuccess delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"OK Button text") otherButtonTitles:nil];
+    [al show];
+    [al release];
+
+    [navContrioller popViewControllerAnimated:YES];
 }
 
 - (IBAction)actionBack:(id)sender {

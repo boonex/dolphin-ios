@@ -15,25 +15,9 @@
 @implementation Designer
 
 + (void)applyStylesForCell:(UITableViewCell*)cell {	
-	
-	if (![cell isKindOfClass:[ProfileBlock class]]) {
-		UIImage * img = [UIImage imageNamed:@"icon_accessory_disclosure.png"];	
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-		cell.accessoryView = [[[UIImageView alloc] initWithImage:img] autorelease];
-	}
-	
-	cell.backgroundColor = [UIColor clearColor];
-    
-	cell.backgroundView = [[[BackgroundView alloc] initWithFrame:CGRectZero selected:false withSpaces:true] autorelease];
-    
-	cell.selectedBackgroundView = [[[BackgroundView alloc] initWithFrame:CGRectZero selected:true withSpaces:true] autorelease];
-    
-	cell.textLabel.textColor = [UIColor colorWithRed:BX_TEXT_RED green:BX_TEXT_GREEN blue:BX_TEXT_BLUE alpha:BX_TEXT_ALPHA];
-	
 }
 
-+ (void)applyStylesForContainer:(UIView*)view {	
-	
++ (void)applyStylesForContainer:(UIView*)view {
 	UIView *viewBackground = [[[BackgroundView alloc] initWithFrame:view.bounds selected:false withSpaces:false] autorelease];
 	viewBackground.backgroundColor = [UIColor clearColor];
     view.backgroundColor = [UIColor clearColor];
@@ -45,8 +29,7 @@
     view.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0];
 }
 
-+ (void)applyStylesForScreen:(UIView*)view {	
-	
++ (void)applyStylesForScreen:(UIView*)view {
 	if ([BX_SCREEN_BG_IMAGE isEqualToString:@""])	
 		view.backgroundColor = [UIColor colorWithRed:BX_SCREEN_BG_RED green:BX_SCREEN_BG_GREEN blue:BX_SCREEN_BG_BLUE alpha:BX_SCREEN_BG_ALPHA];
 	else
@@ -58,13 +41,13 @@
         [table setBackgroundView:nil];
 }
 
-+ (void)applyStylesForLabel:(UILabel*)label {	
++ (void)applyStylesForLabel:(UILabel*)label {
 	label.font = [UIFont boldSystemFontOfSize:16];
 	label.textColor = [UIColor colorWithRed:BX_TEXT_RED green:BX_TEXT_GREEN blue:BX_TEXT_BLUE alpha:BX_TEXT_ALPHA];
 	label.backgroundColor = [UIColor clearColor];
 }
 
-+ (void)applyStylesForLabelTitle:(UILabel*)label {	
++ (void)applyStylesForLabelTitle:(UILabel*)label {
 	[self applyStylesForLabel:label];
 }
 
@@ -73,20 +56,20 @@
 	label.font = [UIFont boldSystemFontOfSize:12];
 }
 
-+ (void)applyStylesForLabelNew:(UILabel*)label {	
++ (void)applyStylesForLabelNew:(UILabel*)label {
 	label.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
 	label.textColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
-	label.font = [UIFont boldSystemFontOfSize:12];	
+	label.font = [UIFont boldSystemFontOfSize:12];
 }
 
-+ (void)applyStylesForTextEdit:(UITextField*)textEdit {	
++ (void)applyStylesForTextEdit:(UITextField*)textEdit {
 	textEdit.font = [UIFont boldSystemFontOfSize:17];
     textEdit.textColor = [UIColor colorWithRed:BX_TEXT_INPUT_RED green:BX_TEXT_INPUT_GREEN blue:BX_TEXT_INPUT_BLUE alpha:BX_TEXT_INPUT_ALPHA];
 	if (textEdit.borderStyle != UITextBorderStyleRoundedRect)
 		textEdit.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
 }
 
-+ (void)applyStylesForTextArea:(UITextView*)textArea {	
++ (void)applyStylesForTextArea:(UITextView*)textArea {
 	textArea.font = [UIFont boldSystemFontOfSize:14];
     textArea.textColor = [UIColor colorWithRed:BX_TEXT_AREA_RED green:BX_TEXT_AREA_GREEN blue:BX_TEXT_AREA_BLUE alpha:BX_TEXT_AREA_ALPHA];
 	textArea.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];    
@@ -104,12 +87,18 @@
 
 }
 
-+ (void)applyStylesForErrorMessageInsideThumbnail:(UILabel*)label {	
++ (void)applyStylesForErrorMessageInsideThumbnail:(UILabel*)label {
 	label.font = [UIFont systemFontOfSize:10];
 	label.backgroundColor = [UIColor clearColor];
 	label.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1];
 	label.numberOfLines = 0;
 }
+
++ (void)applyStylesForSegmentedControl:(UISegmentedControl*)segmentedControl {
+    segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    //segmentedControl.tintColor = [UIColor blackColor];
+}
+
 
 /**********************************************************************************************************************
  HOME BUTTONS STYLES
@@ -120,29 +109,28 @@
 + (void)applyStylesForLabelHomeButton:(UILabel*)label {
 	label.font = [UIFont boldSystemFontOfSize:13.0];
 	label.textAlignment = UITextAlignmentCenter;
-	label.textColor = [UIColor colorWithRed:BX_TEXT_RED green:BX_TEXT_GREEN blue:BX_TEXT_BLUE alpha:BX_TEXT_ALPHA];
+	label.textColor = [UIColor colorWithRed:BX_HOME_TEXT_RED green:BX_HOME_TEXT_GREEN blue:BX_HOME_TEXT_BLUE alpha:BX_HOME_TEXT_ALPHA];
 	label.backgroundColor = [UIColor clearColor];	
 }
 
-+ (void)applyStylesForHomeButton:(UIView*)view {	
++ (void)applyStylesForHomeButton:(UIView*)view {
 
-	UIView *viewBackground = [[[BackgroundView alloc] initWithFrame:view.bounds selected:false withSpaces:false] autorelease];	
+	UIView *viewBackground = [[[BackgroundView alloc] initWithFrameHome:view.bounds selected:false withSpaces:false] autorelease];
 	viewBackground.backgroundColor = [UIColor clearColor];
 	viewBackground.tag = BX_DESIGNER_BG_TAG;
 	[view addSubview:viewBackground];
 	[view sendSubviewToBack:viewBackground];
 
-	UIView *viewBackgroundSel = [[[BackgroundView alloc] initWithFrame:view.bounds selected:true withSpaces:false] autorelease];
+	UIView *viewBackgroundSel = [[[BackgroundView alloc] initWithFrameHome:view.bounds selected:true withSpaces:false] autorelease];
 	viewBackgroundSel.backgroundColor = [UIColor clearColor];
 	viewBackgroundSel.tag = BX_DESIGNER_BG_TAG_SEL;
     viewBackgroundSel.alpha = 0;
 	[view addSubview:viewBackgroundSel];
-	[view sendSubviewToBack:viewBackgroundSel];	
-
+	[view sendSubviewToBack:viewBackgroundSel];
 }
 
 + (void)applyStylesForLabelBubble:(UILabel*)label {
-	label.font = [UIFont boldSystemFontOfSize:13.0];
+	label.font = [UIFont boldSystemFontOfSize:12.0];
 	label.textAlignment = UITextAlignmentCenter;
 	label.textColor = [UIColor colorWithRed:BX_BUBBLE_TEXT_RED green:BX_BUBBLE_TEXT_GREEN blue:BX_BUBBLE_TEXT_BLUE alpha:BX_BUBBLE_TEXT_ALPHA];
 	label.backgroundColor = [UIColor clearColor];	
@@ -206,16 +194,11 @@
 	return [s sizeWithFont:[UIFont systemFontOfSize:13.0] constrainedToSize:CGSizeMake(fMaxWidth, fMaxHeight) lineBreakMode:UILineBreakModeTailTruncation];
 }
 
+/**********************************************************************************************************************
+ TOOLBAR STYLES
+ **********************************************************************************************************************/
+
 + (void)applyStylesForTabbar:(UITabBar*)tabBar orientation:(UIInterfaceOrientation)interfaceOrientation {
-    if ([tabBar respondsToSelector:@selector(setBackgroundImage:)]) {
-        NSString *sImageBg;
-        if (UIInterfaceOrientationLandscapeLeft == interfaceOrientation ||  UIInterfaceOrientationLandscapeRight == interfaceOrientation)
-            sImageBg = @"tabbar_bg_landscape.png";
-        else
-            sImageBg = @"tabbar_bg.png";
-        [tabBar setBackgroundImage:[UIImage imageNamed:sImageBg]];
-        [tabBar setSelectionIndicatorImage:[UIImage imageNamed:@"tabbar_tab_active.png"]];
-    }
 }
 
 @end

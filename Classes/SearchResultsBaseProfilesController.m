@@ -43,10 +43,10 @@
 											  nil]];
 	[segmentedControl addTarget:self action:@selector(actionPrevNext:) forControlEvents:UIControlEventValueChanged];
 	segmentedControl.frame = CGRectMake(0, 0, 90, 30);
-	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
-	segmentedControl.tintColor = [UIColor blackColor];
 	segmentedControl.momentary = YES;
 	
+    [Designer applyStylesForSegmentedControl:segmentedControl];
+    
 	UIBarButtonItem *segmentBarItem = [[UIBarButtonItem alloc] initWithCustomView:segmentedControl];
 	self.navigationItem.rightBarButtonItem = segmentBarItem;
     [segmentBarItem release];

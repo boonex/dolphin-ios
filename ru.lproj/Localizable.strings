@@ -357,6 +357,9 @@
 /* Remember Password switch text */
 "Remember Password"= "Запомнить";
 
+/* Reported Profile Mail Subject */
+"Reported Profile"= "Жалоба на профайл: %@";
+
 /* Save button title */
 "Save" = "Сохранить";
 
@@ -429,6 +432,14 @@
 
 /* Take File with Camera button title */
 "Take File with Camera" = "Камера";
+
+/* Terms & Privacy Links */
+"Terms And Privacy" = "
+<html>
+<body style=\"background-color:transparent; color:#333; font-family:Helvetica; font-size:11px; text-align:center; padding:0; margin:0;\">
+Заходя на сайт, я соглашаюсь с <a href=\"%@../terms_of_use.php?mobile=1\">условиями использования</a> и <a href=\"%@../privacy.php?mobile=1\">политикой конфиденциальности</a>
+</body>
+</html>";
 
 /* Message text field caption */
 "Text" = "Сообщение";

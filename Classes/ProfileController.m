@@ -320,7 +320,23 @@
 			break;
 		case 9:
 			ctrl = [[AudioAlbumsController alloc] initWithProfile:profile title:title nav:navController];
-			break;            
+			break;
+		case 10:
+            {
+                NSString *sSubject = [NSString stringWithFormat:NSLocalizedString(@"Reported Profile", @"Reported Profile Mail Subject"), profile];
+                NSString *sMail = [dict valueForKey:@"action_data"];
+                NSArray *aRecipients = [NSArray arrayWithObjects:sMail, nil];
+                
+                MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+                controller.mailComposeDelegate = self;
+                [controller setToRecipients:aRecipients];
+                [controller setSubject:sSubject];
+                [controller setMessageBody:@"" isHTML:NO];
+                if (controller)
+                    [self presentModalViewController:controller animated:YES];
+                [controller release];
+            }
+			break;
         case 100:
         case 101:
         {
@@ -332,6 +348,21 @@
 	}
 	[navController pushViewController:ctrl animated:YES];
 	[ctrl release];
+}
+
+/**********************************************************************************************************
+ DELEGATES: MFMailComposeViewController
+ **********************************************************************************************************/
+
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error;
+{
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"message sent");
+    }
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 /**********************************************************************************************************************

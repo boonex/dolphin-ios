@@ -106,12 +106,18 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	return 1;
+    return nil == BX_LOCK_APP ? 2 : 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [[DolphinUsers sharedDolphinUsers] countOfUsers] + (nil == BX_LOCK_APP ? 1 : 0);
+    switch (section) {
+        default:
+        case 0:
+            return [[DolphinUsers sharedDolphinUsers] countOfUsers];
+        case 1:
+            return 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -119,41 +125,46 @@
 	DolphinUsers *users = [DolphinUsers sharedDolphinUsers];
 	
 	UITableViewCell *cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero] autorelease];
+    
+    switch (indexPath.section) {
+        default:
+        case 0:
+        {
+            BxUser *user = [users userAtIndex:(indexPath.row)];
+            cell.textLabel.text = user.strSite;
+            
+            cell.imageView.image = [UIImage imageNamed:@"icon_empty.png"];
+            
+            if (nil == user.iconSite) {
+                
+                AsyncImageView *asyncImage = [[AsyncImageView alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];// cell.imageView.frame];
+                NSString *strLogoUrl = [[NSString alloc] initWithFormat:@"%@../%@", user.connector.urlServerXMLRPC.absoluteString, BX_MOBILE_LOGO_PATH];
+                NSLog(@"%@", strLogoUrl);
+                NSURL *url = [[NSURL alloc] initWithString:strLogoUrl];
+                [asyncImage loadImageFromURL:url];
+                user.iconSite = asyncImage;
+                [asyncImage release];
+                [strLogoUrl release];
+                [url release];
+                
+            } 
+            
+            [cell.imageView addSubview:user.iconSite];
+            
+            user.cell = cell;
+        }
+        break;
+        case 1:
+        {
+            if ([users countOfUsers] == 0)
+                cell.textLabel.text = NSLocalizedString(@"Add Dolphin Site", @"Add site table row, while adding first site");
+            else
+                cell.textLabel.text = NSLocalizedString(@"Add Another Dolphin Site", @"Add site table row, while adding second and futher sites");
+            
+            cell.imageView.image = [UIImage imageNamed:@"icon_add_community.png"];
+        }
+    }
 
-	if ([users countOfUsers] == indexPath.row) {			
-		if ([users countOfUsers] == 0)
-			cell.textLabel.text = NSLocalizedString(@"Add Dolphin Site", @"Add site table row, while adding first site");
-		else
-			cell.textLabel.text = NSLocalizedString(@"Add Another Dolphin Site", @"Add site table row, while adding second and futher sites");
-		
-		cell.imageView.image = [UIImage imageNamed:@"icon_add_community.png"];
-						
-	} else {			
-						
-		BxUser *user = [users userAtIndex:(indexPath.row)];
-		cell.textLabel.text = user.strSite;	 
-		
-        cell.imageView.image = [UIImage imageNamed:@"icon_empty.png"];
-        
-		if (nil == user.iconSite) {
-            
-			AsyncImageView *asyncImage = [[AsyncImageView alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];// cell.imageView.frame];
-			NSString *strLogoUrl = [[NSString alloc] initWithFormat:@"%@../%@", user.connector.urlServerXMLRPC.absoluteString, BX_MOBILE_LOGO_PATH];
-            NSLog(@"%@", strLogoUrl);
-			NSURL *url = [[NSURL alloc] initWithString:strLogoUrl];
-			[asyncImage loadImageFromURL:url];
-			user.iconSite = asyncImage;
-			[asyncImage release];
-            [strLogoUrl release];
-            [url release];
-            
-		} 
-        
-        [cell.imageView addSubview:user.iconSite];
-		
-		user.cell = cell;
-	}
-		
 	[Designer applyStylesForCell:cell];
 	
 	return cell;
@@ -209,11 +220,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-	return BX_TABLE_FOOTER_INITIAL_HEIGHT;
+	return 0 == section ? 0 : BX_TABLE_FOOTER_INITIAL_HEIGHT;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-	return logo;
+	return 0 == section ? nil : logo;
 }
 
 

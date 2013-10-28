@@ -29,6 +29,7 @@
 + (void)applyStylesForWebView:(UIWebView*)webView;
 + (void)applyStylesForButton:(UIButton*)btn;
 + (void)applyStylesForErrorMessageInsideThumbnail:(UILabel*)label;
++ (void)applyStylesForSegmentedControl:(UISegmentedControl*)segmentedControl;
 
 + (void)applyStylesForLabelHomeButton:(UILabel*)label;
 + (void)applyStylesForHomeButton:(UIView*)view;

@@ -41,6 +41,15 @@
     textUsername.text = user.strUsername;
     textPassword.text = user.rememberPassword ? user.strPwdHash : @"";
 	
+    NSString *sSiteUrlCorrected = [user.connector getXmlRpcUrlForSite:user.strSite];
+    
+    NSLog(@"SITE - %@", sSiteUrlCorrected);
+    
+    NSString *sAboutText = [NSString stringWithFormat:NSLocalizedString(@"Terms And Privacy", @"Terms & Privacy Links"), sSiteUrlCorrected, sSiteUrlCorrected];
+	[htmlTerms loadHTMLString:sAboutText baseURL:nil];
+    htmlTerms.opaque = NO;
+    htmlTerms.backgroundColor = [UIColor clearColor];
+    
 	[Designer applyStylesForTextEdit:textDomain];
 	[Designer applyStylesForTextEdit:textUsername];
 	[Designer applyStylesForTextEdit:textPassword];
@@ -75,6 +84,7 @@
 	[textUsername release];
 	[textPassword release];
     [buttonLogin release];
+    [htmlTerms release];
 		
     [viewContainerFacebook release];
     [viewContainer release];
@@ -397,6 +407,24 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)theTextField {
 	return true;
 }
+
+
+/*********************************************************************************************************
+ DELEGATES: UIWebView
+ *********************************************************************************************************/
+
+#pragma mark - Delegates
+
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType; {
+    NSURL *requestURL = [[request URL] retain];
+    if (([[requestURL scheme] isEqualToString:@"http"] || [[requestURL scheme] isEqualToString:@"https"] || [[requestURL scheme] isEqualToString:@"mailto"])
+        && (navigationType == UIWebViewNavigationTypeLinkClicked)) {
+        return ![[UIApplication sharedApplication] openURL:[requestURL autorelease]];
+    }
+    [requestURL release];
+    return YES;
+}
+
 
 /**********************************************************************************************************************
  DELEGATES: FB

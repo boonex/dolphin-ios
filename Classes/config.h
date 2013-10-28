@@ -44,8 +44,7 @@
 #define BX_TEXT_AREA_BLUE 0.2
 #define BX_TEXT_AREA_ALPHA 1.0
 
-
-// default table background, if image is empty string - colors values are used 
+// default table background
 #define BX_TABLE_BG_RED 1.0
 #define BX_TABLE_BG_GREEN 1.0
 #define BX_TABLE_BG_BLUE 1.0
@@ -69,6 +68,29 @@
 #define BX_BORDER_WIDTH 1.0
 #define BX_BORDER_RADIUS 3.0
 
+// home button
+#define BX_HOME_BG_RED 0.3
+#define BX_HOME_BG_GREEN 0.3
+#define BX_HOME_BG_BLUE 0.3
+#define BX_HOME_BG_ALPHA 0.8
+
+#define BX_HOME_SEL_RED 1.0
+#define BX_HOME_SEL_GREEN 0.47
+#define BX_HOME_SEL_BLUE 0.0
+#define BX_HOME_SEL_ALPHA 1.0
+
+#define BX_HOME_BORDER_RED 0.0
+#define BX_HOME_BORDER_GREEN 0.0
+#define BX_HOME_BORDER_BLUE 0.0
+#define BX_HOME_BORDER_ALPHA 0.0
+#define BX_HOME_BORDER_WIDTH 0.0
+#define BX_HOME_BORDER_RADIUS 3.0
+
+#define BX_HOME_TEXT_RED 1.0
+#define BX_HOME_TEXT_GREEN 1.0
+#define BX_HOME_TEXT_BLUE 1.0
+#define BX_HOME_TEXT_ALPHA 1.0
+
 #define BX_SPACE_TOP 4.0
 #define BX_SPACE_BOTTOM 4.0
 
@@ -82,14 +104,14 @@
 #define BX_BUBBLE_BORDER_RED 0.7
 #define BX_BUBBLE_BORDER_GREEN 0.7
 #define BX_BUBBLE_BORDER_BLUE 0.7
-#define BX_BUBBLE_BORDER_ALPHA 1.0
-#define BX_BUBBLE_BORDER_WIDTH 1.0
-#define BX_BUBBLE_BORDER_RADIUS 3.0
+#define BX_BUBBLE_BORDER_ALPHA 0.0
+#define BX_BUBBLE_BORDER_WIDTH 0.0
+#define BX_BUBBLE_BORDER_RADIUS 9
 
 // bubble background
-#define BX_BUBBLE_BG_RED 0.8
-#define BX_BUBBLE_BG_GREEN 0.0
-#define BX_BUBBLE_BG_BLUE 0.0
+#define BX_BUBBLE_BG_RED 1.0
+#define BX_BUBBLE_BG_GREEN 0.23
+#define BX_BUBBLE_BG_BLUE 0.188
 #define BX_BUBBLE_BG_ALPHA 1.0
 
 // default screen background, if image is empty string - colors values are used 

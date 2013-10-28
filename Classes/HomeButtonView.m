@@ -32,7 +32,7 @@
 		label.text = title;
 		[Designer applyStylesForLabelHomeButton:label];
 		
-		bubble = [[BackgroundBubbleView alloc] initWithOrigin:CGPointMake(BX_HOME_BUTTON_WIDTH, 0) text:@""];
+		bubble = [[BackgroundBubbleView alloc] initWithOrigin:CGPointMake(BX_HOME_BUTTON_WIDTH-2.0, 2.0) text:@""];
 		bubble.hidden = YES;
 		
 		[self addSubview:viewImage];
@@ -109,23 +109,39 @@
 
 #pragma mark - Touches Functions
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    UIView *vSelected = [self viewWithTag:BX_DESIGNER_BG_TAG_SEL];
-	vSelected.alpha = 1;
-
-	UIView *v = [self viewWithTag:BX_DESIGNER_BG_TAG];
-	[self sendSubviewToBack:v];
+- (void)swapHomeBtnBg:(BOOL)isSelected {
+    if (isSelected) {
+        UIView *vSelected = [self viewWithTag:BX_DESIGNER_BG_TAG_SEL];
+        vSelected.alpha = 1;
+        
+        UIView *v = [self viewWithTag:BX_DESIGNER_BG_TAG];
+        [self sendSubviewToBack:v];
+    } else {
+        UIView *vSelected = [self viewWithTag:BX_DESIGNER_BG_TAG_SEL];
+        vSelected.alpha = 0;
+        [self sendSubviewToBack:vSelected];
+    }
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {	
-	UIView *vSelected = [self viewWithTag:BX_DESIGNER_BG_TAG_SEL];
-    vSelected.alpha = 0;
-	[self sendSubviewToBack:vSelected];    	
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self swapHomeBtnBg:YES];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self swapHomeBtnBg:NO];
 	
     UITouch *touch = [touches anyObject]; 
     if([touch tapCount] == 1) {
         [self clickEvent];
     }
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self swapHomeBtnBg:NO];
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self swapHomeBtnBg:NO];
 }
 
 - (NSString*)getTitle {

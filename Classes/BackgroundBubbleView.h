@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#define BX_BUBBLE_HEIGHT 21.0
+#define BX_BUBBLE_HEIGHT 18.0
 #define BX_BUBBLE_WIDTH_MAX 50.0
-#define BX_BUBBLE_SPACE 5.0
+#define BX_BUBBLE_SPACE 5.5
 
 @interface BackgroundBubbleView : UIView {
 	UILabel *label;

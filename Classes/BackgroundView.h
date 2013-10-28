@@ -12,8 +12,10 @@
 @interface BackgroundView : UIView {
 	Boolean selected;
 	Boolean withSpaces;
+    Boolean homeBackground;
 }
 
 - (id)initWithFrame:(CGRect)frame selected:(Boolean)isSelected withSpaces:(Boolean)isWithSpaces;
+- (id)initWithFrameHome:(CGRect)frame selected:(Boolean)isSelected withSpaces:(Boolean)isWithSpaces;
 
 @end
