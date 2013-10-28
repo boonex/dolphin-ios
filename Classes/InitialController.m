@@ -178,45 +178,34 @@
 	
 	DolphinUsers *users = [DolphinUsers sharedDolphinUsers];
 	
-	NSUInteger usersCount = [users countOfUsers];
-	
-	if (indexPath.section == 0) {
-        
-        [self setupBackButton];
-        
-		if ([users countOfUsers] == indexPath.row || usersCount == 0) {
-			
-			SiteAddController * siteAddController = [[SiteAddController alloc] init];
-			siteAddController.title = NSLocalizedString(@"Add Site", @"Add site view title");
-						
-			Dolphin6AppDelegate *app = [Dolphin6AppDelegate getApp];
-			[app.navigationController pushViewController:siteAddController animated:YES];
-			[siteAddController release];
-			
-		} else {
-			
+    [self setupBackButton];
+    
+    switch (indexPath.section) {
+        case 0:
+        {
 			BxUser *aUser = [users userAtIndex:(indexPath.row)];
 			LoginController *loginController = (LoginController *)[[LoginController alloc] initWithUserObject:aUser];
-			         
+            
 			Dolphin6AppDelegate *app = [Dolphin6AppDelegate getApp];
 			[app.navigationController pushViewController:loginController animated:YES];
 			[loginController release];
-		}
-	}
+        }
+        break;
+        case 1:
+        {
+			SiteAddController * siteAddController = [[SiteAddController alloc] init];
+			siteAddController.title = NSLocalizedString(@"Add Site", @"Add site view title");
+            
+			Dolphin6AppDelegate *app = [Dolphin6AppDelegate getApp];
+			[app.navigationController pushViewController:siteAddController animated:YES];
+			[siteAddController release];
+        }
+            
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-
-	DolphinUsers *users = [DolphinUsers sharedDolphinUsers];
-	
-	NSUInteger usersCount = [users countOfUsers];
-	
-	if (indexPath.section == 0) {		
-		if ([users countOfUsers] == indexPath.row || usersCount == 0) {
-			return NO;
-		}
-	}
-	return YES;
+    return indexPath.section == 0 ? YES : NO;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {

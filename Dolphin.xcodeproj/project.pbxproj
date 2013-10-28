@@ -116,7 +116,6 @@
 		FA1F2334131F5A63004410CE /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F2333131F5A63004410CE /* AsyncImageView.m */; };
 		FA2E14801581C34D001E54A9 /* TextViewPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E147F1581C34D001E54A9 /* TextViewPlaceholder.m */; };
 		FA2E9A7116A51A4900E92513 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2E9A7016A51A4900E92513 /* FacebookSDK.framework */; };
-		FA2E9A7316A51A8300E92513 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA2E9A7216A51A8300E92513 /* FacebookSDKResources.bundle */; };
 		FA2E9A7716A51B8300E92513 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2E9A7416A51B8300E92513 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA2E9A7816A51B8300E92513 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2E9A7516A51B8300E92513 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA2E9A7916A51B8300E92513 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2E9A7616A51B8300E92513 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -383,7 +382,6 @@
 		FA2E147E1581C34D001E54A9 /* TextViewPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewPlaceholder.h; sourceTree = "<group>"; };
 		FA2E147F1581C34D001E54A9 /* TextViewPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewPlaceholder.m; sourceTree = "<group>"; };
 		FA2E9A7016A51A4900E92513 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		FA2E9A7216A51A8300E92513 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		FA2E9A7416A51B8300E92513 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		FA2E9A7516A51B8300E92513 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		FA2E9A7616A51B8300E92513 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -812,7 +810,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				FA43A83B178E674100D80A94 /* MobileCoreServices.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -890,11 +887,11 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA43A83B178E674100D80A94 /* MobileCoreServices.framework */,
 				FABE63DC181E1D4000EB0506 /* MessageUI.framework */,
 				FA2E9A7416A51B8300E92513 /* Accounts.framework */,
 				FA2E9A7516A51B8300E92513 /* AdSupport.framework */,
 				FA2E9A7616A51B8300E92513 /* Social.framework */,
-				FA2E9A7216A51A8300E92513 /* FacebookSDKResources.bundle */,
 				FA2E9A7016A51A4900E92513 /* FacebookSDK.framework */,
 				04EABD4D10452AD20027B307 /* CoreLocation.framework */,
 				04759717103523CB005D3730 /* MapKit.framework */,
@@ -1074,7 +1071,6 @@
 				FA6BE6261581A8B100C38A60 /* logo_about.png in Resources */,
 				FA6BE6271581A8B100C38A60 /* logo_about@2x.png in Resources */,
 				FA5EEDD61626777D00F76BB6 /* Default-568h@2x.png in Resources */,
-				FA2E9A7316A51A8300E92513 /* FacebookSDKResources.bundle in Resources */,
 				FA4FDEE916ACE2D800D6199E /* SiteAddView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

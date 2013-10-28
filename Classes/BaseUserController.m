@@ -29,7 +29,7 @@
     if (NO != isProgress)
         return;
 	
-	UIActivityIndicatorView *aivSmall = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+	UIActivityIndicatorView *aivSmall = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 	UIBarButtonItem *activityButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aivSmall];
 	[aivSmall startAnimating]; 
 	[aivSmall release];
