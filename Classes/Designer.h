@@ -33,6 +33,7 @@
 
 + (void)applyStylesForLabelHomeButton:(UILabel*)label;
 + (void)applyStylesForHomeButton:(UIView*)view;
++ (void)applyStylesForHomeButtonCustom:(UIView*)view r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue a:(CGFloat)alpha;
 + (void)applyStylesForLabelBubble:(UILabel*)label;
 + (CGSize)sizeForBubbleLabel:(NSString*)s maxWidth:(CGFloat)fMaxWidth maxHeight:(CGFloat)fMaxHeight;
 

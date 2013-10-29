@@ -113,6 +113,22 @@
 	label.backgroundColor = [UIColor clearColor];	
 }
 
++ (void)applyStylesForHomeButtonCustom:(UIView*)view r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue a:(CGFloat)alpha {
+	UIView *viewBackground = [[[BackgroundView alloc] initWithFrameCustom:view.bounds withSpaces:false r:red g:green b:blue a:alpha] autorelease];
+	viewBackground.backgroundColor = [UIColor clearColor];
+	viewBackground.tag = BX_DESIGNER_BG_TAG;
+	[view addSubview:viewBackground];
+	[view sendSubviewToBack:viewBackground];
+    
+	UIView *viewBackgroundSel = [[[BackgroundView alloc] initWithFrameHome:view.bounds selected:true withSpaces:false] autorelease];
+	viewBackgroundSel.backgroundColor = [UIColor clearColor];
+	viewBackgroundSel.tag = BX_DESIGNER_BG_TAG_SEL;
+    viewBackgroundSel.alpha = 0;
+	[view addSubview:viewBackgroundSel];
+	[view sendSubviewToBack:viewBackgroundSel];
+    
+}
+
 + (void)applyStylesForHomeButton:(UIView*)view {
 
 	UIView *viewBackground = [[[BackgroundView alloc] initWithFrameHome:view.bounds selected:false withSpaces:false] autorelease];

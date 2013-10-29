@@ -12,19 +12,30 @@
 @implementation BackgroundView
 
 - (id)initWithFrame:(CGRect)frame selected:(Boolean)isSelected withSpaces:(Boolean)isWithSpaces {
-    return [self initWithFrameCustom:frame selected:isSelected withSpaces:isWithSpaces home:NO];
+    if (isSelected)
+        return [self initWithFrameCustom:frame withSpaces:isWithSpaces r:BX_TABLE_SEL_RED g:BX_TABLE_SEL_GREEN b:BX_TABLE_SEL_BLUE a:BX_TABLE_SEL_ALPHA];
+    else
+        return [self initWithFrameCustom:frame withSpaces:isWithSpaces r:BX_TABLE_BG_RED g:BX_TABLE_BG_GREEN b:BX_TABLE_BG_BLUE a:BX_TABLE_BG_ALPHA];
 }
 
 - (id)initWithFrameHome:(CGRect)frame selected:(Boolean)isSelected withSpaces:(Boolean)isWithSpaces {
-    return [self initWithFrameCustom:frame selected:isSelected withSpaces:isWithSpaces home:YES];
+    if (isSelected)
+        return [self initWithFrameCustom:frame withSpaces:isWithSpaces r:BX_HOME_SEL_RED g:BX_HOME_SEL_GREEN b:BX_HOME_SEL_BLUE a:BX_HOME_SEL_ALPHA];
+    else
+        return [self initWithFrameCustom:frame withSpaces:isWithSpaces r:BX_HOME_BG_RED g:BX_HOME_BG_GREEN b:BX_HOME_BG_BLUE a:BX_HOME_BG_ALPHA];
+        
 }
 
-- (id)initWithFrameCustom:(CGRect)frame selected:(Boolean)isSelected withSpaces:(Boolean)isWithSpaces home:(Boolean)isHomeBackground {
+- (id)initWithFrameCustom:(CGRect)frame withSpaces:(Boolean)isWithSpaces r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue a:(CGFloat)alpha {
     self = [super initWithFrame:frame];
     if (self) {
-        selected = isSelected;
+        fRed = red;
+        fGreen = green;
+        fBlue = blue;
+        fAlpha = alpha;
+        
 		withSpaces = isWithSpaces;
-        homeBackground = isHomeBackground;
+        
 		self.backgroundColor = [UIColor clearColor];
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     }
@@ -41,18 +52,8 @@
     CGContextRef context=UIGraphicsGetCurrentContext();
     CGContextSetRGBStrokeColor(context, BX_HOME_BORDER_RED, BX_HOME_BORDER_GREEN, BX_HOME_BORDER_BLUE, BX_HOME_BORDER_ALPHA);
     CGContextSetLineWidth(context, BX_HOME_BORDER_WIDTH);
-    if (homeBackground) {
-        if (selected)
-            CGContextSetRGBFillColor(context, BX_HOME_SEL_RED, BX_HOME_SEL_GREEN, BX_HOME_SEL_BLUE, BX_HOME_SEL_ALPHA);
-        else
-            CGContextSetRGBFillColor(context, BX_HOME_BG_RED, BX_HOME_BG_GREEN, BX_HOME_BG_BLUE, BX_HOME_BG_ALPHA);
-    } else {
-        if (selected)
-            CGContextSetRGBFillColor(context, BX_TABLE_SEL_RED, BX_TABLE_SEL_GREEN, BX_TABLE_SEL_BLUE, BX_TABLE_SEL_ALPHA);
-        else
-            CGContextSetRGBFillColor(context, BX_TABLE_BG_RED, BX_TABLE_BG_GREEN, BX_TABLE_BG_BLUE, BX_TABLE_BG_ALPHA);
-    }
-    
+
+    CGContextSetRGBFillColor(context, fRed, fGreen, fBlue, fAlpha);
     
     // If you were making this as a routine, you would probably accept a rectangle 
     // that defines its bounds, and a radius reflecting the "rounded-ness" of the rectangle. 

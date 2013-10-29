@@ -24,9 +24,7 @@
         indexAction = anIndexAction;
         title = [aText retain];
 		
-        viewImage = [self createImageView:anImageRes];
-		//viewImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:anImageRes]];
-		//viewImage.frame = CGRectMake(13, 5, 54, 54);		
+        viewImage = [self createImageView:[self imageFromString:anImageRes]];
 		
 		label = [[UILabel alloc] initWithFrame:CGRectMake(4, 70, 85, 15)];
 		label.text = title;
@@ -40,8 +38,52 @@
 		[self addSubview:bubble];
 		
 		[self setUserInteractionEnabled:YES];
-		
-		[Designer applyStylesForHomeButton:self];
+        
+        NSString *sCustomColor = [self colorsFromString:anImageRes];
+        CGFloat fRed = 0, fGreen = 0, fBlue = 0, fAlpha = 0;
+        
+        if (nil != sCustomColor) {
+            fRed = [self colorFromString:sCustomColor index:0 default:0.3];
+            fGreen = [self colorFromString:sCustomColor index:1 default:0.3];
+            fBlue = [self colorFromString:sCustomColor index:2 default:0.3];
+            fAlpha = [self colorFromString:sCustomColor index:3 default:1.0];
+        } else {
+            NSDictionary *colors = [NSDictionary
+                                    dictionaryWithObjects: [NSArray arrayWithObjects:
+                                            @"194,7,86",  // status
+                                            @"207,60,25", // location
+                                            @"43,104,32", // messages
+                                            @"86,156,0",  // friends
+                                            @"186,188,0", // info
+                                            @"218,128,0", // search
+                                            @"9,54,176",  // images
+                                            @"0,146,148", // sounds
+                                            @"0,143,184", // videos
+                                            nil]
+                                    forKeys:[NSArray arrayWithObjects:
+                                             @"home_status.png",
+                                             @"home_location.png",
+                                             @"home_messages.png",
+                                             @"home_friends.png",
+                                             @"home_info.png",
+                                             @"home_search.png",
+                                             @"home_images.png",
+                                             @"home_sounds.png",
+                                             @"home_videos.png",
+                                             nil]];
+            NSString *sColor = [colors valueForKey:anImageRes];
+            if (nil != sColor) {
+                fRed = [self colorFromString:sColor index:0 default:0.3];
+                fGreen = [self colorFromString:sColor index:1 default:0.3];
+                fBlue = [self colorFromString:sColor index:2 default:0.3];
+                fAlpha = [self colorFromString:sColor index:3 default:1.0];
+            }
+        }
+        
+        if (0 == fRed && 0 == fGreen && 0 == fBlue && 0 == fAlpha)
+            [Designer applyStylesForHomeButton:self];
+        else
+            [Designer applyStylesForHomeButtonCustom:self r:fRed g:fGreen b:fBlue a:fAlpha];
 	}
 	
 	return self; 
@@ -79,13 +121,7 @@
     CGRect frame = CGRectMake(anOrigin.x, anOrigin.y, BX_HOME_BUTTON_WIDTH, BX_HOME_BUTTON_HEIGHT);   
     self.frame = frame;
 }
-/*
-- (UIView*)createImageView:(NSString*)sImageName {
-    UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:sImageName]];
-    image.frame = CGRectMake(13, 5, 54, 54);    
-    return (UIView*)image;
-}
-*/
+
 - (UIView*)createImageView:(NSString*)sImageName {
     
     if ([sImageName hasPrefix:@"http://"] || [sImageName hasPrefix:@"https://"]) {    
@@ -100,6 +136,36 @@
         [image setUserInteractionEnabled:NO];
         return (UIView*)image;    
     }
+}
+
+- (NSString*)colorsFromString:(NSString*)s {
+    NSRange range = [s rangeOfString:@"("];
+    if (range.location == NSNotFound)
+        return nil;
+    return [s substringFromIndex:range.location];
+}
+
+- (NSString*)imageFromString:(NSString*)s {
+    NSRange range = [s rangeOfString:@"("];
+    if (range.location == NSNotFound)
+        return s;
+    return [s substringToIndex:range.location];
+}
+
+- (CGFloat)colorFromString:(NSString*)s index:(int)i default:(CGFloat)fDefValue {
+    NSString *ss = [s stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    ss = [ss stringByReplacingOccurrencesOfString:@")" withString:@""];
+    NSArray *a = [ss componentsSeparatedByString:@","];
+    if (nil == a)
+        return fDefValue;
+    if (i < 0 || i > ([a count]-1))
+        return fDefValue;
+    ss = [a objectAtIndex:i];
+    ss = [ss stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    int iColor = [ss intValue];
+    if (iColor > 255 || iColor < 0)
+        return fDefValue;
+    return iColor/255.0;
 }
 
 
