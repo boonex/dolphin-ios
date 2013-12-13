@@ -188,14 +188,14 @@
 		actionSheet = [[UIActionSheet alloc] 
 					   initWithTitle:@""
 					   delegate:self 
-					   cancelButtonTitle:@"Cancel" 
+					   cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel button title")
 					   destructiveButtonTitle:nil
 					   otherButtonTitles:strFromLibrary, strFromCamera, nil];
 	} else {
 		actionSheet = [[UIActionSheet alloc] 
 					   initWithTitle:@""
 					   delegate:self 
-					   cancelButtonTitle:@"Cancel" 
+					   cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel button title")
 					   destructiveButtonTitle:nil
 					   otherButtonTitles:strFromLibrary, nil];
 	}
