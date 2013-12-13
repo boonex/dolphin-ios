@@ -205,7 +205,7 @@
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return indexPath.section == 0 ? YES : NO;
+    return nil != BX_LOCK_APP && indexPath.section == 0 ? YES : NO;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
