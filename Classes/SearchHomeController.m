@@ -164,10 +164,9 @@
 - (void)tableView:(UITableView *)atableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     NSMutableDictionary *dict = [aMenu objectAtIndex:indexPath.row];
-    
     int iAction = [[dict valueForKey:@"action"] intValue];
-        
 	UIViewController * ctrl = nil;
+    
 	switch (iAction)
 	{
 		case 30:
@@ -185,7 +184,8 @@
             NSString *sTitle = [dict valueForKey:@"title"];
             NSString *sActionData = [dict valueForKey:@"action_data"];
             Dolphin6AppDelegate *app = [Dolphin6AppDelegate getApp];
-            [self openPageUrl:sActionData title:sTitle nav:app.homeNavigationController openInNewWindow:(101 == iAction ? YES : NO)];
+            
+            [self openPageUrl:sActionData title:sTitle nav:app.searchNavigationController openInNewWindow:(101 == iAction ? YES : NO)];
             return;            
         }
 	}
