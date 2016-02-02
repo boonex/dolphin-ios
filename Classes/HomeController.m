@@ -360,7 +360,7 @@
 	id resp = [[idData valueForKey:BX_KEY_RESP] retain];
 	
 	// if error occured 
-	if([resp isKindOfClass:[NSError class]])
+	if ([resp isKindOfClass:[NSError class]] || [resp valueForKey:@"error"])
 	{		
 		[BxConnector showErrorAlertWithDelegate:self];
 		return;
@@ -548,6 +548,7 @@
             {
                 Dolphin6AppDelegate *app = [Dolphin6AppDelegate getApp];
                 HomeButton3rdPartyView *btn = (HomeButton3rdPartyView *)[aButtons objectAtIndex:anIndex];
+                NSLog(@"homeButtonPressed URL: %@", [btn getData]);
                 [self openPageUrl:[btn getData] title:[btn getTitle] nav:app.homeNavigationController openInNewWindow:(101 == anIndexAction ? YES : NO)];
             }
 			break;		

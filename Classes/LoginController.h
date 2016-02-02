@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 #import "BaseUserTableController.h"
 
 @class BxUser;
 
-@interface LoginController : BaseUserController <UITextFieldDelegate> {
+@interface LoginController : BaseUserController <UITextFieldDelegate, FBSDKLoginButtonDelegate> {
 	
 	IBOutlet UITextField *textDomain;
 	IBOutlet UITextField *textUsername;
@@ -23,7 +25,7 @@
 	IBOutlet UIView *viewContainer;
 	IBOutlet UIScrollView *viewScroll;
     
-    FBLoginView *viewFacebookLogin;
+    FBSDKLoginButton *viewFacebookLogin;
 }
 
 - (IBAction)actionLogin:(id)sender;

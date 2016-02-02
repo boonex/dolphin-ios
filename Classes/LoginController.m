@@ -14,7 +14,7 @@
 #import "Dolphinusers.h"
 #import "Designer.h"
 
-@interface LoginController () <FBLoginViewDelegate> 
+@interface LoginController () <FBSDKLoginButtonDelegate>
 
 @end
 
@@ -79,7 +79,6 @@
 - (void)dealloc {
     
     [viewFacebookLogin release];
-    [FBSession.activeSession closeAndClearTokenInformation];
     
 	[textDomain release];
 	[textUsername release];
@@ -94,9 +93,9 @@
 	[super dealloc];
 }
 
-/**********************************************************************************************************************
+/**************************************************************************************************************
  CUSTOM FUNCTIONS
- **********************************************************************************************************************/
+ **************************************************************************************************************/
 
 #pragma mark - Custom Funtions
 
@@ -135,31 +134,21 @@
 }
 
 - (void)createFacebookButton {
-
+    
     if (viewFacebookLogin != nil)
         return;
         
-    viewFacebookLogin = [[FBLoginView alloc] init];
+    viewFacebookLogin = [[FBSDKLoginButton alloc] init];
+  
+    viewFacebookLogin.delegate = self;
     
-    viewFacebookLogin.frame = CGRectOffset(
-                                   viewFacebookLogin.frame,
-                                   (viewContainerFacebook.frame.size.width - viewFacebookLogin.frame.size.width)/2,
-                                   textUsername.frame.origin.y);
+    viewFacebookLogin.readPermissions = @[@"public_profile", @"email", @"user_friends"];
+
+    viewFacebookLogin.center = CGPointMake(viewContainerFacebook.frame.size.width/2, viewContainerFacebook.frame.size.height/2);
     
     viewFacebookLogin.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     
-    viewFacebookLogin.delegate = self;
-    
     [viewContainerFacebook addSubview:viewFacebookLogin];
-    
-    [viewFacebookLogin sizeToFit];
-    
-    viewContainerFacebook.frame = CGRectMake(
-                                             viewContainerFacebook.frame.origin.x,
-                                             viewContainerFacebook.frame.origin.y,
-                                             viewContainerFacebook.frame.size.width,
-                                             viewFacebookLogin.frame.size.height + viewFacebookLogin.frame.origin.y * 2);
-
 }
 
 /**********************************************************************************************************************
@@ -171,14 +160,16 @@
 /**
  * login action - user press login/save button
  */
-- (void)actionLoginWithFacebookUser:(id<FBGraphUser>)userFacebook {
+- (void)actionLoginWithFacebookUser:(id) userFacebook token:(NSString*)sToken {
 
 	// hide keyboard
 	[textPassword resignFirstResponder];
 	[textUsername resignFirstResponder];
 	[textDomain resignFirstResponder];
 
-	NSArray *myArray = [NSArray arrayWithObjects:@"facebook_connect", @"login", [NSArray arrayWithObjects:userFacebook, nil], @"Module", nil];
+    NSLog(@"Facebook profile: %@", userFacebook);
+    
+	NSArray *myArray = [NSArray arrayWithObjects:@"facebook_connect", @"login", [NSArray arrayWithObjects:userFacebook, sToken, nil], @"Module", nil];
 	
     user.strUsername = @"";
     user.strPwdHash = @"";
@@ -234,7 +225,9 @@
     
     if ([resp isKindOfClass:[NSMutableDictionary class]] && nil != [resp valueForKey:@"error"]) {
         
-        [FBSession.activeSession closeAndClearTokenInformation];
+        Dolphin6AppDelegate *app = [Dolphin6AppDelegate getApp];
+        [app logoutFB];
+        
         [self removeProgressIndicator];
         [self showErrorAlert:[resp valueForKey:@"error"]];
         
@@ -431,22 +424,38 @@
  DELEGATES: FB
  **********************************************************************************************************************/
 
-#pragma mark - FBLoginViewDelegate
+#pragma mark - FBSDKLoginButtonDelegate
 
-- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
 
-}
-
-- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
-                            user:(id<FBGraphUser>)fbUser {
+- (void) loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
     
-    [self actionLoginWithFacebookUser:fbUser];
+    if (error != nil) {
+        [BxConnector showErrorAlertWithDelegate:self responce:error];
+        return;
+    }
+
+    if (result.isCancelled) {
+        [BxConnector showErrorAlertWithDelegate:self];
+        return;
+    }
+
+    LoginController *loginController = self;
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me?fields=name,email,first_name,last_name,gender" parameters:nil] startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+            
+            if (error) {
+                [BxConnector showErrorAlertWithDelegate:self responce:error];
+                return;
+            }
+            
+            [loginController actionLoginWithFacebookUser:result token:[FBSDKAccessToken currentAccessToken].tokenString];
+         }];
+    }
 }
 
-- (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
-
+- (void) loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
+    
 }
-
 
 
 @end

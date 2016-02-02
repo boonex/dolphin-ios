@@ -32,36 +32,30 @@ static BxUser *glUser = nil;
 	return glApp;
 }
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    // If we have a valid session at the time of openURL call, we handle Facebook transitions
-    // by passing the url argument to handleOpenURL. Attempt to extract a token from the url.
-    return [FBSession.activeSession handleOpenURL:url];
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBSDKAppEvents activateApp];
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application	{
-    // We need to properly handle activation of the application with regards to SSO
-    // (e.g., returning from iOS 6.0 authorization dialog or from fast app switching).
-    [FBSession.activeSession handleDidBecomeActive];
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation
+            ];
 }
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {		
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    // BUG:
-    // Nib files require the type to have been loaded before they can do the
-    // wireup successfully.
-    // http://stackoverflow.com/questions/1725881/unknown-class-myclass-in-interface-builder-file-error-at-runtime
-    [FBProfilePictureView class];
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     
     [application setStatusBarStyle:UIStatusBarStyleDefault];
     [application setStatusBarHidden:NO withAnimation:NO];
-
-	InitialController *aInitialController = [[InitialController alloc] initWithNibName:@"InitialView" bundle:[NSBundle mainBundle]];
-	navigationController =	[[UINavigationController alloc] initWithRootViewController:aInitialController];	
-	[aInitialController release];
-
+    
+    InitialController *aInitialController = [[InitialController alloc] initWithNibName:@"InitialView" bundle:[NSBundle mainBundle]];
+    navigationController =	[[UINavigationController alloc] initWithRootViewController:aInitialController];
+    [aInitialController release];
+    
     DolphinUsers *users = [DolphinUsers sharedDolphinUsers];
     if (1 == [users countOfUsers]) {
         BxUser *user = [users userAtIndex:0];
@@ -71,14 +65,15 @@ static BxUser *glUser = nil;
             [aLoginController release];
         }
     }
-
-	
-	navigationController.navigationBar.barStyle = UIBarStyleDefault;
     
-	//[window addSubview:navigationController.view]; // < iOS 6
-    window.rootViewController = navigationController; // >= iOS 6 style
     
-	[window makeKeyAndVisible];
+    navigationController.navigationBar.barStyle = UIBarStyleDefault;
+    
+    [self.window setRootViewController:navigationController];
+    
+    [window makeKeyAndVisible];
+    
+    return YES;
 }
 
 - (void) login:(BxUser*)anUser {
@@ -176,17 +171,21 @@ static BxUser *glUser = nil;
 	[glUser release];
 	glUser = nil;
     
-    [FBSession.activeSession closeAndClearTokenInformation];
+    [self logoutFB];
 }
 
+- (void) logoutFB {
+    FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+    [loginManager logOut];
+    [loginManager dealloc];
+}
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// save data on app quit
 	DolphinUsers *users = [DolphinUsers sharedDolphinUsers];
 	[users saveUsers];
     
-    // if the app is going away, we close the session object
-    [FBSession.activeSession close];
+    [self logoutFB];
 }
 
 - (void)dealloc {

@@ -109,6 +109,7 @@
     if (isOpenInNewWindow) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:sUrl]];
     } else {
+        NSLog(@"openPageUrl: %@ (%@)", sUrl, aTitle);
         WebPageController *ctrl = [[WebPageController alloc] initWithUrl:sUrl title:aTitle user:self.user nav:aNav];
         [aNav pushViewController:ctrl animated:YES];
         [ctrl release];

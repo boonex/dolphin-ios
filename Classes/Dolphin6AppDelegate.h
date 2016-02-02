@@ -7,7 +7,7 @@
 
 
 #import <UIKit/UIKit.h>
-#import <FacebookSDK/FacebookSDK.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 #import "config.h"
 #import "User.h"
@@ -54,6 +54,7 @@
 
 - (void) login:(BxUser*)anUser;
 - (void) logout;
+- (void) logoutFB;
 
 @end
 
