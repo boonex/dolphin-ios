@@ -54,7 +54,7 @@ CLLocationManager* locmanager = nil;
 		[BxConnector showErrorAlertWithDelegate:self];
 		return;
 	}
-	
+		
 	NSLog(@"user location update result: %@", resp);		
 	[resp release];
 }
@@ -66,7 +66,7 @@ CLLocationManager* locmanager = nil;
 		[locmanager setDelegate:self];
 		[locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
 	}
-	[locmanager startUpdatingLocation];	
+    [locmanager startUpdatingLocation];
 	[self addProgressIndicator];
 }
 
@@ -76,13 +76,14 @@ CLLocationManager* locmanager = nil;
 
 #pragma mark - CLLocationManager delegates
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
-	
+
 	[self removeProgressIndicator];
 	
 	[locmanager stopUpdatingLocation];
 	
+    CLLocation *newLocation = locations.firstObject;    
 	CLLocationCoordinate2D coord = [newLocation coordinate];
 	
 	MKCoordinateRegion region;
@@ -116,12 +117,14 @@ CLLocationManager* locmanager = nil;
 			break;
 	}
 	
-	NSArray *myArray = [NSArray arrayWithObjects:user.strUsername, user.strPwdHash, [NSString stringWithFormat:@"%.8f", coord.latitude], [NSString stringWithFormat:@"%.8f", coord.longitude], [NSString stringWithFormat:@"%d", [self deltaToZoom:span.latitudeDelta]], mapType, nil];
+	NSArray *myArray = [NSArray arrayWithObjects:user.strUsername, user.strPwdHash, [NSString stringWithFormat:@"%.8f", coord.latitude], [NSString stringWithFormat:@"%.8f", coord.longitude], [NSString stringWithFormat:@"%d", [self deltaToZoom:span.latitudeDelta]], sMapType, nil];
 	[user.connector execAsyncMethod:@"dolphin.updateUserLocation" withParams:myArray withSelector:@selector(actionUpdateUserLocation:) andSelectorObject:self andSelectorData:nil useIndicator:nil];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
+    NSLog(@"didFailWithError: %@", error);
+    
 	[self removeProgressIndicator];
 	
 	[locmanager stopUpdatingLocation];
