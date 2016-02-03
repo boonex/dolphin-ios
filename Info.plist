@@ -47,12 +47,12 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1661492157433700</string>
+				<string>fb212147745792489</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookAppID</key>
-	<string>1661492157433700</string>
+	<string>212147745792489</string>
 	<key>FacebookDisplayName</key>
 	<string>Local Dolphin Pro</string>
 	<key>NSAppTransportSecurity</key>
