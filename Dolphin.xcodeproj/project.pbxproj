@@ -53,7 +53,6 @@
 		0473D17B0EB5D9A20003086A /* MailMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 0473D17A0EB5D9A20003086A /* MailMessages.m */; };
 		0473D1810EB5DC8A0003086A /* Msg.m in Sources */ = {isa = PBXBuildFile; fileRef = 0473D1800EB5DC8A0003086A /* Msg.m */; };
 		0475961510351E6E005D3730 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0475961410351E6E005D3730 /* LocationController.m */; };
-		04759718103523CB005D3730 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04759717103523CB005D3730 /* MapKit.framework */; };
 		0475978510353466005D3730 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0475978410353466005D3730 /* LocationViewController.m */; };
 		04759787103536E0005D3730 /* LocationViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04759786103536E0005D3730 /* LocationViewView.xib */; };
 		04816F590ED6D26F000C4883 /* tab_friends.png in Resources */ = {isa = PBXBuildFile; fileRef = 04816F560ED6D26F000C4883 /* tab_friends.png */; };
@@ -204,6 +203,7 @@
 		FAEA03BE1329EA370091BB15 /* ConnectorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEA03BD1329EA370091BB15 /* ConnectorHelper.m */; };
 		FAFED4BF1C5AEC8300ED5791 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFED4BD1C5AEC8300ED5791 /* FBSDKCoreKit.framework */; };
 		FAFED4C01C5AEC8300ED5791 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFED4BE1C5AEC8300ED5791 /* FBSDKLoginKit.framework */; };
+		FAFED4C21C6192F400ED5791 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFED4C11C6192F400ED5791 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -287,7 +287,6 @@
 		0473D1800EB5DC8A0003086A /* Msg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Msg.m; sourceTree = "<group>"; };
 		0475961310351E6E005D3730 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
 		0475961410351E6E005D3730 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
-		04759717103523CB005D3730 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0475978310353466005D3730 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		0475978410353466005D3730 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		04759786103536E0005D3730 /* LocationViewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationViewView.xib; sourceTree = "<group>"; };
@@ -487,6 +486,7 @@
 		FAEA03BD1329EA370091BB15 /* ConnectorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectorHelper.m; sourceTree = "<group>"; };
 		FAFED4BD1C5AEC8300ED5791 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		FAFED4BE1C5AEC8300ED5791 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		FAFED4C11C6192F400ED5791 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -498,6 +498,7 @@
 				FA43A83C178E674100D80A94 /* MobileCoreServices.framework in Frameworks */,
 				FA2E9A7716A51B8300E92513 /* Accounts.framework in Frameworks */,
 				FA2E9A7816A51B8300E92513 /* AdSupport.framework in Frameworks */,
+				FAFED4C21C6192F400ED5791 /* MapKit.framework in Frameworks */,
 				FAFED4C01C5AEC8300ED5791 /* FBSDKLoginKit.framework in Frameworks */,
 				FA2E9A7916A51B8300E92513 /* Social.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -506,7 +507,6 @@
 				FAFED4BF1C5AEC8300ED5791 /* FBSDKCoreKit.framework in Frameworks */,
 				04B3F5F60EDE565D005B15B9 /* QuartzCore.framework in Frameworks */,
 				041B08960EEE3EDC0041A9D6 /* MediaPlayer.framework in Frameworks */,
-				04759718103523CB005D3730 /* MapKit.framework in Frameworks */,
 				04EABD4E10452AD20027B307 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -902,6 +902,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAFED4C11C6192F400ED5791 /* MapKit.framework */,
 				FAFED4BD1C5AEC8300ED5791 /* FBSDKCoreKit.framework */,
 				FAFED4BE1C5AEC8300ED5791 /* FBSDKLoginKit.framework */,
 				FA43A83B178E674100D80A94 /* MobileCoreServices.framework */,
@@ -910,7 +911,6 @@
 				FA2E9A7516A51B8300E92513 /* AdSupport.framework */,
 				FA2E9A7616A51B8300E92513 /* Social.framework */,
 				04EABD4D10452AD20027B307 /* CoreLocation.framework */,
-				04759717103523CB005D3730 /* MapKit.framework */,
 				041B08950EEE3EDC0041A9D6 /* MediaPlayer.framework */,
 				04B3F5F50EDE565D005B15B9 /* QuartzCore.framework */,
 				047297750E71925B00D09E1E /* CoreGraphics.framework */,
@@ -958,6 +958,14 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 235MTP3MJ2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -1202,12 +1210,12 @@
 		04CE01D00EF12A6A00F8AA1B /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "897804CB-49DB-497F-A3AC-2B75ABB822C8";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
@@ -1218,7 +1226,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1233,8 +1241,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = Dolphin;
-				PROVISIONING_PROFILE = "897804CB-49DB-497F-A3AC-2B75ABB822C8";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "897804CB-49DB-497F-A3AC-2B75ABB822C8";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1277,7 +1285,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1291,8 +1299,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = Dolphin;
-				PROVISIONING_PROFILE = "897804CB-49DB-497F-A3AC-2B75ABB822C8";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "897804CB-49DB-497F-A3AC-2B75ABB822C8";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1302,13 +1310,13 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alex Trofimov (AAY4NF26UA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A1631ECF-1E3F-442E-8566-8C68BB8D0C8B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1316,12 +1324,12 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BoonEx, LLC (235MTP3MJ2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "897804CB-49DB-497F-A3AC-2B75ABB822C8";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
