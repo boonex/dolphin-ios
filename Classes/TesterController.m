@@ -36,7 +36,7 @@
 		// ORDER IS IMPORTANT !
 		
 		NSData *imgData = UIImageJPEGRepresentation([UIImage imageNamed:@"128x128.png"], 0.8);
-		NSString *sDataLen = [NSString stringWithFormat:@"%d", [imgData length]];
+		NSString *sDataLen = [NSString stringWithFormat:@"%d", (int)[imgData length]];
 		
 		runQueue = [[NSArray alloc] initWithObjects:
 
@@ -84,7 +84,7 @@
 
 			nil];
 		
-		NSLog(@"Number of tests: %d", [runQueue count]);
+		NSLog(@"Number of tests: %d", (int)[runQueue count]);
 		
 		currentIndex = 0;
 	}
@@ -93,7 +93,8 @@
 
 - (void)drawRect:(CGRect)rect {
 	[[UIColor whiteColor] set];
-	[@"Login" drawAtPoint:CGPointMake(50, 50) withFont:[UIFont systemFontOfSize:20]];
+    NSDictionary *attributes = @{ NSFontAttributeName: [UIFont systemFontOfSize:20]};
+    [@"Login" drawAtPoint:CGPointMake(50, 50) withAttributes:attributes];
 }
 
 - (void)viewDidLoad {
@@ -215,11 +216,11 @@
 		
 	} else if([resp isKindOfClass:[NSArray class]]) {
 		
-		s = [s stringByAppendingFormat:@" (Array: %d)", [resp count]];
+		s = [s stringByAppendingFormat:@" (Array: %d)", (int)[resp count]];
 		
 	} else if([resp isKindOfClass:[NSDictionary class]]) {
 		
-		s = [s stringByAppendingFormat:@" (NSDictionary: %d %@)", [resp count], [[resp allKeys] componentsJoinedByString:@","]];
+		s = [s stringByAppendingFormat:@" (NSDictionary: %d %@)", (int)[resp count], [[resp allKeys] componentsJoinedByString:@","]];
 				
 	} else if([resp isKindOfClass:[NSString class]]) {
 			

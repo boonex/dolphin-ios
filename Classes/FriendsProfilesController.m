@@ -31,7 +31,7 @@
 		self.navigationItem.title = NSLocalizedString(@"My Friends", @"My Friends view title");
         
         
-		UIBarButtonItem *btn2 = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Edit", @"Edit button title") style:UIBarButtonItemStyleBordered target:self action:@selector(actionEdit:)];
+		UIBarButtonItem *btn2 = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Edit", @"Edit button title") style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
 		self.navigationItem.rightBarButtonItem = btn2;
 		[btn2 release];
         
@@ -128,7 +128,7 @@
 	if (![profilesList count]) 	
 		return;
 			
-	NSLog(@"Deleting row: %d", indexPath.row); 
+	NSLog(@"Deleting row: %d", (int)indexPath.row); 
 	
 	NSMutableDictionary *dict = [profilesList objectAtIndex:indexPath.row];
 	NSString* nick = [dict valueForKey:@"Nick"];

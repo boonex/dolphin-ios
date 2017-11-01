@@ -16,7 +16,7 @@
 #import "MailHomeController.h"
 #import "FriendsHomeController.h"
 #import "SearchHomeController.h"
-#import "profileInfoController.h"
+#import "ProfileInfoController.h"
 
 @implementation Dolphin6AppDelegate
 
@@ -112,7 +112,7 @@ static BxUser *glUser = nil;
     window.rootViewController = tabController;
     
     // tab bar customization
-    [Designer applyStylesForTabbar:[tabController tabBar] orientation:tabController.interfaceOrientation];
+    [Designer applyStylesForTabbar:[tabController tabBar] orientation:[[UIApplication sharedApplication] statusBarOrientation]];
     
 }
 

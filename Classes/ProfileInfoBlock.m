@@ -70,7 +70,7 @@
 				
         // add fields
         int iOriginYSum = BX_PROFILE_INFO_CAPTION_HEIGHT + fY;
-        int iCount = [info count];
+        NSInteger iCount = [info count];
 		for (int i=0 ; i < iCount ; ++i) {
 			NSDictionary *dict = [info objectAtIndex:i];
 			NSString *sType = [dict valueForKey:@"Type"];

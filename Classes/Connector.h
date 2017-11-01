@@ -44,5 +44,7 @@
 + (void)showErrorAlertWithDelegate:(id)aDelegate;
 + (void)showErrorAlertWithDelegate:(id)aDelegate responce:(id)aResp;
 + (void)showDictErrorAlertWithDelegate:(id)aDelegate responce:(id)aResp;
++ (void)showErrorAlertWithDelegate:(id)aDelegate message:(NSString*)sMsg;
++ (void)showAlertWithDelegate:(id)aDelegate message:(NSString*)sMsg title:(NSString*)sTitle;
 
 @end

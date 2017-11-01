@@ -133,8 +133,7 @@
 				[comps setMinute:[mn integerValue]];
 				[comps setSecond:[sec	integerValue]];
 				
-				NSCalendar *gregorian = [[NSCalendar alloc]
-																 initWithCalendarIdentifier:NSGregorianCalendar];
+				NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 				curVal = [gregorian dateFromComponents:comps];
 				[comps release];
 				[gregorian release];

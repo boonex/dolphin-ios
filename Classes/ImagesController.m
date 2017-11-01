@@ -108,7 +108,7 @@
 }
 
 // iOS 6
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
 
@@ -186,7 +186,7 @@
 	
 	// calculate minimum scale to perfectly fit image width, and begin at that scale
 	float minimumScale;
-	if (self.interfaceOrientation == UIDeviceOrientationPortrait || self.interfaceOrientation == UIDeviceOrientationPortraitUpsideDown)
+	if ([[UIApplication sharedApplication] statusBarOrientation] == UIDeviceOrientationPortrait || [[UIApplication sharedApplication] statusBarOrientation] == UIDeviceOrientationPortraitUpsideDown)
 		minimumScale = sw / iw;
 	else
 		minimumScale = sh / ih;
@@ -228,7 +228,7 @@
 	[imageView loadImageFromURL:url];
 	[scrollView addSubview:imageView];
 	
-	titleButtonItem.title = [NSString stringWithFormat:@"%d/%d", currentImageIndex+1, count];
+	titleButtonItem.title = [NSString stringWithFormat:@"%d/%d", (int)currentImageIndex+1, (int)count];
 
 	prevButtonItem.enabled = NO;
 	nextButtonItem.enabled = NO;		
@@ -237,7 +237,7 @@
 
 - (void)findImageIndex {	
     if (-1 == currentImageIndex) {
-        int iCount = [imagesList count];
+        NSInteger iCount = [imagesList count];
 		for (int i=0 ; i < iCount ; ++i) {
 			NSMutableDictionary *dict = [imagesList objectAtIndex:i];
             if ([imageId isEqualToString:[dict valueForKey:@"id"]]) {
@@ -378,7 +378,7 @@
 
 - (IBAction)actionClose:(id)sender {
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES];
-	[navContrioller dismissModalViewControllerAnimated:YES];	    
+    [navContrioller.visibleViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)actionMakeThumbnail:(id)sender {
@@ -438,7 +438,7 @@
  * The following delegate method works around a known bug in zoomToRect:animated: 
  * In the next release after 3.0 this workaround will no longer be necessary      
  */
-- (void)scrollViewDidEndZooming:(UIScrollView *)aScrollView withView:(UIView *)view atScale:(float)scale {
+- (void)scrollViewDidEndZooming:(UIScrollView *)aScrollView withView:(UIView *)view atScale:(CGFloat)scale {
     [aScrollView setZoomScale:scale+0.01 animated:NO];
     [aScrollView setZoomScale:scale animated:NO];
 }

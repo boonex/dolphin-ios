@@ -72,7 +72,7 @@
 - (void)requestUserInfo {
     
     NSString *sMethod;
-    NSLog(@"user.intProtocolVer = %d", user.intProtocolVer);
+    NSLog(@"user.intProtocolVer = %d", (int)user.intProtocolVer);
     if (user.intProtocolVer > 1) {
         sMethod = @"dolphin.getUserInfo2";
     } else {
@@ -323,18 +323,22 @@
 			break;
 		case 10:
             {
-                NSString *sSubject = [NSString stringWithFormat:NSLocalizedString(@"Reported Profile", @"Reported Profile Mail Subject"), profile];
-                NSString *sMail = [dict valueForKey:@"action_data"];
-                NSArray *aRecipients = [NSArray arrayWithObjects:sMail, nil];
+                if (YES == [MFMailComposeViewController canSendMail]) {
+                    NSString *sSubject = [NSString stringWithFormat:NSLocalizedString(@"Reported Profile", @"Reported Profile Mail Subject"), profile];
+                    NSString *sMail = [dict valueForKey:@"action_data"];
+                    NSArray *aRecipients = [NSArray arrayWithObjects:sMail, nil];
                 
-                MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
-                controller.mailComposeDelegate = self;
-                [controller setToRecipients:aRecipients];
-                [controller setSubject:sSubject];
-                [controller setMessageBody:@"" isHTML:NO];
-                if (controller)
-                    [self presentModalViewController:controller animated:YES];
-                [controller release];
+                    MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+                    controller.mailComposeDelegate = self;
+                    [controller setToRecipients:aRecipients];
+                    [controller setSubject:sSubject];
+                    [controller setMessageBody:@"" isHTML:NO];
+                    controller.modalPresentationStyle = YES;
+                    [self presentViewController:controller animated:YES completion:nil];
+                    [controller release];
+                } else {
+                    [BxConnector showErrorAlertWithDelegate:self message:NSLocalizedString(@"Email send isn't available on this device", @"Email send isn't available on this device error message")];
+                }
             }
 			break;
         case 100:
@@ -362,7 +366,7 @@
     if (result == MFMailComposeResultSent) {
         NSLog(@"message sent");
     }
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /**********************************************************************************************************************

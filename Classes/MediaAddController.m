@@ -97,7 +97,7 @@
 - (void)requestUploadMedia:(NSData*)aData title:(NSString*)aTitle tags:(NSString*)theTags desc:(NSString*)aDesc {
 	
 	NSLog (@"Album name: %@", albumName);
-	NSString *sDataLen = [NSString stringWithFormat:@"%d", [aData length]];
+	NSString *sDataLen = [NSString stringWithFormat:@"%d", (int)[aData length]];
 	NSArray *myArray = [NSArray arrayWithObjects:user.strUsername, user.strPwdHash, nil == albumName ? @"Hidden" : albumName, aData, sDataLen, aTitle, theTags, aDesc, fileExt, nil];
 	
 	[self addProgressIndicator];

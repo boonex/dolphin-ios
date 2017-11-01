@@ -97,7 +97,6 @@
 		04D6F0470E5B8B48005A7E8F /* XMLValueDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D6F0400E5B8B48005A7E8F /* XMLValueDecoder.m */; };
 		04D8C87B0E6F2D020051DC34 /* InitialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D8C87A0E6F2D020051DC34 /* InitialView.xib */; };
 		04D8C8830E6F2D6B0051DC34 /* InitialController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D8C8820E6F2D6B0051DC34 /* InitialController.m */; };
-		04EABD4E10452AD20027B307 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EABD4D10452AD20027B307 /* CoreLocation.framework */; };
 		04F2E8AB0EC2BC22004B1850 /* ImagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F2E8AA0EC2BC22004B1850 /* ImagesController.m */; };
 		04F2E9570EC2F2FC004B1850 /* ProfileBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F2E9560EC2F2FC004B1850 /* ProfileBlock.m */; };
 		04F2EA360EC3092D004B1850 /* BaseUserThumbTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F2EA350EC3092D004B1850 /* BaseUserThumbTableController.m */; };
@@ -115,8 +114,10 @@
 		FA1F2334131F5A63004410CE /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F2333131F5A63004410CE /* AsyncImageView.m */; };
 		FA2E14801581C34D001E54A9 /* TextViewPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E147F1581C34D001E54A9 /* TextViewPlaceholder.m */; };
 		FA2E9A7716A51B8300E92513 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2E9A7416A51B8300E92513 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		FA2E9A7816A51B8300E92513 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2E9A7516A51B8300E92513 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		FA2E9A7916A51B8300E92513 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2E9A7616A51B8300E92513 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FA35FE261FA9F33B002B7E63 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EABD4D10452AD20027B307 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		FA35FE271FA9F5FE002B7E63 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFED4BD1C5AEC8300ED5791 /* FBSDKCoreKit.framework */; };
+		FA35FE281FA9F60D002B7E63 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFED4BE1C5AEC8300ED5791 /* FBSDKLoginKit.framework */; };
+		FA35FE2A1FA9FABB002B7E63 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA35FE291FA9FABA002B7E63 /* Bolts.framework */; };
 		FA43A83A178E5AAC00D80A94 /* MediaAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA43A839178E5AAC00D80A94 /* MediaAddController.m */; };
 		FA43A83C178E674100D80A94 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA43A83B178E674100D80A94 /* MobileCoreServices.framework */; };
 		FA43A83F178E679B00D80A94 /* VideoAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA43A83D178E679B00D80A94 /* VideoAddController.m */; };
@@ -201,9 +202,6 @@
 		FADB0D061316286E00DE6E5E /* icon_add_community@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FADB0D041316286E00DE6E5E /* icon_add_community@2x.png */; };
 		FADB0D071316286E00DE6E5E /* icon_default_community@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FADB0D051316286E00DE6E5E /* icon_default_community@2x.png */; };
 		FAEA03BE1329EA370091BB15 /* ConnectorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEA03BD1329EA370091BB15 /* ConnectorHelper.m */; };
-		FAFED4BF1C5AEC8300ED5791 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFED4BD1C5AEC8300ED5791 /* FBSDKCoreKit.framework */; };
-		FAFED4C01C5AEC8300ED5791 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFED4BE1C5AEC8300ED5791 /* FBSDKLoginKit.framework */; };
-		FAFED4C21C6192F400ED5791 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFED4C11C6192F400ED5791 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -388,6 +386,7 @@
 		FA2E9A7416A51B8300E92513 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		FA2E9A7516A51B8300E92513 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		FA2E9A7616A51B8300E92513 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		FA35FE291FA9FABA002B7E63 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		FA43A838178E5AAC00D80A94 /* MediaAddController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaAddController.h; sourceTree = "<group>"; };
 		FA43A839178E5AAC00D80A94 /* MediaAddController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaAddController.m; sourceTree = "<group>"; };
 		FA43A83B178E674100D80A94 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -494,20 +493,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA35FE261FA9F33B002B7E63 /* CoreLocation.framework in Frameworks */,
 				FABE63DD181E1D4000EB0506 /* MessageUI.framework in Frameworks */,
 				FA43A83C178E674100D80A94 /* MobileCoreServices.framework in Frameworks */,
 				FA2E9A7716A51B8300E92513 /* Accounts.framework in Frameworks */,
-				FA2E9A7816A51B8300E92513 /* AdSupport.framework in Frameworks */,
-				FAFED4C21C6192F400ED5791 /* MapKit.framework in Frameworks */,
-				FAFED4C01C5AEC8300ED5791 /* FBSDKLoginKit.framework in Frameworks */,
-				FA2E9A7916A51B8300E92513 /* Social.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				047297760E71925B00D09E1E /* CoreGraphics.framework in Frameworks */,
-				FAFED4BF1C5AEC8300ED5791 /* FBSDKCoreKit.framework in Frameworks */,
 				04B3F5F60EDE565D005B15B9 /* QuartzCore.framework in Frameworks */,
 				041B08960EEE3EDC0041A9D6 /* MediaPlayer.framework in Frameworks */,
-				04EABD4E10452AD20027B307 /* CoreLocation.framework in Frameworks */,
+				FA35FE271FA9F5FE002B7E63 /* FBSDKCoreKit.framework in Frameworks */,
+				FA35FE281FA9F60D002B7E63 /* FBSDKLoginKit.framework in Frameworks */,
+				FA35FE2A1FA9FABB002B7E63 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +899,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA35FE291FA9FABA002B7E63 /* Bolts.framework */,
 				FAFED4C11C6192F400ED5791 /* MapKit.framework */,
 				FAFED4BD1C5AEC8300ED5791 /* FBSDKCoreKit.framework */,
 				FAFED4BE1C5AEC8300ED5791 /* FBSDKLoginKit.framework */,
@@ -954,7 +952,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0910;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 235MTP3MJ2;
@@ -1210,11 +1208,34 @@
 		04CE01D00EF12A6A00F8AA1B /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -1228,6 +1249,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 235MTP3MJ2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1237,9 +1259,10 @@
 				GCC_PREFIX_HEADER = Dolphin_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lsqlite3.0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boonex.dolphin;
 				PRODUCT_NAME = Dolphin;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1257,6 +1280,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 235MTP3MJ2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1268,8 +1292,9 @@
 				GCC_PREFIX_HEADER = Dolphin_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-lsqlite3.0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boonex.dolphin;
 				PRODUCT_NAME = Dolphin;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1287,6 +1312,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 235MTP3MJ2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1296,8 +1322,9 @@
 				GCC_PREFIX_HEADER = Dolphin_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-lsqlite3.0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boonex.dolphin;
 				PRODUCT_NAME = Dolphin;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1310,11 +1337,35 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -1324,11 +1375,34 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};

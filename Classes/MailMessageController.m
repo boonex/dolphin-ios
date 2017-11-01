@@ -28,7 +28,7 @@
 	[super viewDidLoad];
 	
 	// left nav item
-	UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Inbox", @"Inbox button title") style:UIBarButtonItemStyleBordered target:self action:@selector(actionBack:)];
+	UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Inbox", @"Inbox button title") style:UIBarButtonItemStylePlain target:self action:@selector(actionBack:)];
 	self.navigationItem.leftBarButtonItem = btn;
 	[btn release];	
 	
@@ -77,7 +77,7 @@
 
 - (void)requestMessage {	
 	[self addProgressIndicator];
-	NSArray *myArray = [NSArray arrayWithObjects:user.strUsername, user.strPwdHash, [NSString stringWithFormat:@"%d", msgId], nil];
+	NSArray *myArray = [NSArray arrayWithObjects:user.strUsername, user.strPwdHash, [NSString stringWithFormat:@"%d", (int)msgId], nil];
 	if (isInbox)
 		[user.connector execAsyncMethod:@"dolphin.getMessageInbox" withParams:myArray withSelector:@selector(actionRequestMessage:) andSelectorObject:self andSelectorData:nil useIndicator:nil];
 	else

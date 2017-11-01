@@ -52,7 +52,7 @@
 }
 
 // iOS 6
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
 
@@ -180,7 +180,7 @@
     
     NSArray *mediaList = (NSArray *)resp;
     
-    int count = [mediaList count];    
+    NSInteger count = [mediaList count];    
 	for (int i=0; i<count; ++i) {
         NSMutableDictionary *dict = [mediaList objectAtIndex:i];
         NSString* strId = [dict valueForKey:@"id"];

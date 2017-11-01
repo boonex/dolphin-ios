@@ -53,7 +53,7 @@
     else
         intProtocolVer = 1;
 	self.rememberPassword = [self.strPwdHash isEqualToString:@""] ? NO : YES;
-    NSLog(@"decoding: site=%@ protocol=%d", self.strSite, intProtocolVer);	
+    NSLog(@"decoding: site=%@ protocol=%ld", self.strSite, (long)intProtocolVer);
     return self;	
 }
 
@@ -61,10 +61,10 @@
     [coder encodeObject:strSite forKey:@"MVSite"];
 	[coder encodeObject:strUsername forKey:@"MVUsername"];
 	[coder encodeObject:(rememberPassword ? strPwdHash : @"") forKey:@"MVPwdHash"];
-	[coder encodeInt:intId forKey:@"MVId"];
+	[coder encodeInt:(int)intId forKey:@"MVId"];
 	[coder encodeObject:connector forKey:@"MVConnector"];	
-    [coder encodeInt:intProtocolVer forKey:@"MVProtocolVer"];
-    NSLog(@"encoding: site=%@ protocol=%d", self.strSite, intProtocolVer);	
+    [coder encodeInt:(int)intProtocolVer forKey:@"MVProtocolVer"];
+    NSLog(@"encoding: site=%@ protocol=%ld", self.strSite, (long)intProtocolVer);
 }
 
 - (void)updateBadgeValues {
@@ -72,12 +72,12 @@
 	Dolphin6AppDelegate *app = [Dolphin6AppDelegate getApp];
 	
 	if (numUnreadLetters > 0)
-		app.mailNavigationController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", numUnreadLetters];
+		app.mailNavigationController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld", (long)numUnreadLetters];
 	else
 		app.mailNavigationController.tabBarItem.badgeValue = nil;
 	
 	if (numFriendRequests > 0)
-		app.friendsNavigationController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", numFriendRequests];
+		app.friendsNavigationController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld", (long)numFriendRequests];
 	else
 		app.friendsNavigationController.tabBarItem.badgeValue = nil;
 }
@@ -106,7 +106,7 @@
     if (intProtocolVer < 4)
         return;
     
-    NSString *sCookieLoggedIn = [NSString stringWithFormat:@"memberID=%d; memberPassword=%@; lang=%@", intId, strPwdHash, [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0]];
+    NSString *sCookieLoggedIn = [NSString stringWithFormat:@"memberID=%ld; memberPassword=%@; lang=%@", (long)intId, strPwdHash, [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0]];
     NSString *sCookieOld = [request valueForHTTPHeaderField: @"Cookie"];
     if (sCookieOld == nil) {
         [request addValue:sCookieLoggedIn forHTTPHeaderField:@"Cookie"];

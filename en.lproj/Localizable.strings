@@ -1,4 +1,4 @@
-﻿/* city, country format */
+/* city, country format */
 "%@, %@" = "%@, %@";
 
 /* User Music view title */
@@ -140,6 +140,9 @@ and mobile apps package from <a href=\"http://www.boonex.com/\" style=\"color:#3
 
 /* Done button title */
 "Done" = "Done";
+
+/* Email send isn't available on this device error message */
+"Email send isn't available on this device" = "Email send isn't available on this device";
 
 /* Edit button title */
 "Edit" = "Edit";

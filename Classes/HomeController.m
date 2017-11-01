@@ -55,12 +55,12 @@
 	[super viewDidLoad];
 	
 	// left nav item
-	UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Logout", @"Logout button title") style:UIBarButtonItemStyleBordered target:self action:@selector(actionBack:)];
+	UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Logout", @"Logout button title") style:UIBarButtonItemStylePlain target:self action:@selector(actionBack:)];
 	self.navigationItem.leftBarButtonItem = btn;
 	[btn release];	
 	
 	// right nav item
-	UIBarButtonItem *btn2 = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Reload", @"Reload button title") style:UIBarButtonItemStyleBordered target:self action:@selector(actionReload:)];
+	UIBarButtonItem *btn2 = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Reload", @"Reload button title") style:UIBarButtonItemStylePlain target:self action:@selector(actionReload:)];
 	self.navigationItem.rightBarButtonItem = btn2;
 	[btn2 release];	
 	
@@ -77,8 +77,8 @@
 		[self requestHomepageInfo];
 		isReloadProfileInfoRequired = false;
 	} else {
-		[btnMail setBubbleText:[NSString stringWithFormat:@"%d", user.numUnreadLetters]];
-		[btnFriends setBubbleText:[NSString stringWithFormat:@"%d", user.numFriendRequests]];
+		[btnMail setBubbleText:[NSString stringWithFormat:@"%lu", (unsigned long)user.numUnreadLetters]];
+		[btnFriends setBubbleText:[NSString stringWithFormat:@"%lu", (unsigned long)user.numFriendRequests]];
 	}
     [self fixScroll];
 }
@@ -170,7 +170,7 @@
 	
     NSArray *myArray;
     NSString *sMethod;
-    NSLog(@"user.intProtocolVer = %d", user.intProtocolVer);
+    NSLog(@"user.intProtocolVer = %ld", (long)user.intProtocolVer);
     if (user.intProtocolVer > 1) {
         myArray = [NSArray arrayWithObjects:user.strUsername, user.strPwdHash, [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0], nil];
         sMethod = @"dolphin.getHomepageInfo2";
@@ -202,7 +202,7 @@
     
     if (nil != aButtons) {
         
-        int iCount = [aButtons count];
+        NSUInteger iCount = [aButtons count];
         for (int i = 1; i<=iCount ; ++i) {
             HomeButtonView *oBtn = [aButtons objectAtIndex:i-1];
             [oBtn removeFromSuperview];
@@ -220,7 +220,7 @@
         
     aButtons = [[NSMutableArray alloc] init];
     
-    int iCount = [aMenu count];
+    NSUInteger iCount = [aMenu count];
     for (int i = 0; i<iCount ; ++i) {
         
         NSMutableDictionary *dict = [aMenu objectAtIndex:i];
@@ -299,7 +299,7 @@
     CGFloat w = self.view.frame.size.width;
     CGFloat d = 0;
     
-    if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+    if ([[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationLandscapeLeft || [[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationLandscapeRight) {
         CGFloat fOffsetPortrait = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPAD : BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPHONE;
         d = fOffsetPortrait;
         w -= fOffsetPortrait;
@@ -514,7 +514,7 @@
 #pragma mark - Delegates
 
 - (void)homeButtonPressed:(NSInteger)anIndex indexAction:(NSInteger)anIndexAction {
-	NSLog(@"homeButtonPressed: %d action:%d", anIndex, anIndexAction);
+	NSLog(@"homeButtonPressed: %d action:%d", (int)anIndex, (int)anIndexAction);
 	switch (anIndexAction) {
 		case 1:
 			[self actionOpenStatusMessage:nil];

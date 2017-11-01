@@ -52,7 +52,7 @@
 #pragma mark - Custom Functions
 
 - (void) requestData {
-	NSArray *myArray = [NSArray arrayWithObjects:user.strUsername, user.strPwdHash, [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0], sLat, sLng, isOnlineOnly ? @"1" : @"", isWithPhotosOnly ? @"1" : @"", [NSString stringWithFormat:@"%d", intStartFrom], [NSString stringWithFormat:@"%d", intPerPage], nil];
+	NSArray *myArray = [NSArray arrayWithObjects:user.strUsername, user.strPwdHash, [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0], sLat, sLng, isOnlineOnly ? @"1" : @"", isWithPhotosOnly ? @"1" : @"", [NSString stringWithFormat:@"%d", (int)intStartFrom], [NSString stringWithFormat:@"%d", (int)intPerPage], nil];
 	[self addProgressIndicator];
 	[user.connector execAsyncMethod:@"dolphin.getSearchResultsNearMe" withParams:myArray withSelector:@selector(actionRequestFillProfilesArray:) andSelectorObject:self andSelectorData:nil useIndicator:nil];
 }

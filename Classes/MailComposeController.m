@@ -30,7 +30,7 @@
 	
 	[super viewDidLoad];
 	
-	UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", @"Cancel button title") style:UIBarButtonItemStyleBordered target:self action:@selector(actionBack:)];
+	UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", @"Cancel button title") style:UIBarButtonItemStylePlain target:self action:@selector(actionBack:)];
 	self.navigationItem.leftBarButtonItem = btn;
 	[btn release];	
 		

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "config.h"
 #import "Dolphin6AppDelegate.h"
-#import "baseController.h"
+#import "BaseController.h"
 
 @interface BaseUserController : BaseController {
 	BxUser *user;

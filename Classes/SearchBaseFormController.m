@@ -25,7 +25,7 @@
 	
 	UIBarButtonItem *btn;
 	
-	btn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", @"Back button text") style:UIBarButtonItemStyleBordered target:self action:@selector(actionBack:)];
+	btn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", @"Back button text") style:UIBarButtonItemStylePlain target:self action:@selector(actionBack:)];
 	self.navigationItem.leftBarButtonItem = btn;
 	[btn release];	
 

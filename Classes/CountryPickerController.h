@@ -10,7 +10,7 @@
 #import "BasePickerController.h"
 
 @protocol CountryPickerDelegate 
-	- (void)setCountry:(NSString*)aName code:(NSString*)aCode;	
+	- (void)setCountry:(NSString*)aName code:(NSString*)aCode;
 @end
 
 @interface CountryPickerController : BasePickerController {

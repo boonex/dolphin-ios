@@ -120,7 +120,7 @@
 	return _source;
 }
 
-- (int)length
+- (NSUInteger)length
 {
 	return [_data length];
 }

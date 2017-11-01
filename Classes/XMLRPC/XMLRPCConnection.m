@@ -92,7 +92,7 @@ NSString *XMLRPCReceivedResponseNotification = @"XML-RPC Successfully Received R
 		return (id) err;
 	}
 	
-	NSLog(@"data lenght:%d err:%@", [data length], err);
+	NSLog(@"data lenght:%lu err:%@", (unsigned long)[data length], err);
 	NSLog(@"returningResponse %@", data);
 	if (data != nil)
 	{

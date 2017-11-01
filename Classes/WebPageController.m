@@ -48,7 +48,7 @@
     [super viewDidLoad];
      
 	// left nav item
-	UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", @"Back button title") style:UIBarButtonItemStyleBordered target:self action:@selector(actionBack:)];
+	UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", @"Back button title") style:UIBarButtonItemStylePlain target:self action:@selector(actionBack:)];
 	self.navigationItem.leftBarButtonItem = backButton;
 	[backButton release];
 
@@ -158,8 +158,11 @@
             return YES;
         
         ImagesController *ctrl = [[ImagesController alloc] initWithAlbum:sAlbumId profile:sProfile nav:navController selectedImageId:sImageId];
-        [ctrl setWantsFullScreenLayout:YES];
-        [navController presentModalViewController:ctrl animated:YES];
+
+        ctrl.extendedLayoutIncludesOpaqueBars = YES;
+        ctrl.edgesForExtendedLayout = UIRectEdgeAll;
+        ctrl.modalPresentationStyle = YES;
+        [navController presentViewController:ctrl animated:YES completion:nil];
         [ctrl release];        
         return NO;
         

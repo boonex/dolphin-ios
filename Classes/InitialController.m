@@ -27,13 +27,13 @@
 - (void)viewDidLoad {
 	
 	// right nav item
-	UIBarButtonItem *aboutButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"About", @"About button title") style:UIBarButtonItemStyleBordered target:self action:@selector(actionAbout:)];
+	UIBarButtonItem *aboutButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"About", @"About button title") style:UIBarButtonItemStylePlain target:self action:@selector(actionAbout:)];
 	self.navigationItem.rightBarButtonItem = aboutButton;
 	[aboutButton release];	
 	
     if (nil == BX_LOCK_APP) {
         // left nav item
-        UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Edit", @"Edit button title") style:UIBarButtonItemStyleBordered target: self action:@selector(actionEdit:)];
+        UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Edit", @"Edit button title") style:UIBarButtonItemStylePlain target: self action:@selector(actionEdit:)];
         self.navigationItem.leftBarButtonItem = editButton;
         [editButton release];
 	}
@@ -95,7 +95,7 @@
 		 
 	} else {			
 
-		NSLog(@"Deleting row: %d", indexPath.row); 
+		NSLog(@"Deleting row: %d", (int)indexPath.row); 
 		[users removeUserAtIndex:(indexPath.row)];
 		[users saveUsers];
 		[table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
@@ -106,7 +106,10 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return nil == BX_LOCK_APP ? 2 : 1;
+    if (/* DISABLES CODE */ nil == BX_LOCK_APP)
+        return 2;
+    else
+        return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

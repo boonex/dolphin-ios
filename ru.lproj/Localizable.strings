@@ -134,6 +134,9 @@
 /* Done button title */
 "Done" = "Готово";
 
+/* Email send isn't available on this device error message */
+"Email send isn't available on this device" = "Отсылка писем не поддерживается на данном устройстве"; 
+
 /* Edit button title */
 "Edit" = "Изменить";
 

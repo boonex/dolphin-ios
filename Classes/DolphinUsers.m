@@ -88,13 +88,13 @@ static DolphinUsers *sharedDolphinUsers;
 		[self saveUsers];
 	}
 	
-	if (0 == [self countOfUsers] && nil != BX_LOCK_APP) {
+    if (/* DISABLES CODE */ (0) == [self countOfUsers] && nil != BX_LOCK_APP) {
         BxUser *aUser = [[BxUser alloc] initWithUser:@"" id:0 passwordHash:@"" site:BX_LOCK_APP protocolVer:2];
 		[self addUser:aUser];
 		[self saveUsers];
 	}        
     
-	NSLog(@"Number of users at launch: %d", [usersList count]);
+	NSLog(@"Number of users at launch: %d", (int)[usersList count]);
 }
 
 - (void)saveUsers {
@@ -104,7 +104,7 @@ static DolphinUsers *sharedDolphinUsers;
 	// check if file exists before saving
 	if ([usersList count] || ([[NSFileManager defaultManager] fileExistsAtPath:filePath])) {
 		
-		NSLog(@"Saving %d users in list.", [usersList count]);
+		NSLog(@"Saving %d users in list.", (int)[usersList count]);
 		[NSKeyedArchiver archiveRootObject:usersList toFile:filePath];	
 		
 	} else {

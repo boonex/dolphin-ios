@@ -30,7 +30,7 @@
     [Designer applyStylesForTableBackgroundClear:table];
 	[Designer applyStylesForScreen:self.view];
     
-	UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Search Form", @"Search form button text") style:UIBarButtonItemStyleBordered target:self action:@selector(actionHome:)];
+	UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Search Form", @"Search form button text") style:UIBarButtonItemStylePlain target:self action:@selector(actionHome:)];
 	self.navigationItem.leftBarButtonItem = btn;
 	[btn release];
 	

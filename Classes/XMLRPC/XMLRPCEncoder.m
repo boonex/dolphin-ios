@@ -310,14 +310,14 @@
 - (NSString *)encodeDate: (NSDate *)date
 {
 	NSCalendar *cal = [NSCalendar currentCalendar];	
-	NSDateComponents *comps = [cal components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit
+	NSDateComponents *comps = [cal components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond
 																	 fromDate:date];
 	
-	NSString *month = [NSString stringWithFormat:@"%d",[comps month]];
-	NSString *day = [NSString stringWithFormat:@"%d",[comps day]];
-	NSString *hour = [NSString stringWithFormat:@"%d",[comps hour]];
-	NSString *minute = [NSString stringWithFormat:@"%d",[comps minute]];
-	NSString *second = [NSString stringWithFormat:@"%d",[comps second]];
+	NSString *month = [NSString stringWithFormat:@"%d", (int)[comps month]];
+	NSString *day = [NSString stringWithFormat:@"%d",(int)[comps day]];
+	NSString *hour = [NSString stringWithFormat:@"%d",(int)[comps hour]];
+	NSString *minute = [NSString stringWithFormat:@"%d",(int)[comps minute]];
+	NSString *second = [NSString stringWithFormat:@"%d",(int)[comps second]];
 
 	if ([month length] == 1)	month = [NSString stringWithFormat:@"0%@",month];	
 	if ([day length] == 1)	day = [NSString stringWithFormat:@"0%@",day];
@@ -325,23 +325,22 @@
 	if ([minute length] == 1)	minute = [NSString stringWithFormat:@"0%@",minute];
 	if ([second length] == 1)	second = [NSString stringWithFormat:@"0%@",second];
 	
-	NSString *buffer = [NSString stringWithFormat:@"%d%@%@T%@:%@:%@", [comps year]	,month	,day		,hour	,minute,second];
+	NSString *buffer = [NSString stringWithFormat:@"%d%@%@T%@:%@:%@", (int)[comps year], month, day, hour, minute, second];
 	
 	return [self valueTag: @"dateTime.iso8601" value: buffer];
 }
 
 - (NSString *)encodeData: (NSData *)data
 {
-	NSLog(@"START base64StringFromData %d", [data length]);
-
-	NSData *d = [NSPropertyListSerialization dataFromPropertyList:data  format:NSPropertyListXMLFormat_v1_0 errorDescription:NULL];
+	NSLog(@"START base64StringFromData %d", (int)[data length]);
+    NSData *d = [NSPropertyListSerialization dataWithPropertyList:data format:NSPropertyListXMLFormat_v1_0 options:0 error:NULL];
 	NSString *str = [NSString stringWithUTF8String:[d bytes]];
 	NSRange r = [str rangeOfString:@"<data>"];
 	str = [str substringFromIndex:r.location+7];
 	r = [str rangeOfString:@"</data>"];
 	str = [str substringToIndex:r.location-1];
 	str = [NSString stringWithFormat:@"<value><base64>%@</base64></value>",str];
-	NSLog(@"END base64StringFromData %d", [data length]);
+	NSLog(@"END base64StringFromData %d", (int)[data length]);
 	return str;
 }
 

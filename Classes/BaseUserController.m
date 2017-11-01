@@ -105,6 +105,10 @@
 	isEditingMode = isEditBegin;
 }
 
+- (IBAction)actionDone:(id)sender {
+    // must be overriden
+}
+
 - (void)openPageUrl:(NSString*)sUrl title:(NSString*)aTitle nav:(UINavigationController*)aNav openInNewWindow:(BOOL)isOpenInNewWindow {
     if (isOpenInNewWindow) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:sUrl]];

@@ -95,8 +95,7 @@
 }
 
 + (void)applyStylesForSegmentedControl:(UISegmentedControl*)segmentedControl {
-    segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
-    //segmentedControl.tintColor = [UIColor blackColor];
+
 }
 
 
@@ -108,7 +107,7 @@
 
 + (void)applyStylesForLabelHomeButton:(UILabel*)label {
 	label.font = [UIFont boldSystemFontOfSize:13.0];
-	label.textAlignment = UITextAlignmentCenter;
+	label.textAlignment = NSTextAlignmentCenter;
 	label.textColor = [UIColor colorWithRed:BX_HOME_TEXT_RED green:BX_HOME_TEXT_GREEN blue:BX_HOME_TEXT_BLUE alpha:BX_HOME_TEXT_ALPHA];
 	label.backgroundColor = [UIColor clearColor];	
 }
@@ -147,14 +146,17 @@
 
 + (void)applyStylesForLabelBubble:(UILabel*)label {
 	label.font = [UIFont boldSystemFontOfSize:12.0];
-	label.textAlignment = UITextAlignmentCenter;
+	label.textAlignment = NSTextAlignmentCenter;
 	label.textColor = [UIColor colorWithRed:BX_BUBBLE_TEXT_RED green:BX_BUBBLE_TEXT_GREEN blue:BX_BUBBLE_TEXT_BLUE alpha:BX_BUBBLE_TEXT_ALPHA];
 	label.backgroundColor = [UIColor clearColor];	
-	label.lineBreakMode = UILineBreakModeTailTruncation;
+	label.lineBreakMode = NSLineBreakByTruncatingTail;
 }
 
 + (CGSize)sizeForBubbleLabel:(NSString*)s maxWidth:(CGFloat)fMaxWidth maxHeight:(CGFloat)fMaxHeight {
-	return [s sizeWithFont:[UIFont boldSystemFontOfSize:13.0] constrainedToSize:CGSizeMake(fMaxWidth, fMaxHeight) lineBreakMode:UILineBreakModeTailTruncation];
+    return [s boundingRectWithSize:CGSizeMake(fMaxWidth, fMaxHeight)
+                           options:NSStringDrawingUsesLineFragmentOrigin
+                        attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:13.0]}
+                           context:nil].size; // lineBreakMode:UILineBreakModeTailTruncation
 }
 
 /**********************************************************************************************************************
@@ -165,12 +167,15 @@
 
 + (void)applyStylesForLabelStatus:(UILabel*)label {
 	[self applyStylesForLabel:label];
-	label.lineBreakMode = UILineBreakModeWordWrap;
+	label.lineBreakMode = NSLineBreakByWordWrapping;
 	label.font = [UIFont systemFontOfSize:12.0];
 }
 
 + (CGSize)sizeForProfileStatusLabel:(NSString*)s maxWidth:(CGFloat)fMaxWidth maxHeight:(CGFloat)fMaxHeight {
-	return [s sizeWithFont:[UIFont systemFontOfSize:12.0] constrainedToSize:CGSizeMake(fMaxWidth, fMaxHeight) lineBreakMode:UILineBreakModeWordWrap];
+    return [s boundingRectWithSize:CGSizeMake(fMaxWidth, fMaxHeight)
+                           options:NSStringDrawingUsesLineFragmentOrigin
+                        attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:12.0]}
+                           context:nil].size; // lineBreakMode:NSLineBreakByWordWrapping];
 }
 
 /**********************************************************************************************************************
@@ -186,28 +191,37 @@
 }
 
 + (CGSize)sizeForLabelProfileInfoCaption:(NSString*)s maxWidth:(CGFloat)fMaxWidth maxHeight:(CGFloat)fMaxHeight {
-	return [s sizeWithFont:[UIFont boldSystemFontOfSize:16.0] constrainedToSize:CGSizeMake(fMaxWidth, fMaxHeight) lineBreakMode:UILineBreakModeTailTruncation];
+    return [s boundingRectWithSize:CGSizeMake(fMaxWidth, fMaxHeight)
+                           options:NSStringDrawingUsesLineFragmentOrigin
+                        attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:16.0]}
+                           context:nil].size; // lineBreakMode:UILineBreakModeTailTruncation
 }
 
 + (void)applyStylesForLabelProfileInfo:(UILabel*)label {
 	[self applyStylesForLabel:label];
-	label.lineBreakMode = UILineBreakModeTailTruncation;
+	label.lineBreakMode = NSLineBreakByTruncatingTail;
 	label.font = [UIFont systemFontOfSize:13.0];
 }
 
 + (CGSize)sizeForProfileInfo:(NSString*)s maxWidth:(CGFloat)fMaxWidth maxHeight:(CGFloat)fMaxHeight {
-	return [s sizeWithFont:[UIFont systemFontOfSize:13.0] constrainedToSize:CGSizeMake(fMaxWidth, fMaxHeight) lineBreakMode:UILineBreakModeTailTruncation];
+    return [s boundingRectWithSize:CGSizeMake(fMaxWidth, fMaxHeight)
+                           options:NSStringDrawingUsesLineFragmentOrigin
+                        attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:13.0]}
+                           context:nil].size; // lineBreakMode:UILineBreakModeTailTruncation
 }
 
 + (void)applyStylesForLabelProfileInfoArea:(UILabel*)label {
 	[self applyStylesForLabel:label];
     label.numberOfLines = 0;
-	label.lineBreakMode = UILineBreakModeTailTruncation;
+	label.lineBreakMode = NSLineBreakByTruncatingTail;
 	label.font = [UIFont systemFontOfSize:13.0];
 }
 
 + (CGSize)sizeForProfileInfoArea:(NSString*)s maxWidth:(CGFloat)fMaxWidth maxHeight:(CGFloat)fMaxHeight {
-	return [s sizeWithFont:[UIFont systemFontOfSize:13.0] constrainedToSize:CGSizeMake(fMaxWidth, fMaxHeight) lineBreakMode:UILineBreakModeTailTruncation];
+    return [s boundingRectWithSize:CGSizeMake(fMaxWidth, fMaxHeight)
+                           options:NSStringDrawingUsesLineFragmentOrigin
+                        attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:13.0]}
+                           context:nil].size; // lineBreakMode:UILineBreakModeTailTruncation
 }
 
 /**********************************************************************************************************************

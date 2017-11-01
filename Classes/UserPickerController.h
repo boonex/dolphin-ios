@@ -10,7 +10,7 @@
 #import "BasePickerController.h"
 
 @protocol UserPickerDelegate 
-    - (void)setRecipient:(NSString*)sRecipient title:(NSString*)sRecipientTitle;	
+    - (void)setRecipient:(NSString*)sRecipient title:(NSString*)sRecipientTitle;    
 @end
 
 @interface UserPickerController : BasePickerController {

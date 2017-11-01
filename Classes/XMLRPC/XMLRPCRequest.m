@@ -126,7 +126,7 @@
 - (NSURLRequest *)request
 {
 	NSData *request = [[_encoder encode] dataUsingEncoding: NSUTF8StringEncoding];
-	NSNumber *length = [NSNumber numberWithInt: [request length]];
+    NSNumber *length = [NSNumber numberWithUnsignedInteger: request.length];
 	
 	if (request == nil)
 	{

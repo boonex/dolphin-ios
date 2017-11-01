@@ -90,7 +90,7 @@
 	if (YES == table.editing) {
 		[table setEditing:NO animated:YES];
 		self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"Edit", @"Edit button title");
-        self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStyleBordered;
+        self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
 	} else {
 		
 		[table setEditing:YES animated:YES];

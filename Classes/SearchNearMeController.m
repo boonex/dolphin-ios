@@ -11,7 +11,7 @@
 
 @implementation SearchNearMeController
 
-CLLocationManager* locmanager;
+CLLocationManager* lmanager;
 
 - (id)init {
 	if ((self = [super initWithNibNameOnly:@"SearchNearMeView"])) {
@@ -39,10 +39,10 @@ CLLocationManager* locmanager;
  * do search
  */
 - (IBAction)actionSearch:(id)sender {	
-	locmanager = [[CLLocationManager alloc] init];
-	[locmanager setDelegate:self];
-	[locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
-	[locmanager startUpdatingLocation];	
+	lmanager = [[CLLocationManager alloc] init];
+	[lmanager setDelegate:self];
+	[lmanager setDesiredAccuracy:kCLLocationAccuracyBest];
+	[lmanager startUpdatingLocation];
 	[self addProgressIndicator];	
 }
 

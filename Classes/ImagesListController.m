@@ -60,8 +60,10 @@
 	
 	ImagesController *ctrl = [[ImagesController alloc] initWithList:mediaList profile:profile nav:navController selectedImageIndex:indexPath.row makeThumbnailFlag:(isAlbumDefault && [profile isEqualToString:user.strUsername])];
     
-    [ctrl setWantsFullScreenLayout:YES];
-	[navController presentModalViewController:ctrl animated:YES];
+    ctrl.extendedLayoutIncludesOpaqueBars = YES;
+    ctrl.edgesForExtendedLayout = UIRectEdgeAll;
+    ctrl.modalPresentationStyle = YES;
+    [navController presentViewController:ctrl animated:YES completion:nil];
 	[ctrl release];
 }
 

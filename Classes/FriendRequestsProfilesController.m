@@ -76,7 +76,7 @@
 	
 	[indexPathForRemoving release];
 	indexPathForRemoving = [[table indexPathForCell:cell] retain];
-	NSLog(@"%@ at row: %d", aMethod, indexPathForRemoving.row);	
+	NSLog(@"%@ at row: %d", aMethod, (int)indexPathForRemoving.row);	
 }
 
 /**********************************************************************************************************************

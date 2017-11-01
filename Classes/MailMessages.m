@@ -54,7 +54,7 @@ static MailMessages *sharedMailMessages = nil;
 
 - (void)setMessagesArray:(NSMutableArray*)anArray {
 	self.msgsList = anArray; // retain
-	NSLog(@"Number of messages: %d", [msgsList count]);
+	NSLog(@"Number of messages: %d", (int)[msgsList count]);
 	initialized = YES;
 }
 

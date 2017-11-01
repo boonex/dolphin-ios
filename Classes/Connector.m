@@ -206,39 +206,53 @@
     [coder encodeObject:urlServerXMLRPC forKey:@"MVServerUrl"];
 }
 
++ (void)showAlertWithDelegate:(id)aDelegate message:(NSString*)sMsg title:(NSString*)sTitle {
+    UIAlertController *al = [UIAlertController
+                             alertControllerWithTitle:sTitle
+                             message:sMsg
+                             preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK Button Title") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [aDelegate dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [al addAction:defaultAction];
+    
+    [aDelegate presentViewController:al animated:YES completion:nil];
+}
+
++ (void)showErrorAlertWithDelegate:(id)aDelegate message:(NSString*)sMsg {
+    [self showAlertWithDelegate:aDelegate message:sMsg title:NSLocalizedString(@"Error Title", @"Error Alert Title")];
+}
+    
 + (void)showErrorAlertWithDelegate:(id)aDelegate {
-	UIAlertView *al = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error Title", @"Error Alert Title") message:NSLocalizedString(@"Connection Error", @"Error Alert Text") delegate:aDelegate cancelButtonTitle:NSLocalizedString(@"OK", @"OK Button Title") otherButtonTitles:nil];
-	[al show];
-	[al release];	
+    [self showErrorAlertWithDelegate:aDelegate message:NSLocalizedString(@"Connection Error", @"Error Alert Text")];
 }
 
 + (void)showErrorAlertWithDelegate:(id)aDelegate responce:(id)aResp {
 #ifdef DEBUG
-	UIAlertView *al = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error Title", @"Error Alert Title") message:[((NSError*)aResp) localizedDescription] delegate:aDelegate cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    NSString *msg = [((NSError*)aResp) localizedDescription];
 #else
-	UIAlertView *al = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error Title", @"Error Alert Title") message:NSLocalizedString(@"Connection Error", @"Error Alert Text") delegate:aDelegate cancelButtonTitle:NSLocalizedString(@"OK", @"OK Button Title") otherButtonTitles:nil];
+    NSString *msg = NSLocalizedString(@"Connection Error", @"Error Alert Text");
 #endif
-	[al show];
-	[al release];	
+    [self showErrorAlertWithDelegate:aDelegate message:msg];
 }
 
 + (void)showDictErrorAlertWithDelegate:(id)aDelegate responce:(id)aResp {    
-    NSDictionary *dict = (NSDictionary *)aResp;    
+    NSDictionary *dict = (NSDictionary *)aResp;
+    NSString *s;
 #ifdef DEBUG    
-    NSString *s = [dict objectForKey:@"faultString"];
+    s = [dict objectForKey:@"faultString"];
     if (nil == s && nil != [dict objectForKey:@"error"])
         s = NSLocalizedString(@"Error occured", @"Error occured alert text");
     if (nil == s)
         s = NSLocalizedString(@"Connection Error", @"Error Alert Text");    
-	UIAlertView *al = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error Title", @"Error Alert Title") message:s delegate:aDelegate cancelButtonTitle:@"OK" otherButtonTitles:nil];
 #else
-    NSString *s = NSLocalizedString(@"Connection Error", @"Error Alert Text");
-    if (nil != [dict objectForKey:@"error"])
+    s = [dict objectForKey:@"error"];
+    if (nil == s)
         s = NSLocalizedString(@"Error occured", @"Error occured alert text"); 
-	UIAlertView *al = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error Title", @"Error Alert Title") message:s delegate:aDelegate cancelButtonTitle:NSLocalizedString(@"OK", @"OK Button Title") otherButtonTitles:nil];
 #endif
-	[al show];
-	[al release];	
+    [self showErrorAlertWithDelegate:aDelegate message:s];
 }
 
 @end

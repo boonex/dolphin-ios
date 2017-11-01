@@ -43,7 +43,7 @@
 
 - (void)requestMenu {
     
-    NSLog(@"user.intProtocolVer = %d", user.intProtocolVer);
+    NSLog(@"user.intProtocolVer = %d", (int)user.intProtocolVer);
     if (user.intProtocolVer < 3) {
         [self initMenuPredefined];
         return;

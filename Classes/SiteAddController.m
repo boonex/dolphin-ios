@@ -7,7 +7,7 @@
 //
 
 #import "SiteAddController.h"
-#import "Dolphinusers.h"
+#import "DolphinUsers.h"
 #import "Designer.h"
 
 @interface SiteAddController ()

@@ -31,7 +31,7 @@
 	[super viewDidLoad];
     
 	// right nav item
-	UIBarButtonItem *btn2 = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Reload", @"Reload button title") style:UIBarButtonItemStyleBordered target:self action:@selector(actionReload:)];
+	UIBarButtonItem *btn2 = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Reload", @"Reload button title") style:UIBarButtonItemStylePlain target:self action:@selector(actionReload:)];
 	self.navigationItem.rightBarButtonItem = btn2;
 	[btn2 release];
 	

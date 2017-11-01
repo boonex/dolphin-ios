@@ -52,7 +52,7 @@
             self.navigationItem.rightBarButtonItem = segmentBarItem;
             
         } else if (isEditAllowed && !isAddAllowed) {
-            UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_conf.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(actionEdit:)];
+            UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_conf.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
             self.navigationItem.rightBarButtonItem = btn;
             [btn release];
         }
@@ -271,7 +271,7 @@
 	if (editingStyle != UITableViewCellEditingStyleDelete)
 		return;
 	
-	NSLog(@"Deleting row: %d", indexPath.row);
+	NSLog(@"Deleting row: %d", (int)indexPath.row);
 	
 	NSMutableDictionary *dict = [mediaList objectAtIndex:indexPath.row];
 	NSString* sId = [dict valueForKey:@"id"];

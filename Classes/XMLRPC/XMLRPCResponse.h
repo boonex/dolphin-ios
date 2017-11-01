@@ -56,6 +56,6 @@
 #pragma mark -
 
 - (NSString *)source;
-- (int)length;
+- (NSUInteger)length;
 
 @end

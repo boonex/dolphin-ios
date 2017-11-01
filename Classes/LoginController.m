@@ -11,7 +11,7 @@
 #import "LoginController.h"
 #import "HomeController.h"
 #import "AboutController.h"
-#import "Dolphinusers.h"
+#import "DolphinUsers.h"
 #import "Designer.h"
 
 @interface LoginController () <FBSDKLoginButtonDelegate>
@@ -108,7 +108,7 @@
 	
 	bzero(md, CC_MD5_DIGEST_LENGTH);
 	[str getCString:buff maxLength:128 encoding:NSASCIIStringEncoding];
-	CC_MD5((const void *)buff, strlen(buff), md); 
+	CC_MD5((const void *)buff, (unsigned int)strlen(buff), md);
 	
 	bzero(buff,128);
 	for (int i=0; i<CC_MD5_DIGEST_LENGTH; ++i)
