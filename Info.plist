@@ -54,7 +54,7 @@
 	<key>FacebookAppID</key>
 	<string>212147745792489</string>
 	<key>FacebookDisplayName</key>
-	<string>Local Dolphin Pro</string>
+	<string>$(PRODUCT_NAME)</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
