@@ -5,7 +5,7 @@
 #endif
 */
 
-#define BX_VER	@"1.9.0"
+#define BX_VER	@"1.9.1"
 
 // specify site you want to lock to, for example: #define BX_LOCK_APP	@"mysite.com/dolphin"
 #define BX_LOCK_APP	nil
