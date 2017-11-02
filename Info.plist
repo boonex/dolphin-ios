@@ -103,13 +103,15 @@
 	<key>UIStatusBarHidden</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>$(PRODUCT_NAME) camera use</string>
+	<string>$(PRODUCT_NAME) take pictures upon user&apos;s permission to upload to the site</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>$(PRODUCT_NAME) photo use</string>
+	<string>$(PRODUCT_NAME) upload selected photos to the site</string>
 	<key>NSLocationUsageDescription</key>
-	<string>$(PRODUCT_NAME) location use</string>
+	<string>$(PRODUCT_NAME) update user&apos;s location on the site upon user&apos;s permission</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>$(PRODUCT_NAME) update user&apos;s location on the site upon user&apos;s permission</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>$(PRODUCT_NAME) microphone use</string>
+	<string>$(PRODUCT_NAME) uses microphone during video recording</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
