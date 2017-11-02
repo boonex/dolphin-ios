@@ -102,6 +102,14 @@
 	<true/>
 	<key>UIStatusBarHidden</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) camera use</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) photo use</string>
+	<key>NSLocationUsageDescription</key>
+	<string>$(PRODUCT_NAME) location use</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>$(PRODUCT_NAME) microphone use</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
