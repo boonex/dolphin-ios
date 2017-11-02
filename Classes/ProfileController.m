@@ -160,7 +160,11 @@
 	
 	NSLog(@"requested info: %@", resp);
 	
-	if ([resp isKindOfClass:[NSString class]]) {
+    if([resp isKindOfClass:[NSDictionary class]] && nil != [(NSDictionary *)resp objectForKey:@"error"]) {
+        
+        [BxConnector showErrorAlertWithDelegate:self];
+
+    } else if ([resp isKindOfClass:[NSString class]]) {
 		
 		NSString *s = (NSString*)resp;
 		NSString *sMsg;
