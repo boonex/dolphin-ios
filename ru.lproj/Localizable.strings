@@ -235,6 +235,9 @@
 /* Location title */
 "Location" = "Место";
 
+/* Location services are disabled error message */
+"Location services are disabled" = "Сервисы определения местоположения выключены или нет разрешения на их использование";
+
 /* Location is undefined alert msg */
 "Location is undefined" = "Местоположение не определено";
 

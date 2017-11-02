@@ -242,6 +242,9 @@ and mobile apps package from <a href=\"http://www.boonex.com/\" style=\"color:#3
 /* Location title */
 "Location" = "Location";
 
+/* Location services are disabled error message */
+"Location services are disabled" = "Location services are disabled or not enough permissions to use them";
+
 /* Location is undefined alert msg */
 "Location is undefined" = "Location is undefined";
 

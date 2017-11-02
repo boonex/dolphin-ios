@@ -61,13 +61,27 @@ CLLocationManager* locmanager = nil;
 
 - (IBAction)actionCurrentLocation:(id)sender {
 	
-	if (nil == locmanager) {
-		locmanager = [[CLLocationManager alloc] init];
-		[locmanager setDelegate:self];
-		[locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
-	}
-    [locmanager startUpdatingLocation];
-	[self addProgressIndicator];
+    if (NO == [CLLocationManager locationServicesEnabled]) {
+        [BxConnector showErrorAlertWithDelegate:self message:NSLocalizedString(@"Location services are disabled", @"Location services are disabled error message")];
+        return;
+    }
+
+    if (nil == locmanager) {
+        locmanager = [[CLLocationManager alloc] init];
+        [locmanager setDelegate:self];
+        [locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
+    }
+
+    if (kCLAuthorizationStatusNotDetermined == [CLLocationManager authorizationStatus]) {
+        [locmanager requestWhenInUseAuthorization];
+    } else {
+        [self actionCurrentLocationPossible:nil];
+    }
+}
+
+- (IBAction)actionCurrentLocationPossible:(id)sender {
+    [locmanager requestLocation];
+    [self addProgressIndicator];
 }
 
 /**********************************************************************************************************************
@@ -76,9 +90,21 @@ CLLocationManager* locmanager = nil;
 
 #pragma mark - CLLocationManager delegates
 
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    NSLog(@"didChangeAuthorizationStatus: %d", status);
+    
+    if (kCLAuthorizationStatusNotDetermined == status || kCLAuthorizationStatusRestricted == status || kCLAuthorizationStatusDenied == status) {
+        [BxConnector showErrorAlertWithDelegate:self message:NSLocalizedString(@"Location services are disabled", @"Location services are disabled error message")];
+    } else {
+        [self actionCurrentLocationPossible:nil];
+    }
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
-
+    NSLog(@"didUpdateLocations: %@", locations);
+    
 	[self removeProgressIndicator];
 	
 	[locmanager stopUpdatingLocation];
