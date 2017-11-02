@@ -125,10 +125,14 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
-        CGRect rectPopover = [self.view convertRect:[btnChooseMedia frame] fromView:[btnChooseMedia superview]];
-        rectPopover.size.width = MIN(rectPopover.size.width, 300);    
+        dispatch_async(dispatch_get_main_queue(), ^ {
+            
+            CGRect rectPopover = [self.view convertRect:[btnChooseMedia frame] fromView:[btnChooseMedia superview]];
+            rectPopover.size.width = MIN(rectPopover.size.width, 300);
         
-        [ctrlPopover presentPopoverFromRect:rectPopover inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            [ctrlPopover presentPopoverFromRect:rectPopover inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        
+        });
         
     } else {
         [self presentViewController:self.ctrlImagePicker animated:YES completion:NULL];
