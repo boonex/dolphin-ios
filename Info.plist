@@ -12,22 +12,6 @@
 	<string>Dolphin</string>
 	<key>CFBundleIconFile</key>
 	<string></string>
-	<key>CFBundleIconFiles</key>
-	<array>
-		<string>Icon-60</string>
-		<string>Icon.png</string>
-		<string>Icon@2x.png</string>
-		<string>Icon~ipad.png</string>
-		<string>Icon@2x~ipad.png</string>
-	</array>
-	<key>CFBundleIconFiles~ipad</key>
-	<array>
-		<string>Icon-76</string>
-		<string>Icon.png</string>
-		<string>Icon@2x.png</string>
-		<string>Icon~ipad.png</string>
-		<string>Icon@2x~ipad.png</string>
-	</array>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -50,7 +34,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>191</string>
+	<string>1912</string>
 	<key>FacebookAppID</key>
 	<string>212147745792489</string>
 	<key>FacebookDisplayName</key>
@@ -92,26 +76,26 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) take pictures upon user&apos;s permission to upload to the site</string>
+	<key>NSLocationUsageDescription</key>
+	<string>$(PRODUCT_NAME) update user&apos;s location on the site upon user&apos;s permission</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>$(PRODUCT_NAME) update user&apos;s location on the site upon user&apos;s permission</string>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
 	<key>NSMainNibFile~ipad</key>
 	<string>MainWindow-iPad</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>$(PRODUCT_NAME) uses microphone during video recording</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) upload selected photos to the site</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>UIStatusBarHidden</key>
 	<true/>
-	<key>NSCameraUsageDescription</key>
-	<string>$(PRODUCT_NAME) take pictures upon user&apos;s permission to upload to the site</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>$(PRODUCT_NAME) upload selected photos to the site</string>
-	<key>NSLocationUsageDescription</key>
-	<string>$(PRODUCT_NAME) update user&apos;s location on the site upon user&apos;s permission</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>$(PRODUCT_NAME) update user&apos;s location on the site upon user&apos;s permission</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>$(PRODUCT_NAME) uses microphone during video recording</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

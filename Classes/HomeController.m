@@ -95,7 +95,7 @@
         r.origin.x = 0.0;
         r.size.width = self.view.frame.size.width;
     } else if ((fromOrient == UIInterfaceOrientationPortrait || fromOrient == UIInterfaceOrientationPortraitUpsideDown) && (UIInterfaceOrientationLandscapeLeft == toOrient || UIInterfaceOrientationLandscapeRight == toOrient)) {
-        CGFloat fOffsetPortrait = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPAD : BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPHONE;
+        CGFloat fOffsetPortrait = [self calcPortrateOffset];
         r = viewScroll.frame;
         r.origin.x = fOffsetPortrait;
         r.size.width = self.view.frame.size.width - fOffsetPortrait;
@@ -264,11 +264,16 @@
     }
     
     int iButtonsInRow = BX_HOME_BUTTONS_IN_ROW;
-    float fDeltaX = BX_HOME_BUTTONS_DX;
-    float fDeltaY = BX_HOME_BUTTONS_DY;
-    float fOffsetX = BX_HOME_BUTTONS_X;
-    float fOffsetY = BX_HOME_BUTTONS_Y;
-    int fScrollOffset = 113;
+    
+    float fScreenHeight = [UIScreen mainScreen].nativeBounds.size.height / [UIScreen mainScreen].nativeScale;
+    float fDeltaFix = [self calcDeltaFix];
+    float fDeltaX = BX_HOME_BUTTONS_DX + fDeltaFix;
+    float fDeltaY = BX_HOME_BUTTONS_DY + fDeltaFix;
+    float fOffsetX = BX_HOME_BUTTONS_X + fDeltaFix;
+    float fOffsetY = BX_HOME_BUTTONS_Y + fDeltaFix;
+    
+    float fScrollFix = fScreenHeight > 480.0 ? fScreenHeight - 480.0 : 0;
+    int fScrollOffset = 113 + fScrollFix;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         iButtonsInRow = BX_HOME_BUTTONS_IN_ROW_IPAD;
         fDeltaX = BX_HOME_BUTTONS_DX_IPAD;
@@ -277,6 +282,8 @@
         fOffsetY = BX_HOME_BUTTONS_Y_IPAD;
         fScrollOffset = 153;
     }
+    
+    
     
     CGPoint p = CGPointMake(fOffsetX, fOffsetY);
     iCount = [aButtons count];
@@ -295,12 +302,23 @@
     [self fixScroll];
 }
 
+- (CGFloat)calcDeltaFix {
+    float fScreenWidth = [UIScreen mainScreen].nativeBounds.size.width / [UIScreen mainScreen].nativeScale;
+    return fScreenWidth > 320.0 ? (fScreenWidth - 320.0) / 4.0 : 0;
+}
+
+- (CGFloat)calcPortrateOffset {
+    float fDeltaFix = [self calcDeltaFix];
+    float fScreenHeight = [UIScreen mainScreen].nativeBounds.size.height / [UIScreen mainScreen].nativeScale;
+    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPAD : BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPHONE + (fScreenHeight > 480.0 ? fScreenHeight - 480 - 4*fDeltaFix : 0) / 2.0;
+}
+
 - (void)fixScroll {
     CGFloat w = self.view.frame.size.width;
     CGFloat d = 0;
     
     if ([[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationLandscapeLeft || [[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationLandscapeRight) {
-        CGFloat fOffsetPortrait = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPAD : BX_HOME_BUTTONS_OFFSET_PORTRAIT_IPHONE;
+        CGFloat fOffsetPortrait = [self calcPortrateOffset];
         d = fOffsetPortrait;
         w -= fOffsetPortrait;
     }
